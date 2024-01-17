@@ -1,0 +1,10 @@
+main.*
+pdfa.*
+*.out
+*.bbl
+*.fls
+*.log
+*.xdv
+!main.tex
+old/*
+personal-info.tex

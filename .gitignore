@@ -5,6 +5,14 @@ pdfa.*
 *.fls
 *.log
 *.xdv
+*.lua
+*.aux
 !main.tex
 old/*
-personal-info.tex
+reference.info
+personal.info
+*.pdf
+*.gz
+*.xml
+*.fdb_latexmk
+*.bcf

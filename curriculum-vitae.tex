@@ -1,0 +1,776 @@
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+%% Fork (before v1.6.5a): CV dark mode toggle enabler to use a inverted color palette.
+%% Use the "darkmode" option if you want a color palette used to 
+% \documentclass[10pt,a4paper,ragged2e,withhyper,darkmode]{altacv}
+
+%\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv} %default
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicons fonts and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+%% Fork v1.6.5c: Overwriting sloppy environment to ignore any spaces and be used to solve overlapping cvtags
+\newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
+
+% Change the page layout if you need to
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+\usepackage{multicol} % Multicol pacakage allows automatically-balanced text split along multiple columns.
+\usepackage{paracol} % The paracol package lets you typeset columns of text in parallel, choosing the \switchcolumn
+
+\usepackage{subfiles} % Use subfiles to define personal information.
+\usepackage{tabularx}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Fork (before v1.6.5a): Change the color codes to test your personal variant on any mode
+\ifdarkmode%
+  \definecolor{PrimaryColor}{HTML}{C69749}
+  \definecolor{SecondaryColor}{HTML}{D49B54}
+  \definecolor{ThirdColor}{HTML}{1877E8}
+  \definecolor{BodyColor}{HTML}{ABABAB}
+  \definecolor{EmphasisColor}{HTML}{ABABAB}
+  \definecolor{BackgroundColor}{HTML}{191919}
+\else%
+%  \definecolor{PrimaryColor}{HTML}{001F5A}
+%  \definecolor{SecondaryColor}{HTML}{0039AC}
+%  \definecolor{ThirdColor}{HTML}{F3890B}
+%  \definecolor{BodyColor}{HTML}{666666}
+%  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+%  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+  \definecolor{PrimaryColor}{HTML}{001F5A}
+  \definecolor{SecondaryColor}{HTML}{448888}
+  \definecolor{ThirdColor}{HTML}{4682B4}
+  \definecolor{BodyColor}{HTML}{666666}
+  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+  \definecolor{BackgroundColor}{HTML}{FFFFFF}
+%  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+\fi%
+
+%My Colours:
+% Teal 448888
+% Orange DD5522 
+% Light blu 77EEEE
+% Steel Blu 4682B4
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{SecondaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+%\usepackage{hyperref
+%%Setup bib hyperlinks
+\hypersetup{%
+	urlcolor=SecondaryColor,
+	citecolor=SecondaryColor
+}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+%\input{pubs-num.cfg}
+
+\usepackage[
+backend=biber,
+%backend=bibtex, %https://www.overleaf.com/learn/latex/Biblatex_citation_styles
+%style=authoryear,
+%autocite=superscript,
+sorting=ydnt, %TODO: Figure out how to enable this option without destroying bibliography.
+%sorting=nty
+bibstyle=phys,
+autocite=superscript,
+]{biblatex} % required for subfile bib using this answe: https://tex.stackexchange.com/a/578992/137109
+
+\usepackage[super]{nth} %\nth{1}
+
+%\AtBeginRefsection{\GenRefcontextData{sorting=ydnt}}
+%\AtEveryCite{\localrefcontext[sorting=ydnt]}
+
+\newcommand{\makeauthorbold}[1]{%
+	\DeclareNameFormat{author}{%
+		\ifthenelse{\value{listcount}=1}
+		{%
+			{\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\namepartfamily\addcomma\addspace \namepartgiveni}}{\namepartfamily\addcomma\addspace \namepartgiveni}}
+			%
+		}{\ifnumless{\value{listcount}}{\value{liststop}}
+			{\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni}}{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni}}
+			{\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni\addcomma\isdot}}{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni\addcomma\isdot}}%
+		}
+		\ifthenelse{\value{listcount}<\value{liststop}}
+		{\addcomma\space}{}
+	}
+}
+\makeauthorbold{Gebert}
+
+%% sample.bib contains your publications
+\addbibresource{MyPapers.bib}
+\addbibresource{UnderPreparation.bib}
+%\bibliographystyle{phys}
+
+\begin{document}
+    
+    %% You can add multiple photos on the left or right
+    \photoL{4cm}{profile.png}
+
+	% Create Banner via subfiles, where information can be retained as private.
+	\IfFileExists{personal.info}{
+    	\subfile{./personal.info}
+	}{
+		\subfile{./personal-example.info}
+	}
+
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    % \AtBeginEnvironment{itemize}{\small}
+    
+    %% Set the left/right column width ratio to 6:4.
+    \columnratio{0.25}
+
+    % Start a 2-column paracol. Both the left and right columns will automatically
+    % break across pages if things get too long.
+    \begin{paracol}{2}
+    	 % ----- LEARNING -----
+    	% \cvsection{Research}
+    	% \begin{sloppypar*}
+    	% 	\cvsubsection{Expertise}
+    	% 	\cvtags{Electronic Transport, 2D Materials, Topological Materials, Xray Scattering, Xray Reflectometry, Neutron Reflectometry, Cryogenics, UHV}
+    	% 	\medskip
+    		
+    	% 	\cvsubsection{Experimental Techniques}
+    	% 	\cvtags{Electron-Beam Lithography, Photolith., Etching, Material Stacking/Transfer, Material Deposition, Cleanrooms, MBE, PVD, Wirebonding}
+    	% 	%                \medskip
+    	% 	%                \cvtags{PCBs, Digital, Analogue, 3D Printing}
+    	% \end{sloppypar*}
+    	% ----- LEARNING -----
+    	
+        % ----- TECH STACK -----
+        \cvsection{TECH STACK}
+            %% Fork v1.6.5c: The sloppypar* environment is used to avoid tags overlapping with section width
+            \begin{sloppypar*}
+				\cvtags{Microcontrollers, PCBs, Digital, Analogue, FPGAs, Control,  Electronic Nanofab, Real-time Systems}
+				\medskip
+
+                \cvtags{Python\faPython, Django, C++, Verilog/VHDL, HTML\faHtml5, Javascript, CSS\faCss3, Matlab, Shell, Android\faAndroid, LabView}
+                \medskip
+                
+                \cvtags{Full-stack, Data Analysis, Data Visualisation, Algorithms, Linux\faLinux\faUbuntu, Servers, Git\faGithub\faGit*}
+                \medskip
+                
+                \cvtags{Mathematica, AutoCAD, Blender, KLayout, Eagle, LTSpice}
+            \end{sloppypar*}
+        % ----- TECH STACK -----
+        
+       
+        
+        % ----- LANGUAGES -----
+        \cvsection{Languages}
+            \cvlang{English}{Native}\\
+%            \divider
+
+            \cvlang{Mandarin}{Beginner}
+            \vspace{-0.5em}
+            %% Yeah I didn't spend too much time making all the
+            %% spacing consistent... sorry. Use \smallskip, \medskip,
+            %% \bigskip, \vpsace etc to make ajustments.
+        % ----- LANGUAGES -----
+        
+        % use ONLY \newpage if you want to force a page break for ONLY the current column
+        % \newpage %% Switch to the right column. This will now automatically move to the second page if the content is too long.
+        \switchcolumn
+        
+        % ----- ABOUT ME -----
+        \vspace{-0.2em}
+        \cvsection{About Me}
+            \begin{quote}
+            	Electrical \& Computer System Engineer and PhD Graduate experimental physics, with a strong programming background, seeking a career opportunity to passionately contribute to long-term scientific research.
+            \end{quote}
+        \vspace{0.5em}
+        % ----- ABOUT ME -----
+		I am a skilled engineer and scientist with a diverse background in control systems, FPGAs, digital and analouge electronics, and many other technologies. I'm a fast learner of new technology, and highly-adapable team-member. 
+		I have recently completed a PhD in experimental physics, and am looking for a role in a scientific organisation where my engineering excellence and specialised experience can shine.
+		I find the automation of scientific facilities interested, all the way from control and data-acquisition, to automated processing-analysis and end-user visulisation.
+
+%        I love to dabble in code, teach and mentor, and prefer to have clear targets to work towards. My hobbies include music, where I have studied piano to AMEB Grade 8 and do a little electronic production, SciFy video games, Formula1 and Cycling, and home DIY. 
+		% I like teaching and mentoring, and am always wanting to improve upon critical feedback.
+        % I have recently begun learning Mandarin, and have been involved in longterm volunteering and leadership within Christian communities centred on Jesus.
+        
+        % ----- EDUCATION -----
+        \vspace{-1em}
+        \cvsection{Education}
+            \cvevent{Doctor of Philosophy}{Monash University | \cvreference{FLEET}{https://www.fleet.org.au}}{Sep 2019 -- Dec 2023}{Clayton, Australia}
+%            \cvreference
+
+			% \cvachievement{\faBook}{Thesis: Dirac Fermions at Interfaces}{Investigated the properties of Dirac carriers when put into proximity at an interface with other materials. This work encompassed the entire research cycle, from device fabrication, through experimental measurement and analysis, to publishing and comms. Work was particularly focused on transport properties of the 2D material graphene, and topological insulator Bi$_2$Te$_3$. Laboratory experiments also included beamtime at the Lucas Heights ANSTO facility to perform Neutron Reflectometry using Platypus, in addition to other tools.}
+			% \cvachievement{\faUsers}{Membership: ARC CoE Future Low Energy Electronics \& Technologies (FLEET)}{PhD Candidate member of Australian Research Council (ARC) Centre of Excellence (CoE) FLEET. I have benifited from regular centre meetings, workshops, collaborations and professional development to expand my academic experience.}
+			
+			\cvachievementnoicon{Experimental Physics Thesis: Dirac Fermions at Interfaces}{
+				Investigated the properties of Dirac materials when put into proximity at an interface with other materials. 
+				The \textbf{ANSTO Lucas Heights} facility was used to perform Neutron Reflectometry using the Platypus beamline, in addition to other tools.
+				This work encompassed the entire research cycle, from device fabrication, through experimental measurement and analysis, to publishing and communications.
+				}
+			% \cvachievementnoicon{Membership: ARC CoE Future Low Energy Electronics \& Technologies (FLEET)}{PhD Candidate member of Australian Research Council (ARC) Centre of Excellence (CoE) FLEET. I have benifited from regular centre meetings, workshops, collaborations and professional development to expand my academic experience.}
+
+			\begin{tabular}{ll}
+				Main-supervisor: & Prof. Michael S. Fuhrer\\
+				Co-supervisors: & A.Prof. Semonti Bhattacharyya, Dr. Grace Causer\\
+				Research Centre: & ARC CoE Future Low Energy Electronics \& Technologies (FLEET)
+			\end{tabular}
+
+			\vspace{0.5em}
+            \divider
+            % \vspace{-5pt}
+			\cvevent{Undergraduate Bachelor \& Honours Degrees}{Monash University}{}{}
+            
+			\begin{tabularx}{\linewidth}{llXXXX}
+				\multicolumn{3}{l}{{\bfseries\textcolor{emphasis}{B. Science (Honours) - Condensed-matter physics}}}&
+				\multicolumn{3}{r}{{\color{accent}\faCalendar} Feb 2018 --  Dec 2018}\\
+				\multicolumn{2}{l}{\textit{First Class Honours}}&
+				\multicolumn{2}{>{\centering\arraybackslash}X}{\cvreference{GPA:}{http://www.monash.edu/exams/official-record-results/gpa}4.000}&
+				\multicolumn{2}{r}{\cvreference{WAM:}{http://www.monash.edu/exams/official-record-results/wam}83.5\%}\rule[-2ex]{0pt}{0pt}\\
+				\multicolumn{3}{l}{{\bfseries\textcolor{emphasis}{B. Eng (Honours) \& B. Science}}}&
+				\multicolumn{3}{r}{{\color{accent}\faCalendar} Mar 2013 --  Dec 2017}\\
+				\multicolumn{2}{l}{\textit{First Class Honours}}&
+				\multicolumn{2}{>{\centering\arraybackslash}X}{\cvreference{GPA:}{http://www.monash.edu/exams/official-record-results/gpa}3.225}&
+				\multicolumn{2}{r}{\cvreference{WAM:}{http://www.monash.edu/exams/official-record-results/wam}75.2\%}\\
+				{\small\textbf{Specialisations:}}&\multicolumn{5}{l}{Electrical \& Computer Systems Engingeering (Major), Physics (Major),}\\
+				&\multicolumn{5}{l}{Applied Mathematics (Major) \& Computer Science (Minor).}
+			\end{tabularx}
+%         	\vspace{5pt}
+% 			\cvachievement{\faLightbulb}{2017 Undergraduate Academic Board Representative}{Elected onto the university primary governance committee.}
+% %			\vspace{-2em}
+	\end{paracol}
+	\vspace{1em}
+	\divider\\
+	\cvsection{Professional Experience}
+		\cveventlong{\normalsize User at Centre for Neutron Scattering}{\normalsize ANSTO \cvreference{| \faGithub}{https://github.com/mattgebert/refnx}}{Jun 2022 -- Nov 2023}{Lucas Heights, Australia}
+		Utilising the Platypus beamline and Rigaku X-ray reflectometer / diffractometer to perform magnetic sample characterisation. 
+		Two visits made to perform measurements in 2022, one sample created for 2023.
+		Experience in using Refnx software suite to analyse Platypus beamtime data and X-ray data. Worked under the guidance of Dr. David Cortie.
+
+		\divider
+		\newpage
+
+		\cvevent{\normalsize Electronic materials PhD - Fuhrer Lab Group}{\normalsize Monash University 
+		\cvreference{ | \faNewspaper{}}{https://www.fleet.org.au/blog/a-shield-for-2d-materials-that-adds-vibrations-to-reduce-vibration-problems/}
+		\cvreference{ | \faNewspaper{}}{https://www.techbriefs.com/component/content/article/tb/stories/blog/47435}
+		\cvreference{| \faGithub}{https://github.com/mattgebert/pylectric-transport}
+		\cvreference{ | \faGithub}{https://github.com/mattgebert/xrd_analysis}
+		\cvreference{ | \faGithub}{https://github.com/mattgebert/LabViewPrograms}
+		\cvreference{ | \faGithub}{https://github.com/mattgebert/ebl-marker-generator}
+		\cvreference{ | \faGithub}{https://github.com/mattgebert/eagleCircuits}
+		\cvreference{ | \faYoutube}{https://youtu.be/fsEp-QRD9s4}}
+		{Jun 2018 -- Dec 2023}{Clayton, Australia}
+		I conducted my reseach as a student in the Fuhrer lab group. This included restarting the electronic device fabrication section of the group,
+		performing low-noise electrical measurements, streamlining data acquisition and control systems for measurements. I have significant experience in GPIB control instrumentation of
+		electronic equipement in conjunction with LabView, control of piezoelectric actuators for mechanical sample transfer, and experience in glovebox/UHV technical equipement.
+		I have also developed a number of software tools for data analysis, including a Python package for electrical transport analysis, and a Python package for X-ray diffraction analysis.
+		I am familiar with software engineering concepts and best-practise, including version-control, typing, object-orientation, unit-testing, and documentation styles.
+
+		% \begin{itemize}
+		% 	\item Participation as an honours and PhD student in Fuhrer lab group. Worked on condensed matter physics projects primarily using 2D materials and topological insualtors sourced from CVD/MBE and exfoliated methods.
+		% 	\item Various programming for analysis and measurements, including Labview scripts, XR analysis, Blender crystal generation, EBL pattern design and transport analysis.
+		% 	\item Responsibilities for probestation, equipment servicing, glovebox, transfer microscopes, PVD and SEM systems.
+		% 	\item Experience with UHV, MBE, cryogenics, PPMS \& Oxford magnets, and electronic measurement systems.
+		% 	\item Created PhD repository for object-oriented analysis of electrical transport data. Includes datastream processing, reduction, modelling and graphing.
+		% \end{itemize}
+		% \faUsers Collaborators: Dr. Torben Daeneke (RMIT) \& Dr. Nitu Syed (UoM)
+		
+		\divider
+		
+		\cveventlong{\normalsize Engineering FYP}{\normalsize Monash Cold Atoms Group}{Mar 2017 -- Nov 2017}{Clayton, Australia}
+		Implemented a 300 kHz - 3 MHz digital IQ demodulator circuit on an FPGA, and an analogue differential amplifier circuit
+		to analyse magnetometry signals acquired from Faraday measurements on cold-atoms/BECs as a final year project in collaboration with
+		my supervisors Lincoln Turner (Physics) and James Saunderson (Engineering).
+
+		\divider
+
+		\cveventlong{\normalsize Real time system design project}{\normalsize ECE5881, Monash}{Mar 2017 -- Jun 2017}{Clayton, Australia}
+
+		Implemented a PID control loop on an Altera DE2 FPGA Developement Board, using a NIOS-II uCOS-II microcontroller architecture. 
+		The embedded task was to synchronise needle motion to a swinging pendulum, using a light-beam hardware interrupt as the signal source.
+
+		\divider
+
+		\cveventlong{\normalsize Electrical engineering design project}{\normalsize ECE3091, Monash}{Aug 2016 -- Nov 2016}{Clayton, Australia}
+
+		Implemented an autonomous robot to collect coloured pucks, and stack them according to a readable sequence using a mechanical claw.
+		This system was implemented using a programmable system-on-chip, in particular the Cypress CY8CKIT-059 PSoC 5LP Developement Board.
+
+		\divider
+
+		\cveventlong{\normalsize Research User}{\normalsize Melbourne Centre for Nanofabrication}{Jun 2018 -- Present}{Clayton, Australia}
+		I learned and optimised facility equipement for the electronic device fabrication, including responsible after-hours use and establishing new processes.
+		I designed and programatically generated 2D mask patterning for variety of materials science problems.  
+		Equipement I worked with included the Raith EBPG5000plusES electron-beam-lithography system (Linux OS), 
+		the Intelligent Micropatterning SF100 XPRESS, Wire Bonder Wedge FS Bondtec, and the Oxford PlasmaPro 100 ICP RIE system.
+
+	\cvsection{Complementary expertise}
+			
+		\setcolumnwidth{0.33\linewidth,0.33\linewidth,0.33\linewidth}
+    	% \columnratio{0.33}
+		\begin{paracol}{3}
+			\cvsubsection{Communication \& Governance}
+			\begin{itemize}
+				\item \cvreference{2017 \textbf{Undergraduate Academic Board Representative}}{https://www.monash.edu/academic-board}{- Elected onto the university primary governance committee.}
+				\item \cvreference{2022 \textbf{Science Meets Parliment}}{https://scienceandtechnologyaustralia.org.au/smp2022}
+				{- Represented FLEET CoE forging conversation between parlimentarians and scientists.}
+				\item Appeared on\cvreference{RRR \textbf{Einstein A GoGo}}{https://www.rrr.org.au/explore/podcasts/einstein-a-go-go}
+				\item FLEET industry rel. committee
+				\item Multiple conference presentations
+				\item Journal coverart design\cvreference{1}{https://onlinelibrary.wiley.com/doi/abs/10.1002/adma.202170262},\cvreference{2}{https://pubs.acs.org/toc/nalefd/23/1}
+			\end{itemize}
+			\switchcolumn
+			\cvsubsection{Teaching/Supervision}
+			\begin{itemize}
+				\item \textbf{University tutor} for \cvreference{Eng. Maths}{https://monash.edu/pubs/2017handbooks/units/ENG1005.html}, 
+				\cvreference{Fields \& Quantum Physics}{https://www3.monash.edu/pubs/2018handbooks/units/PHS1022.html}, and
+				\cvreference{Experimental Physics}{https://handbook.monash.edu/2023/units/PHS3000}.
+				\item \textbf{Specialist high-school teacher} for \cvreference{Emerging Science Victoria,}{https://emsci.vic.edu.au/} an online education platform based at John Monash Science School.
+				\item \textbf{Student supervision} experience for two Undergrad/Masters student projects. Enjoy teaching and mentoring.
+			\end{itemize}
+			\switchcolumn
+			\cvsubsection{Awards}
+			\cvachievement{\small\faBullhorn}{Outstanding Student Award | Monash Science Faculty Awards \faCalendar*[small] 2020}
+			{Awarded for extensive science-outreach across a range of activities and programs.\hspace{9em} \cvreference{\faNewspaper Blog link}{http://www.fleet.org.au/blog/12772/} | \cvreference{\faCertificate Award link}{https://drive.google.com/file/d/1g3VeY3PgxkLOUvV2EcMlbWNjkn06d4-d/view?usp=drive_link}}
+			\cvachievement{\small\faUserGraduate}{Education \& Training Grant | FLEET \faCalendar*[small] 2020}
+			{Compeditive grant (\$500). Used funds to undertake EdX Quantum Transport course.}
+		\end{paracol}
+
+	\cvsection{References}
+        \newcommand*{\phonesym}{\color{accent}\faPhone}
+        \newcommand*{\phonenumber}[1]{\href{tel:#1}{#1}}
+        \newcommand*{\mailsym}{{\color{accent}\small\normalfont\mailaddresssymbol}}
+        \newcommand*{\mailto}[1]{\href{mailto:#1}{#1}}
+        \newcommand*{\buildingsym}{\color{accent}\faBuilding}
+        \newcommand*{\LIsym}{\color{accent}\faLinkedin}
+        \newcommand*{\LIprofile}[2]{\href{https://linkedin.com/in/#1}{#2}}
+		\IfFileExists{reference.info}{
+    		\subfile{./reference.info}
+		}{
+			\subfile{./reference-example.info}
+		}
+	\end{document}
+	
+	% \newpage
+	% \divider
+
+	% \cvsubsection{Scholarships \& Funding}
+	% 	\cvachievement{\faUserGraduate}{Education \& Training Grant | FLEET \faCalendar*[small] 2020}{Selected for compeditive grant (\$500) to improve skills though a self-nominated proposal. I used these funds to undertake EdX PurdueX 69503x - Introduction to Quantum Transport.}
+		
+	% 	\divider
+		
+	% 	\cvachievement{\faUserGraduate}{Research Training Program (RTP) | Australian Government \faCalendar*[small] 2019-2023}{Fully funded doctoral-candidature, with \$27,500 AUD p/a plus full tuition.}
+		
+	% 	\divider
+		
+	% 	\cvachievement{\faAward}{PhD Top-Up Scholarship | FLEET \faCalendar*[small] 2019-2023}{Additional award contributing \$10,000 AUD p/a to conduct PhD research.}
+		
+	% 	\divider
+		
+	% 	\cvachievement{\faBusinessTime}{Monash Jubilee Anniversary Honours Scholarship | Monash Uni. \faCalendar*[small] 2018}{A merit award of \$6000 AUD for a selection of honours students.}
+		
+	% 	\divider
+		
+	% 	\cvachievement{\faChartArea}{J.L. Williams Scholarship | School of Phys. \& Astro., Monash Uni. \faCalendar*[small] 2018}{A merit/hardship scholarship of \$5,000 AUD to undertake an honours year.}
+		
+	% 	\divider
+		
+	% 	\cvachievement{\faBalanceScaleLeft}{ANU Summer Scholarship | Australian National University \faCalendar*[small] 2015-16}{Fully funded travel \& living expenses for two months to undertake summer research.}
+
+%	\newpage
+	% \columnratio{0.5} %return column width to 0.5, removing the need for the "featured" columns.
+%	\cvsection{Academic Research Cont.}
+%	\columnratio{0.5}
+%	\begin{paracol}{2}
+%	\cvsection{\faMicroscope{} Experimental Experience}
+	% \cvsection{Experimental Experience}
+	% 	\cveventlong{\normalsize User at Centre for Neutron Scattering}{\normalsize ANSTO \cvreference{| \faGithub}{https://github.com/mattgebert/refnx}}{Jun 2022 -- Present}{Lucas Heights, Australia}
+	% 		\begin{itemize}
+	% 			\item Utilising Platypus beamline and X-ray reflectometer / diffractometer.
+	% 			\item Measurement of magnetic-insulator --- topological-insulator heterostructures, specifically TbIG and Bi\textsubscript{2}Te\textsubscript{3}.
+	% 			\item One beamtime completed Sep. 2022, two proposals awarded Jun 2023, scheduled for Nov 23, Feb 24.
+	% 			\item Experience in using Refnx software suite to analyse Platypus beamtime data and X-ray data.
+	% 		\end{itemize}
+	% 		\faUsers Collaborators: Dr. David Cortie, Prof. Dennis Y.C. Leung, Dr. Mark T. Edmonds, Dr. Golrokh Akhgar
+			
+	% 		\divider
+			
+% 		\vspace{-0.2em}
+% 		\cvevent{\normalsize Fuhrer Lab Group}{\normalsize Monash University \cvreference{ | \faNewspaper{}}{https://www.fleet.org.au/blog/a-shield-for-2d-materials-that-adds-vibrations-to-reduce-vibration-problems/}\cvreference{ | \faNewspaper{}}{https://www.techbriefs.com/component/content/article/tb/stories/blog/47435}\cvreference{| \faGithub}{https://github.com/mattgebert/pylectric-transport}\cvreference{ | \faGithub}{https://github.com/mattgebert/xrd_analysis}\cvreference{ | \faGithub}{https://github.com/mattgebert/LabViewPrograms}\cvreference{ | \faGithub}{https://github.com/mattgebert/ebl-marker-generator}\cvreference{ | \faGithub}{https://github.com/mattgebert/eagleCircuits}\cvreference{ | \faYoutube}{https://youtu.be/D6SEuttbz-A}}{Jun 2018 -- Present}{Clayton, Australia}
+% %		https://www.fleet.org.au/blog/a-shield-for-2d-materials-that-adds-vibrations-to-reduce-vibration-problems/
+% 			\begin{itemize}
+% 				\item Participation as an honours and PhD student in Fuhrer lab group. Worked on condensed matter physics projects primarily using 2D materials and topological insualtors sourced from CVD/MBE and exfoliated methods.
+% 				\item Various programming for analysis and measurements, including Labview scripts, XR analysis, Blender crystal generation, EBL pattern design and transport analysis.
+% 				\item Responsibilities for probestation, equipment servicing, glovebox, transfer microscopes, PVD and SEM systems.
+% 				\item Experience with UHV, MBE, cryogenics, PPMS \& Oxford magnets, and electronic measurement systems.
+% 				\item Created PhD repository for object-oriented analysis of electrical transport data. Includes datastream processing, reduction, modelling and graphing.
+% 			\end{itemize}
+% 			\faUsers Collaborators: Dr. Torben Daeneke (RMIT) \& Dr. Nitu Syed (UoM)
+			
+% 		\divider
+		
+% 		\vspace{-0.2em}
+% %		\columnratio{0.5}
+% %		\begin{paracol}{2}
+% 		\cveventlong{\normalsize Engineering FYP}{\normalsize Mon. Cold Atoms Grp \cvreference{| \faYoutube}{https://youtu.be/yhIFpIGQF_8} \cvreference{| \faGithub}{https://github.com/mattgebert/syncIQDemodulator}}{2017}{Monash Uni. Clayton}
+% 		Implemented an FPGA IQ demodulation digital circuit, and an analogue differential amplifier circuit to analyse magnetometry signals acquired from Faraday measurements on cold-atoms/BECs for the final year project.
+		
+% 		\faUsers Supervisor: Dr. Lincoln Turner
+% %		\hspace{2em}\faUsers Supervisor: Dr. Lincoln Turner
+		
+% 		\divider
+		
+% 		\vspace{-0.2em}
+% 		\cveventlong{\normalsize Undergrad. Research Proj}{\normalsize Mon. Particle Phys. Grp \cvreference{| \faFile*}{http://skands.physics.monash.edu/students/gebert/phs3350-report-MattGebert.pdf}}{Sem. 2, 2016}{Monash Uni. Clayton}
+% 		Theory of string fragmentation and the use of theoretical models in Monte Carlo generators. Gained insights into fundamental particle physics and good exposure to terminology and computational aspects.
+		
+% 		\faUsers Supervisor: Prof. Peter Skands
+% %		\hspace{0.2em}\faUsers Supervisor: Prof. Peter Skands
+		
+% 		\divider
+% %		\switchcolumn
+		
+% 		\vspace{-0.2em}
+% 		\cveventlong{\normalsize ANU Summer Scholar}{\normalsize Research School of Phys. \& Eng.}{Dec 2015 - Jan 2016}{ANU, Canberra, Australia}
+% 		Modelled the function of nitrogen vacancy (NV) centres as stress sensors in cantilevers, realising applications in fundamental biology, such as probing the motion of cells.
+		
+% 		\faUsers Supervisor: Dr. Marcus Doherty
+% %		\hspace{2em}\faUsers Supervisor: Dr. Marcus Doherty
+% %		\end{paracol}
+		
+% 	\divider
+	
+%	\switchcolumn
+	
+%	\vspace{-0.2em}
+%	\begin{paracol}{2}
+% 		\cvsection{Workshops / Conferences} %\faPlaneDeparture{}
+% 		\cveventlong{\normalsize March Meeting}{\normalsize American Physical Society | \cvreference{\faGlobe{}}{https://meetings.aps.org/Meeting/MAR23/Session/Y20.15}}{Mar 2023}{Las Vegas, NV, USA}
+% 		Chaired a Quantum Hall session. Attended many 2D material, magnetism, quantum and topological material sessions. 
+		
+% 		\divider
+		
+% 		\cveventlong{\normalsize Quantum Australia}{\normalsize Sydney Quantum Academy \cvreference{| \faNewspaper}{https://www.fleet.org.au/blog/fleet-represents-at-quantum-australia/}}{Feb 2023}{Australia}
+% 		Conference on the development and emergence of Quantum technologies in Australia, particularly focused by panel discussions on the rapid change and challenges in the industry.
+		
+% %		\vspace{-0.2em}
+% 		\divider
+% %		\switchcolumn
+		
+% %		\vspace{-0.2em}
+% 		\cveventlong{\normalsize Annual Workshop}{\normalsize FLEET}{2019-23}{Australia}
+% 		Week-long collaborative workshop with international attendance to update progress on centre goals, explore new research ideas and network.
+		
+% %		\vspace{-0.5em}
+% 		\divider
+		
+% %		\vspace{-0.5em}
+% 		\cveventlong{\normalsize Communicating your research}{\normalsize Monash Grad. Research}{Nov 2019}{Monash Uni, Australia}
+% 		Interactive 2-day workshop with journalists and TV presenters on improving communication to the public.
+% %		\divider
+		
+% %		\switchcolumn
+% 		\divider
+		
+% 		\cveventlong{\normalsize Melb. Cond.-Mat. Community (MC\textsuperscript{2}) Workshops}{}{Nov 2019 --- \nth{4} Workshop}{Uni. Melb, Australia}
+% 		\vspace{-0.3em}
+% 		\cveventlong{}{}{Jun 2019 --- \nth{3} Workshop}{RMIT, Australia}
+		
+% %		\vspace{-1em}
+% 		\divider
+		
+% %		\vspace{-0.5em}
+% 		\cveventlong{\normalsize Idea Factory}{\normalsize FLEET \& EQUS}{Jun 2019}{Brisbane, Australia}
+% 		Innovation program developing skills in pitching, identifying end-users, and developing a business case.
+		
+% 		\divider
+		
+% %		\cvevent{\normalsize \nth{3} Melb. Cond.-Mat. Community (MC\textsuperscript{2}) Workshop}{}{June 2019}{RMIT, Australia}
+% %		
+% %		\divider
+% %		
+% 		\cveventlong{\normalsize \nth{4} Int. Conf. on 2D Mat. \& Tech. (ICON-2D Mat)}{}{2018}{Melbourne, Australia}
+% 		Hosted by FLEET, ICON-2D Mat offered an opportunity to dive into frontier condensed matter research.
+		
+% 		\divider
+%		
+%		\cvevent{\normalsize SUSY}{}{2016}{Uni. Melb., Australia}
+%		
+%		
+%		\divider
+		
+%		\cvevent{\normalsize UniHack}{\normalsize Monash University}{2015}{Monash Uni., Australia}
+%		Developed a mock android app to navigate reliable parking in multicomplex shopping centres.
+		
+%		\cvevent{\normalsize Internation Conference for High Energy Particle Physics}{}{2015}{Monash Uni., Australia}
+%		Volunteer for CoEPP (Centre of Excellence for Particle Physics). Announcement of the Higgs Boson discovery.	
+	
+%		\cvsection{Academic Research Cont.}
+		
+%		\end{paracol}
+		
+%		\begin{paracol}{2}
+% 		\cvsection{Teaching \& Education}
+% 			\cvsubsection{\faChalkboardTeacher{} Teaching}
+% 				\cveventlong{\normalsize Teaching Associate}{\normalsize Monash University}{Mar 2017 - Present}{Clayton, Australia} 
+% 				\vspace{-1em}
+% 				\begin{multicols}{2}
+% 					\begin{itemize}
+% 						\item Tutor and lab demonstrator
+% 						\item \cvreference{Engineering Mathematics}{https://monash.edu/pubs/2017handbooks/units/ENG1005.html}, 2017 S1
+% 						\item \cvreference{Fields \& Quantum Physics}{https://www3.monash.edu/pubs/2018handbooks/units/PHS1022.html}, 2018 S2
+% 						\item \cvreference{Experimental Physics}{https://handbook.monash.edu/2023/units/PHS3000}, 2023 S1 \& S2
+% 					\end{itemize}
+% 				\end{multicols}
+% 				\vspace{-2em}
+				
+% 				\divider
+				
+% %				\vspace{-0.5em}
+% 				\cvevent[0.25]{\normalsize Specialist Teacher}{\normalsize Emerging Science Victoria (ESV) \& John Monash Science School (JMSS)}{Feb 2019 - 2021}{Clayton, Australia}
+% 				Creation, organisation and delivery of introductory courses in neuroscience, astronomy and nanotechnology to regional high school students through a virtual classroom.
+				
+% %				\vspace{-0.5em}
+% 				\divider
+				
+% %				\vspace{-0.5em}
+% 				\cveventlong{\normalsize Research Associate}{\normalsize Monash University}{May 2013 -- Mar 2014}{Caulifield, Australia}
+% 				\begin{itemize}
+% 					\item Development and creation of module resources for MOOC platforms, utilising HTML5, D3, Bootstrap and jQuery to produce interactive learning resources.
+% 					\item Investigated the use of social media APIs for integration into learning platforms.
+% 				\end{itemize}
+			
+% %			\vspace{-0.5em}
+% 			\divider
+				
+% %			\vspace{-0.5em}
+% 			\cvsubsection{\faUsers{} Supervision}
+			
+% 				\cveventlong{\normalsize \nth{3} Year Research Project}{\normalsize Aadarsh Madhavan}{Oct 2022 - Jun 2023}{}
+% 				Jointly supervised undergraduate student investigating the creation of Moire superlattices by utilising strained structures instead of rotation. We focused the TMD semiconductor WS\textsubscript{2}, using PL techniques to measure the change in exciton binding energy after strain.
+			
+% 				\divider
+				
+% 				\cveventlong{\normalsize Masters Engineering Intern}{\normalsize Ms. Srushti Lokesh}{Jan 2021 - Feb 2021}{}
+% 				Jointly supervised masters student to create electronic breakout boxes for electronic transport measurements.
+				
+% 			\divider
+% 			\newpage
+% 			\cvsubsection{\faLightbulb{} Outreach}
+% 			\vspace{-1em}
+% 			\begin{multicols}{2}
+% 			\begin{itemize}
+% 				\item Melbourne Knowledge Week | May 2021
+% 				\item Lab Demonstrations \& Activities | Nov 2019
+% 				\item John Monash Sci. School Immersion Day | 2019, 2021
+% 				\item Monash University Open Day | 2018 - 2021
+% 				\item High school graphene demos and guest classes | 2020-2022
+% 			\end{itemize}
+% 			\end{multicols}
+			
+		
+% %		\switchcolumn
+
+% 		\vspace{-1em}
+% 		\cvsection{Govenance}
+		
+% 		\cveventlong[0.6]{\normalsize Science Meets Parliment}{\normalsize Science \& Technology Australia \cvreference{| \faNewspaper{}}{https://www.fleet.org.au/blog/18322/}}{Feb, June 2022}{Australia}
+% 		Represented FLEET at Science Meets Parliament for a week of discussions \& focused panels around communication, policy and funding in Australia.
+		
+% %		\vspace{-0.5em}
+% 		\divider
+		
+% %		\vspace{-0.5em}
+% 		\cveventlong[0.6]{\normalsize Postgrad. Student Committee}{\normalsize Sch. of Phys. \& Astro.}{Jul 2020 - Jun 2022}{Monash University}
+% 		Representative of SPA HDR student matters on multiple panels. Raised support for retaining existing fabrication facilities at risk of decommission, implemented better professional development programs for Higher Degree by Research (HDR) students, and social programs focused on mental health for COVID affected students. Under my leadership the SPA was awarded \$3500 in funding for school HDR activities.
+		
+% %		\vspace{-0.5em}
+% 		\divider
+		
+% %		\vspace{-0.5em}
+% 		\cveventlong[0.6]{\normalsize Committee Member}{\normalsize FLEET Industry Rel. Committee}{Jul 2020 - Jun 2022}{Monash University}
+% 		Input into FLEET’s strategies towards engagement with industry collaborators, patents, and spinouts. Assisted in organizing colloquia series and participated in various innovative seminars.
+		
+% %		\vspace{-0.5em}
+% 		\divider
+		
+% %		\vspace{-0.5em}
+% 		\cveventlong[0.6]{\normalsize Vice President}{\normalsize Optica (OSA) Student Chapter}{2020}{Monash University}
+% 		Restarted club activities and outreach after a few years of club inactivity.
+		
+% %		\vspace{-0.5em}
+% 		\divider
+		
+% %		\vspace{-0.5em}
+% 		\cveventlong[0.6]{\normalsize Undergrad. Student Rep.}{\normalsize Monash Academic Board}{Dec 2016 - Dec 2017}{Monash University}
+% 		Elected member of Monash University’s principle academic body, chosen by undergraduate student population of Monash University. Contributed to discussion and implementation of academic matters of the university, meeting with key stakeholders and student bodies.
+		
+		
+%			\cvsubsection{}
+%			\divider
+		
+%		\cvevent{Work Experience}{Monash Bioinformatics Platform \cvreference{|\faGithub}{https://github.com/mytardis/mytardis}\cvreference{| \faGlobe}{https://www.mytardis.org/}}{Jan 2013 -- Feb 2013}{Clayton, Australia}
+%		Worked in myTardis team with Steve Androulakis and Grischa Meyer. Developed front-end interfaces for data visualisation using Javascript, with experience in Linux servers and Django.
+		%        \begin{itemize}
+			%        	\item First achievement
+			%        	\item Second achievement
+			%        	\item Third achievement
+			%        \end{itemize}
+		% ----- EXPERIENCE -----
+		
+		% ----- PROJECTS -----
+%		
+%		\vspace{-1em}
+%		\cvsection{Projects}
+%		%        	\cvevent{Refnx}{\cvreference{\faGithub}{https://github.com/mattgebert/refnx}\cvreference{| \faGlobe}{https://refnx.readthedocs.io/en/latest/}}{Mar 2023 -- Present}{}
+%		%        	\begin{itemize}
+%			%        	\end{itemize}
+%		%        	\divider
+%		\vspace{-1.5em}
+%		\begin{multicols}{2}
+%			\cvevent{Pylectric}{\cvreference{\faGithub}{https://github.com/mattgebert/pylectric-transport}}{Feb 2021 -- Present}{}
+%			\begin{itemize}
+%				\item PhD repository for object-oriented analysis of electrical transport data.
+%				\item Datastream processing, reduction, modelling and graphing.
+%			\end{itemize}
+%			%        		\divider
+%			\vspace{2em}
+%			\cvevent{Personal Website}{\cvreference{\faGithub}{https://github.com/mattgebert/djangoPhotafy}\cvreference{| \faGlobe}{http://www.mattgebert.com}}{Jun 2017 -- Present}{}
+%			\begin{itemize}
+%				\item Django powered website to run python based computations.
+%				\item Source includes music analysis, D3 animations, and other database model objects.
+%			\end{itemize}
+%			%        		\divider
+%		\end{multicols}
+		%            \cvevent{myTardis}{Monash Bioinformatics Platform \cvreference{|\faGithub}{https://github.com/mytardis/mytardis}\cvreference{| \faGlobe}{https://www.mytardis.org/}}{Jan 2013 -- Feb 2013}{}
+		%            Developed front-end data interfaces for data visualisation using Javascript, with experience in Django.
+		%            \begin{itemize}
+			%                \item Item 1
+			%                \item Item 2
+			%            \end{itemize}
+		% ----- PROJECTS -----
+%	\end{multicols}
+%	\end{paracol}
+
+% 			\cvevent{Victorian Certificate of Education (VCE)}{John Monash Science School}{Feb 2010 --  Dec 2012}{Monash University, Australia}
+% %			\vspace{-2em}
+% %			\begin{multicols}{3}
+% 				\begin{itemize}[noitemsep]
+% 					\item Australian Tertiary Admissions Rank (\cvreference{ATAR}{https://www.uac.edu.au/future-applicants/atar}): 98.0 Percentile
+% 				\end{itemize}
+% %			\end{multicols}
+% %			\vspace{-1em}
+% 			\vspace{5pt}
+        % ----- EDUCATION -----
+        
+         	    		
+        % \cvsection{Publications}
+        % \cvsubsection{\faFile*[regular] Published}
+        % %				\mynames{Matt/Matthew\bibnamedelima Gebert,
+        % %					Matthew Gordon\bibnamedelima Gebert,
+        % %					M.\bibnamedelimi Gebert}        
+        % \nocite{*} %cite it all so you can construct references later..
+        % \vspace{-0.6em}
+        
+        % \printbibliography[type=article,heading=none]
+        
+        % \vspace{-1em}
+        % \divider
+        
+        % \cvsubsection{\faFile*[regular] Under preparation}
+        
+        % \vspace{-0.6em}
+        % \printbibliography[type=unpublished,heading=none]
+        
+        
+        %\nocite{gebert_passivating_2023,barson_nanomechanical_2017,bhattacharyya_recent_2021,pradeepkumar_low-leakage_2023}
+        
+        %	        	\printbibliography[type=article,title=\printinfo{\faFile*[regular]}{Journal Articles}]
+        
+        %		        \printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+        
+        
+        %		        \printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal 
+        %		        Articles}}, type=article]
+        
+        %		        \printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+        
+        %		        \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+        
+        
+        % \cvsection{Contributed Talks}
+        % \cvevent{\normalsize American Physical Society (APS) March Meeting}{\cvreference{\faGlobe}{https://meetings.aps.org/Meeting/MAR23/Session/A20.2}}{Mar 2023}{Las Vegas, NV, USA}
+        % Gebert, M., Bhattacharrya, S., Fuhrer, M. S., ``Suppressing remote optical phonon scattering in graphene below room temperature with touch-printed oxide Ga2O3".
+        
+        % \divider
+        
+        % \cvevent{\normalsize Int. Conf. for the Phys. of Semiconductors (ICPS)}{\cvreference{\faGlobe}{https://icps2022.org/program/}}{Jun 2022}{ICC, NSW, Australia}
+        % Gebert, M., Bhattacharyya, S., Bounds, C.C., Syed, N., Daeneke, T., Fuhrer, M. S.,
+        % ``Suppressing remote optical phonon scattering in graphene below room temperature with touch‐printed oxide".
+        
+        % \divider
+        
+        % \cvevent{\normalsize Int. Conf. for Undergraduate Research (ICUR)}{\cvreference{\faGlobe}{https://www.icurportal.com/past-events/icur-2017/}}{Aug 2017}{Clayton, Australia}
+        % Gebert, M., Turner, L.
+		% ``Using Cold Atoms as High-Precision Quantum Sensors".
+		
+		        
+        % \divider
+        
+        
+        % \cvsection{Awards and Scholarships}
+	    %     \cvsubsection{Awards}
+	    %     	\cvachievement{\faScroll}{Poster Award | FLEET Annual Meeting \faCalendar*[small] 2021}{Voted best poster award for work on liquid metal oxides and graphene.}
+	        	
+	    %     	\divider
+
+	    %     	\cvachievement{\faBullhorn}{Outstanding Student Award | Monash Science Faculty Awards \faCalendar*[small] 2020}{Awarded for outstanding contributions by a Graduate Research Student to the Life of the Faculty or School Community. Awarded particularly for extensive science-outreach across a range of activities and programs.\hspace{9em} \cvreference{\faNewspaper Blog link}{http://www.fleet.org.au/blog/12772/} | \cvreference{\faCertificate Award link}{https://drive.google.com/file/d/1g3VeY3PgxkLOUvV2EcMlbWNjkn06d4-d/view?usp=drive_link}}
+
+		%         \divider
+
+		% 		\cvachievement{\faTrophy}{Outreach Award | FLEET Annual Meeting \faCalendar*[small] 2020}{Awarded for highest completion of outreach hours to FLEET. Involved organising a series practical lab and teaching classes for high school students, tours.}
+		% 	\vspace{0.5em}

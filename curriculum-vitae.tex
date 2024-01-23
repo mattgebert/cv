@@ -172,6 +172,19 @@ autocite=superscript,
 
     % Start a 2-column paracol. Both the left and right columns will automatically
     % break across pages if things get too long.
+
+	\newcommand{\VarTolerance}{\tolerance}
+	\newcommand{\VarEmergencystretch}{\emergencystretch}
+	\newcommand{\VarHyphenpenalty}{\hyphenpenalty}
+	\newcommand{\VarHbadness}{\hbadness}
+
+	\newcommand{\textalignment}{
+		\tolerance=1 %https://tex.stackexchange.com/a/5039/137109
+		\emergencystretch=\maxdimen
+		\hyphenpenalty=10000 
+		\hbadness=10000
+	}
+
     \begin{paracol}{2}
     	 % ----- LEARNING -----
     	% \cvsection{Research}
@@ -224,16 +237,19 @@ autocite=superscript,
         
         % ----- ABOUT ME -----
         \vspace{-0.2em}
+		
         \cvsection{About Me}
+		{\textalignment
             \begin{quote}
             	Electrical \& Computer System Engineer and PhD Graduate experimental physics, with a strong programming background, seeking a career opportunity to passionately contribute to long-term scientific research.
             \end{quote}
         \vspace{0.5em}
         % ----- ABOUT ME -----
-		I am a skilled engineer and scientist with a diverse background in control systems, FPGAs, digital and analouge electronics, and many other technologies. I'm a fast learner of new technology, and highly-adapable team-member. 
-		I have recently completed a PhD in experimental physics, and am looking for a role in a scientific organisation where my engineering excellence and specialised experience can shine.
-		I find the automation of scientific facilities interested, all the way from control and data-acquisition, to automated processing-analysis and end-user visulisation.
-
+		
+		I am a skilled engineer and scientist with a diverse background in control systems, FPGAs, digital and analogue electronics, and many other technologies. I am a fast learner of new technology, and highly-adapable team-member. 
+		I have recently completed a PhD in experimental physics, and am looking for a role in a scientific organisation where my engineering excellence and specialised experience can shine.\newline
+		I find the automation of scientific facilities intruiging, all the way from control and \newline data-acquisition, to automated processing-analysis and end-user visulisation.
+		}
 %        I love to dabble in code, teach and mentor, and prefer to have clear targets to work towards. My hobbies include music, where I have studied piano to AMEB Grade 8 and do a little electronic production, SciFy video games, Formula1 and Cycling, and home DIY. 
 		% I like teaching and mentoring, and am always wanting to improve upon critical feedback.
         % I have recently begun learning Mandarin, and have been involved in longterm volunteering and leadership within Christian communities centred on Jesus.
@@ -246,12 +262,13 @@ autocite=superscript,
 
 			% \cvachievement{\faBook}{Thesis: Dirac Fermions at Interfaces}{Investigated the properties of Dirac carriers when put into proximity at an interface with other materials. This work encompassed the entire research cycle, from device fabrication, through experimental measurement and analysis, to publishing and comms. Work was particularly focused on transport properties of the 2D material graphene, and topological insulator Bi$_2$Te$_3$. Laboratory experiments also included beamtime at the Lucas Heights ANSTO facility to perform Neutron Reflectometry using Platypus, in addition to other tools.}
 			% \cvachievement{\faUsers}{Membership: ARC CoE Future Low Energy Electronics \& Technologies (FLEET)}{PhD Candidate member of Australian Research Council (ARC) Centre of Excellence (CoE) FLEET. I have benifited from regular centre meetings, workshops, collaborations and professional development to expand my academic experience.}
-			
-			\cvachievementnoicon{Experimental Physics Thesis: Dirac Fermions at Interfaces}{
+			{\textalignment
+			\cvachievementnoicon{Experimental Physics Thesis: Dirac Fermions at Interfaces}{	
 				Investigated the properties of Dirac materials when put into proximity at an interface with other materials. 
 				The \textbf{ANSTO Lucas Heights} facility was used to perform Neutron Reflectometry using the Platypus beamline, in addition to other tools.
 				This work encompassed the entire research cycle, from device fabrication, through experimental measurement and analysis, to publishing and communications.
 				}
+			}
 			% \cvachievementnoicon{Membership: ARC CoE Future Low Energy Electronics \& Technologies (FLEET)}{PhD Candidate member of Australian Research Council (ARC) Centre of Excellence (CoE) FLEET. I have benifited from regular centre meetings, workshops, collaborations and professional development to expand my academic experience.}
 
 			\begin{tabular}{ll}
@@ -285,13 +302,20 @@ autocite=superscript,
 	\end{paracol}
 	\vspace{1em}
 	\divider\\
+	% \vspace{-2em}
+	
+
 	\cvsection{Professional Experience}
-		\cveventlong{\normalsize User at Centre for Neutron Scattering}{\normalsize ANSTO \cvreference{| \faGithub}{https://github.com/mattgebert/refnx}}{Jun 2022 -- Nov 2023}{Lucas Heights, Australia}
+		\cveventlong{\normalsize Beamline user at Cntr. for Neutron Scattering}{\normalsize ANSTO \cvreference{| \faGithub}{https://github.com/mattgebert/refnx}}{Jun 2022 -- Nov 2023}{Lucas Heights, Australia}
+
+		{\textalignment
 		Utilising the Platypus beamline and Rigaku X-ray reflectometer / diffractometer to perform magnetic sample characterisation. 
 		Two visits made to perform measurements in 2022, one sample created for 2023.
 		Experience in using Refnx software suite to analyse Platypus beamtime data and X-ray data. Worked under the guidance of Dr. David Cortie.
-
+		
 		\divider
+		}
+
 		\newpage
 
 		\cvevent{\normalsize Electronic materials PhD - Fuhrer Lab Group}{\normalsize Monash University 
@@ -304,6 +328,8 @@ autocite=superscript,
 		\cvreference{ | \faGithub}{https://github.com/mattgebert/eagleCircuits}
 		\cvreference{ | \faYoutube}{https://youtu.be/fsEp-QRD9s4}}
 		{Jun 2018 -- Dec 2023}{Clayton, Australia}
+
+		\textalignment{
 		I conducted my reseach as a student in the Fuhrer lab group. This included restarting the electronic device fabrication section of the group,
 		performing low-noise electrical measurements, streamlining data acquisition and control systems for measurements. I have significant experience in GPIB control instrumentation of
 		electronic equipement in conjunction with LabView, control of piezoelectric actuators for mechanical sample transfer, and experience in glovebox/UHV technical equipement.
@@ -343,14 +369,15 @@ autocite=superscript,
 		\divider
 
 		\cveventlong{\normalsize Research User}{\normalsize Melbourne Centre for Nanofabrication}{Jun 2018 -- Present}{Clayton, Australia}
-		I learned and optimised facility equipement for the electronic device fabrication, including responsible after-hours use and establishing new processes.
+		I learned and optimised facility equipment for the electronic device fabrication, including responsible after-hours use and establishing new processes.
 		I designed and programatically generated 2D mask patterning for variety of materials science problems.  
 		Equipement I worked with included the Raith EBPG5000plusES electron-beam-lithography system (Linux OS), 
 		the Intelligent Micropatterning SF100 XPRESS, Wire Bonder Wedge FS Bondtec, and the Oxford PlasmaPro 100 ICP RIE system.
+		}
 
 	\cvsection{Complementary expertise}
 			
-		\setcolumnwidth{0.33\linewidth,0.33\linewidth,0.33\linewidth}
+		\setcolumnwidth{0.35\linewidth,0.32\linewidth,0.32\linewidth}
     	% \columnratio{0.33}
 		\begin{paracol}{3}
 			\cvsubsection{Communication \& Governance}
@@ -366,18 +393,18 @@ autocite=superscript,
 			\switchcolumn
 			\cvsubsection{Teaching/Supervision}
 			\begin{itemize}
-				\item \textbf{University tutor} for \cvreference{Eng. Maths}{https://monash.edu/pubs/2017handbooks/units/ENG1005.html}, 
-				\cvreference{Fields \& Quantum Physics}{https://www3.monash.edu/pubs/2018handbooks/units/PHS1022.html}, and
-				\cvreference{Experimental Physics}{https://handbook.monash.edu/2023/units/PHS3000}.
+				\item \textbf{University tutor} for\cvreference{Eng. Maths,}{https://monash.edu/pubs/2017handbooks/units/ENG1005.html}
+				\cvreference{Fields \& Quantum Physics,}{https://www3.monash.edu/pubs/2018handbooks/units/PHS1022.html}and
+				\cvreference{Experimental Physics.}{https://handbook.monash.edu/2023/units/PHS3000}
 				\item \textbf{Specialist high-school teacher} for \cvreference{Emerging Science Victoria,}{https://emsci.vic.edu.au/} an online education platform based at John Monash Science School.
-				\item \textbf{Student supervision} experience for two Undergrad/Masters student projects. Enjoy teaching and mentoring.
+				\item \textbf{Student supervision} experience for two Undergrad/Masters student projects, encompassing project design, teaching and mentoring.
 			\end{itemize}
 			\switchcolumn
 			\cvsubsection{Awards}
 			\cvachievement{\small\faBullhorn}{Outstanding Student Award | Monash Science Faculty Awards \faCalendar*[small] 2020}
 			{Awarded for extensive science-outreach across a range of activities and programs.\hspace{9em} \cvreference{\faNewspaper Blog link}{http://www.fleet.org.au/blog/12772/} | \cvreference{\faCertificate Award link}{https://drive.google.com/file/d/1g3VeY3PgxkLOUvV2EcMlbWNjkn06d4-d/view?usp=drive_link}}
 			\cvachievement{\small\faUserGraduate}{Education \& Training Grant | FLEET \faCalendar*[small] 2020}
-			{Compeditive grant (\$500). Used funds to undertake EdX Quantum Transport course.}
+			{Competitive grant (\$500). Used funds to undertake EdX Quantum Transport course.}
 		\end{paracol}
 
 	\cvsection{References}

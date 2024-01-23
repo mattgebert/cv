@@ -1,5 +1,92 @@
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 
+% \newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+\usepackage{subfiles} % Use subfiles to define personal information.
+
+% % Change the font if you want to, depending on whether
+% % you're using pdflatex or xelatex/lualatex
+% \ifxetexorluatex
+%   % If using xelatex or lualatex:
+%   \setmainfont{Roboto Slab}
+%   \setsansfont{Lato}
+%   \renewcommand{\familydefault}{\sfdefault}
+% \else
+%   % If using pdflatex:
+%   \usepackage[rm]{roboto}
+%   \usepackage[defaultsans]{lato}
+%   % \usepackage{sourcesanspro}
+%   \renewcommand{\familydefault}{\sfdefault}
+% \fi
+
+% Fork (before v1.6.5a): Change the color codes to test your personal variant on any mode
+\ifdarkmode%
+  \definecolor{PrimaryColor}{HTML}{C69749}
+  \definecolor{SecondaryColor}{HTML}{D49B54}
+  \definecolor{ThirdColor}{HTML}{1877E8}
+  \definecolor{BodyColor}{HTML}{ABABAB}
+  \definecolor{EmphasisColor}{HTML}{ABABAB}
+  \definecolor{BackgroundColor}{HTML}{191919}
+\else%
+%  \definecolor{PrimaryColor}{HTML}{001F5A}
+%  \definecolor{SecondaryColor}{HTML}{0039AC}
+%  \definecolor{ThirdColor}{HTML}{F3890B}
+%  \definecolor{BodyColor}{HTML}{666666}
+%  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+%  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+  \definecolor{PrimaryColor}{HTML}{001F5A}
+  \definecolor{SecondaryColor}{HTML}{448888}
+  \definecolor{ThirdColor}{HTML}{4682B4}
+  \definecolor{BodyColor}{HTML}{666666}
+  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+  \definecolor{BackgroundColor}{HTML}{FFFFFF}
+%  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+\fi%
+
+%My Colours:
+% Teal 448888
+% Orange DD5522 
+% Light blu 77EEEE
+% Steel Blu 4682B4
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{SecondaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+%\usepackage{hyperref
+%%Setup bib hyperlinks
+\hypersetup{%
+	urlcolor=SecondaryColor,
+	citecolor=SecondaryColor
+}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+
 \begin{document}
+
+\include{cover-example.info}
+
+\hspace*{2em}
+
+I am writing to you to apply for the position of \cvreference{Senior Controls Engineer}{https://careers.ansto.gov.au/job/Melbourne-Senior-Controls-Engineer-VIC/946930210/}. I am a recent doctoral candidate graduate in experimental physics, 
+with undergraduate honours degrees in both electrical engineering and science. During my PhD I developed a strong background in 
+
+experienced physics PhD Graduate with experience in the Lucas Heights Beamline facility.
 
 \end{document}

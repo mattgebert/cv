@@ -1,4 +1,4 @@
-\documentclass[./main.tex]{subfiles}
+\documentclass[./curriculum-vitae.tex]{subfiles}
 \begin{document}
     \begin{tabularx}{\linewidth}{llllll}
         &\textcolor{emphasis}{\textbf{Assist. Prof. Semonti Bhattacharrya}}&

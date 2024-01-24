@@ -9,11 +9,15 @@ pdfa.*
 *.aux
 !main.tex
 old/*
-reference.info
-personal.info
 *.pdf
 *.gz
 *.xml
 *.fdb_latexmk
 *.bcf
 *.fdb_latexmk
+reference.info
+personal.info
+cv-reference.info
+cv-personal.info
+cl-intro.info
+cl-personal.info

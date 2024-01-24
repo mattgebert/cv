@@ -158,10 +158,10 @@ autocite=superscript,
     \photoL{4cm}{profile.png}
 
 	% Create Banner via subfiles, where information can be retained as private.
-	\IfFileExists{personal.info}{
-    	\subfile{./personal.info}
+	\IfFileExists{./cv-personal.info}{
+    	\subfile{./cv-personal.info}
 	}{
-		\subfile{./personal-example.info}
+		\subfile{./cv-personal-example.info}
 	}
 
     %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
@@ -415,10 +415,10 @@ autocite=superscript,
         \newcommand*{\buildingsym}{\color{accent}\faBuilding}
         \newcommand*{\LIsym}{\color{accent}\faLinkedin}
         \newcommand*{\LIprofile}[2]{\href{https://linkedin.com/in/#1}{#2}}
-		\IfFileExists{reference.info}{
-    		\subfile{./reference.info}
+		\IfFileExists{cv-reference.info}{
+    		\subfile{./cv-reference.info}
 		}{
-			\subfile{./reference-example.info}
+			\subfile{./cv-reference-example.info}
 		}
 	\end{document}
 	

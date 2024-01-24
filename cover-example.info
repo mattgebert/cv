@@ -1,8 +1,0 @@
-\documentclass[./cover-letter.tex]{subfiles}
-\begin{document}
-\color{emphasis} ANSTO \newline \color{body} Australian Synchrotron, Clayton, VIC
-
-\hspace*{1em}
-
-Dear Navid Hamedi \& Paul Martin,
-\end{document}

@@ -1,8 +1,9 @@
-\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+\documentclass[10pt,a4paper,ragged2e,withhyper,paragraphstrue]{altacv}
 
 % \newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
 \geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
 \usepackage{subfiles} % Use subfiles to define personal information.
+\usepackage{paracol}
 
 % % Change the font if you want to, depending on whether
 % % you're using pdflatex or xelatex/lualatex
@@ -77,16 +78,100 @@
 \renewcommand{\itemmarker}{{\small\textbullet}}
 \renewcommand{\ratingmarker}{\faCircle}
 
+\newcommand{\textalignment}{
+    \tolerance=1 %https://tex.stackexchange.com/a/5039/137109
+    \emergencystretch=\maxdimen
+    \hyphenpenalty=10000 
+    \hbadness=10000
+}
+
+\setlength{\parindent}{24pt}
+\newcommand{\pind}{\hspace{24pt}}
 
 \begin{document}
+    
+    \IfFileExists{./cl-intro.info}{
+            \subfile{./cl-intro.info}
+        }{
+            \subfile{./cl-intro-example.info}
+        }
 
-\include{cover-example.info}
+    \vspace{1em}
 
-\hspace*{2em}
+    {
+    \textalignment
+    \pind I am writing to you to apply for the position of Senior Controls Engineer\cvreference{(\#PD-1851).}
+    {https://careers.ansto.gov.au/job/Melbourne-Senior-Controls-Engineer-VIC/946930210/}I have recently conferred my doctoral program in experimental physics at the Australian Research Council's Centre of Excellence in 
+    Future Low Energy Electronics \& Technologies (FLEET), based at Monash University under the supervision of Prof. Michael Fuhrer, 
+    the director of FLEET. I additionally have completed undergraduate honours degrees in both electrical engineering and science, where I have specialised my 
+    engineering education into digital and analogue electronic control systems. I am looking for an opportunity where I can
+    use my skill-set in a scientific context, applying my skills in control systems and instrumentation. 
 
-I am writing to you to apply for the position of \cvreference{Senior Controls Engineer}{https://careers.ansto.gov.au/job/Melbourne-Senior-Controls-Engineer-VIC/946930210/}. I am a recent doctoral candidate graduate in experimental physics, 
-with undergraduate honours degrees in both electrical engineering and science. During my PhD I developed a strong background in 
+    % 1. Experience designing and implementing distributed control systems.
+    % 3. Knowledge of data acquisition and real time control systems.
+    \pind My doctoral program and engineering electives have given me a strong background in electronic control and measurement systems. I have designed and implemented 
+    digital control loops for autonomous and time-critical tasks, such as a robotic puck competition, a PID-lock to a swinging pendulum, IQ-demodulation,
+    digital clocks and real-time video-processors. I have implemented these systems on a variety of platforms, including microcontrollers, FPGAs and 
+    programmable system-on-chip (SoCs). I also have analogue circuit design experience, where I have implemented a custom differential-amplifier, 
+    and done some introductory work with RF circuit design.
+    % Desirable 3. Experience with embedded controls, VME systems, motion controls, Instrumentation, PLCs, safety systems.
+    A significant part of my doctoral experiments were to conduct low-noise electronic measurements of low-dimensional materials in strong magnetic fields. 
+    To do this I have utilised a variety of electronic measurement equipment including lock-in amplifiers, sourcemeters and high-impedance preamplifiers, and their 
+    respective automated acquisition through GPIB control using National Instruments LabView. These measurements were often performed in cryogenic UHV environments, 
+    employing cryogenics and vacuum control principles. I have also been required to implement safe operating procedures (SOPs) and risk assessments for such equipment, 
+    for the general use of other students and colleagues.
 
-experienced physics PhD Graduate with experience in the Lucas Heights Beamline facility.
+    % 2. The ability to program in at least one programming language with exposure to low level device programming.
+    % Desirable 2. Advanced skills in C/C++. Software development experience on Linux and/or PLC platforms.
+    \pind I am an avid programmer, with strong experience in Python, and significant experience in C/C++ and (V)HDL. I have full-stack experience, often using linux
+    operating systems (including for fabrication tools such as the Raith EBPG5000plusES), and am hosting and running a personal website using the Django framework. 
+    I am competent in low-level programming and logic as previously mentioned, and have recently started using 3D printers and CNC machines which incorporate motion.
+    I have participated in summer work experience at the Synchrotron in 2012, working on web-UI elements of the MyTardis project particularly for Xray diffraction datasets.
+
+    % 4. The ability to perform and document design reviews relative to data acquisition and real time control.
+    \pind I have significant experience in documenting reproducible work to a scientific standard. This includes code bases, with utilisation of standards and tools such as
+    version control, program typing, unit testing and documentation styles such as NumpyDoc. While I have not been required to document design reviews in a control context 
+    explicitly, I have worked with significant amounts of CAD design and documentation, such as design documents for custom UHV parts and SOP documentation.
+    % 5. The ability to develop relevant working standards and instructions relative to control systems.
+    As mentioned, I have an understanding of software-development standards and have developed a number of SOP, and this will enable me to develop relevant
+    working standards and instructions in control system contexts. One of my PhD forte's was optimising procedures, particularly for high quality samples, and I believe 
+    producing a pragmatic, clear set of instructions and standards can benefit many users, operators and handover.
+
+    % 6. The ability to quickly understand scientific concepts to a sufficient level to provide the support needed.
+    % 7. The ability to communicate and collaborate with various technical groups, engineers, scientists other experts in their field to gain accurate and relevant information.
+    % Desirable 1. Experience in a science environment or light source facility
+    % 8. The ability to work autonomously or with limited supervision.
+    \pind During my doctoral program, I have developed a strong background in experimental physics, with a focus on the development of novel instrumentation and 
+    fabrication/measurement techniques for the study of low dimensional materials. Part of this program involved performing measurements at the ANSTO's Lucas Heights
+    facility, where I used the Platypus beamline to perform neutron reflectometry measurements. I am professionally aware of safety procedures and protocols 
+    in such institutions where security and safety are paramount. The breadth of knowledge required for my doctoral candidature demonstrates that I am also quick to learn 
+    conceptual ideas, new skills and techniques, particularly as my thesis involved nanofabrication, molecular-beam epitaxy, electronic-transport and spectroscopic measurements.
+    Whilst I find managerial supervision very useful, I have been working autonomously for quite some time particularly in experimental contexts.
+    I am a clear communicator, not only demonstrated by multiple conference presentations during my candidature, but also through extensive co-curricular teaching, 
+    leadership, volunteering and governance experience. My multidisciplinary background allows me to easily communicate and collaborate with numerous technical groups relevant
+    to the Synchrotron facility, particularly amongst the Controls \& Scientific Computing team, and I professionally know a number of scientists and engineers 
+    who work at the facility.
+
+    \pind I believe my breadth of professional experience makes me an ideal candidate for the position of Senior Controls Engineer, and I am very excited by the opportunity to
+    contribute to the significant work that is undertaken at the Synchrotron. If you have any questions or seek further clarification, please don't hesitate to contact me.
+    I look forward to hearing from you soon.
+    
+    \vspace{1em}
+
+    Yours Sincerely, \newline
+
+    {\color{emphasis}Matthew Gebert}
+
+    }
+    
+    % \vspace*{0.5em}
+    \divider
+    \IfFileExists{./cl-personal.info}{
+        \vspace{-2em}
+        \subfile{./cl-personal.info}
+    }{
+        \vspace{-2em}
+        \subfile{./cl-personal-example.info}
+    }
 
 \end{document}

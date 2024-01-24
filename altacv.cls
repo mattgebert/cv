@@ -32,6 +32,11 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}}
 \newif\if@raggedtwoe
 \DeclareOption{ragged2e}{\@raggedtwoetrue}
+
+%Added by matt..
+\newif\if@paragraphstrue
+\DeclareOption{paragraphstrue}{\def\@paragraphstrue}
+
 %% v1.3: load hyperref for clickable hyperlinks
 \newif\if@withhyper
 \DeclareOption{withhyper}{\@withhypertrue}
@@ -111,8 +116,12 @@
 \RequirePackage{changepage}
 % \RequirePackage{marginfix}
 
+\if@paragraphstrue
+  \setlength{\parindent}{24pt}
+\else
+  \setlength{\parindent}{24pt}
+\fi
 
-\setlength{\parindent}{0pt}
 \newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
 
 \newenvironment{fullwidth}{%
@@ -250,7 +259,9 @@
 \let\photo\photoR
 
 \newcommand{\namefont}{\Huge\bfseries}
+\newcommand{\clnamefont}{\large\bfseries}
 \newcommand{\taglinefont}{\large\bfseries}
+\newcommand{\cltaglinefont}{\normalsize\bfseries}
 \newcommand{\personalinfofont}{\footnotesize\bfseries}
 \newcommand{\cvsectionfont}{\LARGE\bfseries}
 \newcommand{\cvsubsectionfont}{\large\bfseries}
@@ -269,6 +280,26 @@
     \altacv@right@photos\par%
   \endgroup\medskip
 }
+
+% added by matt for cover letter.
+\newcommand{\makeclfooter}{%
+  \vspace{2em}
+  \begingroup
+    % \altacv@left@photos\hfill%
+    \begin{minipage}{\linewidth}%{\dimexpr\linewidth-\altacv@photos@width}%
+    %\raggedright%
+    \centering
+    {\clnamefont\color{name}\MakeUppercase{\@name}\par}
+    \medskip
+    {\cltaglinefont\color{tagline}\@tagline\par}
+    \medskip
+    {\personalinfofont\@personalinfo\par}
+    \end{minipage}\hfill%
+    \altacv@right@photos\par%
+  \endgroup\medskip
+}
+
+
 
 \renewenvironment{quote}{\color{accent}\itshape\large}{\par}
 

@@ -1,0 +1,20 @@
+\documentclass[./curriculum-vitae.tex]{subfiles}
+\begin{document}
+    \begin{tabularx}{\linewidth}{llllll}
+        &\textcolor{emphasis}{\textbf{Assist. Prof. Semonti Bhattacharrya}}&
+        &\textcolor{emphasis}{\textbf{Dr. David Cortie}}&
+        &\textcolor{emphasis}{\textbf{Prof. Michael Fuhrer}}\\
+        \buildingsym& Leiden University& 
+        \buildingsym& Instrument Scientist, ANSTO& 
+        \buildingsym& Director FLEET, Monash \\
+        \mailsym& \mailto{some-email@physics.leidenuniv.nl}& 
+        \mailsym& \mailto{person@ansto.gov.au}&
+        \mailsym& \mailto{mike@monash.edu}\\
+        \phonesym& \phonenumber{+31 XX XXX XXXX}&
+        \phonesym& \phonenumber{+61 X XXXX XXXX}&
+        \phonesym& \phonenumber{+61 X XXXX XXXX}\\
+        \LIsym& \LIprofile{semonti-physics}{LinkedIn}&
+        \LIsym& \LIprofile{david-cortie-6b00651b1}{LinkedIn}&
+        \LIsym& \LIprofile{michael-fuhrer-3483707b}{LinkedIn}
+    \end{tabularx}
+\end{document}

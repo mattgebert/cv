@@ -369,7 +369,7 @@
 }
 
 \newcommand{\cvachievement}[3]{%
-  \begin{tabularx}{\linewidth}{@{}p{1em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
+  \begin{tabularx}{\linewidth}{@{}p{1em} @{\hspace{3ex}} >{\raggedright\arraybackslash}X@{}}
     \multirow{2}{*}{\Large\color{accent} #1} & \bfseries\textcolor{emphasis}{#2}\\
   & #3
   \end{tabularx}%

@@ -1,20 +1,8 @@
-\documentclass[main.tex]{subfiles}
+\documentclass[./curriculum-vitae.tex]{subfiles}
 \begin{document}
 
-%Avoid github scrapers from finding personal contact info...    
-%    \newcommand{\emla}{matt}
-%	\newcommand{\emlb}{mattgebert}
-%	\newcommand{\emlc}{com}
-% \newcommand{\emla}{mattheuu.gebert}
-% \newcommand{\emlb}{gmail}
-% \newcommand{\emlc}{com}
-% \newcommand{\pha}{+61 420}
-% \newcommand{\phb}{ 656 299}
-% \email{\emla@\emlb.\emlc}\smallskip
-% \phone{\pha\phb}
-
 \name{John Doe}
-\tagline{Imagination Practitioner}
+\tagline{Imgagination Practitioner}
 
 \personalinfo{
         \email{john.doe@gmail.com}
@@ -22,16 +10,16 @@
         \location{Melbourne, Australia}\\
         \linkedin{johndoe}
         \github{johndoe}
-        % \npm{npmUser}
-        % \dev{devtoUser}
+%        \npm{npmUser}
+%        \dev{devtoUser}
         \homepage{johndoe.com}
         %\medium{nicolasomar}
         %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
-	% \orcid{0000-0001-5393-1421}
+        % \orcid{0000-0001-5393-1421}
 
-	% \twitter{mattgebert}
-	% \exchange{1901154/mr-g}
-	% \scholar{dzGJ8\_0AAAAJ\&hl}
+%		\twitter{mattgebert}
+%		\exchange{1901154/mr-g}
+%		\scholar{dzGJ8\_0AAAAJ\&hl}
 
         %% You can add your own arbtrary detail with
         %% \printinfo{symbol}{detail}[optional hyperlink prefix]
@@ -42,7 +30,6 @@
         % \gitlab{your_id}
     }
     
-   
-\makecvheader
+\makeclfooter
 
 \end{document}

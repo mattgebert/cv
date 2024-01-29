@@ -32,6 +32,11 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}}
 \newif\if@raggedtwoe
 \DeclareOption{ragged2e}{\@raggedtwoetrue}
+
+%Added by matt..
+\newif\if@paragraphstrue
+\DeclareOption{paragraphstrue}{\def\@paragraphstrue}
+
 %% v1.3: load hyperref for clickable hyperlinks
 \newif\if@withhyper
 \DeclareOption{withhyper}{\@withhypertrue}
@@ -71,6 +76,7 @@
   %% v1.3.2 attempts to make ligatures
   %% copy-paste as normal characters
   \RequirePackage{cmap}
+  \RequirePackage{array}
   \RequirePackage[utf8]{inputenc}
   \RequirePackage[T1]{fontenc}
   \input{glyphtounicode}
@@ -110,8 +116,12 @@
 \RequirePackage{changepage}
 % \RequirePackage{marginfix}
 
+\if@paragraphstrue
+  \setlength{\parindent}{24pt}
+\else
+  \setlength{\parindent}{24pt}
+\fi
 
-\setlength{\parindent}{0pt}
 \newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
 
 \newenvironment{fullwidth}{%
@@ -249,7 +259,9 @@
 \let\photo\photoR
 
 \newcommand{\namefont}{\Huge\bfseries}
+\newcommand{\clnamefont}{\large\bfseries}
 \newcommand{\taglinefont}{\large\bfseries}
+\newcommand{\cltaglinefont}{\normalsize\bfseries}
 \newcommand{\personalinfofont}{\footnotesize\bfseries}
 \newcommand{\cvsectionfont}{\LARGE\bfseries}
 \newcommand{\cvsubsectionfont}{\large\bfseries}
@@ -268,6 +280,26 @@
     \altacv@right@photos\par%
   \endgroup\medskip
 }
+
+% added by matt for cover letter.
+\newcommand{\makeclfooter}{%
+  \vspace{2em}
+  \begingroup
+    % \altacv@left@photos\hfill%
+    \begin{minipage}{\linewidth}%{\dimexpr\linewidth-\altacv@photos@width}%
+    %\raggedright%
+    \centering
+    {\clnamefont\color{name}\MakeUppercase{\@name}\par}
+    \medskip
+    {\cltaglinefont\color{tagline}\@tagline\par}
+    \medskip
+    {\personalinfofont\@personalinfo\par}
+    \end{minipage}\hfill%
+    \altacv@right@photos\par%
+  \endgroup\medskip
+}
+
+
 
 \renewenvironment{quote}{\color{accent}\itshape\large}{\par}
 
@@ -337,9 +369,18 @@
 }
 
 \newcommand{\cvachievement}[3]{%
-  \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
-  \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2}\\
+  \begin{tabularx}{\linewidth}{@{}p{1em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
+    \multirow{2}{*}{\Large\color{accent} #1} & \bfseries\textcolor{emphasis}{#2}\\
   & #3
+  \end{tabularx}%
+  \smallskip
+}
+
+% Added by Matt
+\newcommand{\cvachievementnoicon}[2]{%
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X@{}}
+  \bfseries\textcolor{emphasis}{#1}\\
+  #2
   \end{tabularx}%
   \smallskip
 }
@@ -432,7 +473,8 @@
     \endgroup
 }
 
-% Fork v1.6.5b: Taking from original version, I added some modifications related to optional Linkedin and mail links for each reference (both will be shown only if there is any value)
+% Fork v1.6.5b: Taking from original version, I added some modifications related to optional Linkedin and mail links for each reference 
+% (both will be shown only if there is any value)
 \newcommand{\cvref}[6]{%
   \textcolor{emphasis}{\textbf{#1}}\par
   \smallskip
@@ -462,8 +504,38 @@
   \end{description}
 }
 
+% \newcommand{\cvcolumn}[6]{
+%   \multirow{4}{*}{
+%   \textcolor{emphasis}{\textbf{#1}}\par
+%     {\color{accent}
+%       \def\temp{#2}\ifx\temp\empty
+%       \else
+%         {#2}
+%       \fi
+%       \\
+%       \def\temp{#3}\ifx\temp\empty
+%       \else
+%         \href{mailto:#3}{#3}
+%       \fi
+%       \\
+%       \def\temp{#4}\ifx\temp\empty
+%       \else
+%         \href{tel:#4}{#4}
+%       \fi
+%       \\
+%       \def\temp{#5}\ifx\temp\empty % URL required
+%       \else
+%         \def\temp{#6}\ifx\temp\empty % 
+%         \else
+%           \href{https://linkedin.com/in/#5}{#6}
+%         \fi
+%       \fi
+%     }
+%   }
+% }
 
-\newenvironment{cvcolumn}[1]{\begin{minipage}[t]{#1}\raggedright}{\end{minipage}}
+
+% \newenvironment{cvcolumn}[1]{\begin{minipage}[t]{#1}\raggedright}{\end{minipage}}
 
 % v1.5 Move biblatex-related code to separate .cfg file
 % so that it's easier to change and customise the style for

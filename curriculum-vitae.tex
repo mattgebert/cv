@@ -15,6 +15,7 @@
 % \documentclass[10pt,a4paper,ragged2e,withhyper,darkmode]{altacv}
 
 %\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv} %default
+%\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 
 %% AltaCV uses the fontawesome5 and academicons fonts and packages.
@@ -127,6 +128,7 @@ autocite=superscript,
 ]{biblatex} % required for subfile bib using this answe: https://tex.stackexchange.com/a/578992/137109
 
 \usepackage[super]{nth} %\nth{1}
+\usepackage{academicons}
 
 %\AtBeginRefsection{\GenRefcontextData{sorting=ydnt}}
 %\AtEveryCite{\localrefcontext[sorting=ydnt]}
@@ -159,7 +161,7 @@ autocite=superscript,
 
 	% Create Banner via subfiles, where information can be retained as private.
 	\IfFileExists{./cv-personal.info}{
-    	\subfile{./cv-personal.info}
+   	\subfile{./cv-personal.info}	
 	}{
 		\subfile{./cv-personal-example.info}
 	}
@@ -179,6 +181,7 @@ autocite=superscript,
 	\newcommand{\VarHbadness}{\hbadness}
 
 	\newcommand{\textalignment}{
+		\justifying
 		\tolerance=1 %https://tex.stackexchange.com/a/5039/137109
 		\emergencystretch=\maxdimen
 		\hyphenpenalty=10000 
@@ -201,19 +204,26 @@ autocite=superscript,
     	% ----- LEARNING -----
     	
         % ----- TECH STACK -----
-        \cvsection{TECH STACK}
+        \cvsection{Skills}
             %% Fork v1.6.5c: The sloppypar* environment is used to avoid tags overlapping with section width
             \begin{sloppypar*}
-				\cvtags{Microcontrollers, PCBs, Digital, Analogue, FPGAs, Control,  Electronic Nanofab, Real-time Systems}
+%				\cvtags{Microcontrollers, PCBs, Digital, Analogue, FPGAs, Control,  Electronic Nanofab, Real-time Systems}
+%				\medskip
+
+				\cvtags{Electronic Transport, 2D Materials, Topological Materials, Reflectometry, Cryogenics, UHV}
 				\medskip
 
-                \cvtags{Python\faPython, Django, C++, Verilog/VHDL, HTML\faHtml5, Javascript, CSS\faCss3, Matlab, Shell, Android\faAndroid, LabView}
+                \cvtags{Python\faPython, Django, C++, Verilog/VHDL, HTML\faHtml5, Javascript, CSS\faCss3, LabView}
+%                	Matlab, Shell, Android\faAndroid, }
                 \medskip
                 
                 \cvtags{Full-stack, Data Analysis, Data Visualisation, Algorithms, Linux\faLinux\faUbuntu, Servers, Git\faGithub\faGit*}
                 \medskip
+%                \cvtags{Mathematica, AutoCAD, Blender, KLayout, Eagle, LTSpice}
                 
-                \cvtags{Mathematica, AutoCAD, Blender, KLayout, Eagle, LTSpice}
+                \cvtags{Electron-Beam Lithography, Photolith., Etching, Material Deposition, Cleanrooms, MBE, PVD, Wirebonding
+%                	Material Stacking/Transfer,
+                }
             \end{sloppypar*}
         % ----- TECH STACK -----
         
@@ -241,14 +251,12 @@ autocite=superscript,
         \cvsection{About Me}
 		{\textalignment
             \begin{quote}
-            	Electrical \& Computer System Engineer and PhD Graduate experimental physics, with a strong programming background, seeking a career opportunity to passionately contribute to long-term scientific research.
+            	Postdoctoral researcher in tender X-rays, and a strong programmer, seeking opportunities to passionately contribute to long-term scientific research.
             \end{quote}
         \vspace{0.5em}
         % ----- ABOUT ME -----
 		
-		I am a skilled engineer and scientist with a diverse background in control systems, FPGAs, digital and analogue electronics, and many other technologies. I am a fast learner of new technology, and highly-adapable team-member. 
-		I have recently completed a PhD in experimental physics, and am looking for a role in a scientific organisation where my engineering excellence and specialised experience can shine.\newline
-		I find the automation of scientific facilities intruiging, all the way from control and \newline data-acquisition, to automated processing-analysis and end-user visulisation.
+		I am a passionate scientist and engineer with a diverse background in fabrication, beamline and electronic techniques. I am a fast learner of new technology, and highly-adapable team-member. I love creating meaningful, optimised algorithms \& processes. Nothing is better than an efficient system! I enjoy new challenges and perfecting processes, which is part of my drive in science, and am a hobbyist programmer. I am currently working as a postdoctoral fellow in synchrotron science, where I do a lot of programming. I have strong interpersonal qualities and communication, and well suited to working within diverse teams. I like teaching and mentoring, and am always wanting to improve upon critical feedback.
 		}
 %        I love to dabble in code, teach and mentor, and prefer to have clear targets to work towards. My hobbies include music, where I have studied piano to AMEB Grade 8 and do a little electronic production, SciFy video games, Formula1 and Cycling, and home DIY. 
 		% I like teaching and mentoring, and am always wanting to improve upon critical feedback.
@@ -257,7 +265,7 @@ autocite=superscript,
         % ----- EDUCATION -----
         \vspace{-1em}
         \cvsection{Education}
-            \cvevent{Doctor of Philosophy}{Monash University | \cvreference{FLEET}{https://www.fleet.org.au}}{Sep 2019 -- Dec 2023}{Clayton, Australia}
+            \cvevent{\cvreference{Doctor of Philosophy}{https://www.myequals.net/sharelink/c1423425-566f-4677-8233-4191e41585bb/9526942e-9d1a-4677-b5a8-eabec64ad5da}| Monash University}{\cvreference{FLEET}{https://www.fleet.org.au}}{Sep 2019 -- Dec 2023}{Clayton, Australia}
 %            \cvreference
 
 			% \cvachievement{\faBook}{Thesis: Dirac Fermions at Interfaces}{Investigated the properties of Dirac carriers when put into proximity at an interface with other materials. This work encompassed the entire research cycle, from device fabrication, through experimental measurement and analysis, to publishing and comms. Work was particularly focused on transport properties of the 2D material graphene, and topological insulator Bi$_2$Te$_3$. Laboratory experiments also included beamtime at the Lucas Heights ANSTO facility to perform Neutron Reflectometry using Platypus, in addition to other tools.}
@@ -265,7 +273,7 @@ autocite=superscript,
 			{\textalignment
 			\cvachievementnoicon{Experimental Physics Thesis: Dirac Fermions at Interfaces}{	
 				Investigated the properties of Dirac materials when put into proximity at an interface with other materials. 
-				The \textbf{ANSTO Lucas Heights} facility was used to perform Neutron Reflectometry using the Platypus beamline, in addition to other tools.
+				The ANSTO Lucas Heights facility was used to perform Neutron Reflectometry using the Platypus beamline, in addition to other tools.
 				This work encompassed the entire research cycle, from device fabrication, through experimental measurement and analysis, to publishing and communications.
 				}
 			}
@@ -285,12 +293,12 @@ autocite=superscript,
 			\begin{tabularx}{\linewidth}{llXXXX}
 				\multicolumn{3}{l}{{\bfseries\textcolor{emphasis}{B. Science (Honours) - Condensed-matter physics}}}&
 				\multicolumn{3}{r}{{\color{accent}\faCalendar} Feb 2018 --  Dec 2018}\\
-				\multicolumn{2}{l}{\textit{First Class Honours}}&
+				\multicolumn{2}{l}{\cvreference{\textit{First Class Honours}}{https://www.myequals.net/sharelink/5736635b-e2ae-4ec7-b26a-df72dba6268e/e6fe416c-da29-4080-bf51-85f492e2b9cf}}&
 				\multicolumn{2}{>{\centering\arraybackslash}X}{\cvreference{GPA:}{http://www.monash.edu/exams/official-record-results/gpa}4.000}&
 				\multicolumn{2}{r}{\cvreference{WAM:}{http://www.monash.edu/exams/official-record-results/wam}83.5\%}\rule[-2ex]{0pt}{0pt}\\
 				\multicolumn{3}{l}{{\bfseries\textcolor{emphasis}{B. Eng (Honours) \& B. Science}}}&
 				\multicolumn{3}{r}{{\color{accent}\faCalendar} Mar 2013 --  Dec 2017}\\
-				\multicolumn{2}{l}{\textit{First Class Honours}}&
+				\multicolumn{2}{l}{\cvreference{\textit{First Class Honours}}{https://www.myequals.net/r/sharelink/3d43a154-ec7f-43f8-a491-565804ebd27f/a397ac2f-2931-4941-9543-d8f3403b6296}}&
 				\multicolumn{2}{>{\centering\arraybackslash}X}{\cvreference{GPA:}{http://www.monash.edu/exams/official-record-results/gpa}3.225}&
 				\multicolumn{2}{r}{\cvreference{WAM:}{http://www.monash.edu/exams/official-record-results/wam}75.2\%}\\
 				{\small\textbf{Specialisations:}}&\multicolumn{5}{l}{Electrical \& Computer Systems Engingeering (Major), Physics (Major),}\\
@@ -302,21 +310,27 @@ autocite=superscript,
 	\end{paracol}
 	\vspace{1em}
 	\divider\\
-	% \vspace{-2em}
+	 \vspace{-1em}
 	
 
 	\cvsection{Professional Experience}
-		\cveventlong{\normalsize Beamline user at Cntr. for Neutron Scattering}{\normalsize ANSTO \cvreference{| \faGithub}{https://github.com/mattgebert/refnx}}{Jun 2022 -- Nov 2023}{Lucas Heights, Australia}
+	
+		\cvevent{\normalsize Postdoctoral researcher - McNeill Group}{\normalsize Monash University\cvreference{|\faGithub}{https://github.com/mattgebert/pyNexafs}}{Mar 2024 -- Present}{Clayton, VIC, Australia}
+		My recent appointment to the McNeill research group is focused in tender x-ray measurements of organic semiconductors. As part of this program I am developing research tools using modern software engineering practices. In my time thus far I have performed NEXAFS spectroscopy with medium and soft energy X-rays, and GI-WAXS.
+	
+		\divider
+	
+		\newpage
+		
+		\cveventlong{\normalsize Beamline user at Cntr. for Neutron Scattering}{\normalsize ANSTO \cvreference{| \faGithub}{https://github.com/mattgebert/refnx}}{Jun 2022 -- Nov 2023}{Lucas Heights, NSW, Australia}
 
 		{\textalignment
-		Utilising the Platypus beamline and Rigaku X-ray reflectometer / diffractometer to perform magnetic sample characterisation. 
-		Performed independent measurements, and been a contributor to multiple beamtimes in 2022/2023. \newline I have developed expertise in using Refnx software
-		suite to analyse Platypus beamtime data and X-ray data, and have worked under the guidance of Dr. David Cortie.
+		I have utilised the Platypus beamline and Rigaku X-ray reflectometer / diffractometer to perform magnetic sample characterisation, particularly in the topological insulator Bi\textsubscript{2}Te\textsubscript{3}. Performed independent measurements, and been a contributor to multiple beamtimes across 2022/2023. I have developed expertise in using Refnx software suite to analyse Platypus beamtime data and X-ray data, and have worked under the guidance of Dr. David Cortie and Dr. Grace Causer.
+		}
 		
 		\divider
-		}
 
-		\newpage
+%		\newpage
 
 		\cvevent{\normalsize Electronic materials PhD - Fuhrer Lab Group}{\normalsize Monash University 
 		\cvreference{ | \faNewspaper{}}{https://www.fleet.org.au/blog/a-shield-for-2d-materials-that-adds-vibrations-to-reduce-vibration-problems/}
@@ -327,15 +341,11 @@ autocite=superscript,
 		\cvreference{ | \faGithub}{https://github.com/mattgebert/ebl-marker-generator}
 		\cvreference{ | \faGithub}{https://github.com/mattgebert/eagleCircuits}
 		\cvreference{ | \faYoutube}{https://youtu.be/fsEp-QRD9s4}}
-		{Jun 2018 -- Dec 2023}{Clayton, Australia}
+		{Jun 2018 -- Dec 2023}{Clayton, VIC, Australia}
 
 		\textalignment{
-		I conducted my reseach as a student in the Fuhrer lab group. This included restarting the electronic device fabrication section of the group,
-		performing low-noise electrical measurements, streamlining data acquisition and control systems for measurements. I have significant experience in GPIB control instrumentation of
-		electronic equipement in conjunction with LabView, control of piezoelectric actuators for mechanical sample transfer, and experience in glovebox/UHV technical equipement.
-		I have also developed a number of software tools for data analysis, including a Python package for electrical transport analysis, and a Python package for X-ray diffraction analysis.
-		I am familiar with software engineering concepts and best-practise, including version-control, typing, object-orientation, unit-testing, and documentation styles.
-
+		I conducted my research as a student in the Fuhrer lab group. This included restarting the electronic device fabrication section of the group, performing low-noise electrical measurements, and streamlining data acquisition and control systems for measurements. Fabrication techniques included molecular beam epitaxy (MBE) growths, exfoliation, mechanical sample transfer, liquid metal printing and vapor deposition methods. I have also developed a number of software tools for data analysis, including a Python package for electrical transport analysis, and a Python package for X-ray diffraction analysis.
+		}
 		% \begin{itemize}
 		% 	\item Participation as an honours and PhD student in Fuhrer lab group. Worked on condensed matter physics projects primarily using 2D materials and topological insualtors sourced from CVD/MBE and exfoliated methods.
 		% 	\item Various programming for analysis and measurements, including Labview scripts, XR analysis, Blender crystal generation, EBL pattern design and transport analysis.
@@ -345,37 +355,55 @@ autocite=superscript,
 		% \end{itemize}
 		% \faUsers Collaborators: Dr. Torben Daeneke (RMIT) \& Dr. Nitu Syed (UoM)
 		
-		\divider
+		\noindent\divider
 		
-		\cveventlong{\normalsize Engineering FYP}{\normalsize Monash Cold Atoms Group}{Mar 2017 -- Nov 2017}{Clayton, Australia}
-		Implemented a 300 kHz - 3 MHz digital IQ demodulator circuit on an FPGA, and an analogue differential amplifier circuit
-		to analyse magnetometry signals acquired from Faraday measurements on cold-atoms/BECs as a final year project in collaboration with
-		my supervisors Lincoln Turner (Physics) and James Saunderson (Engineering).
+		
+%		\noindent\cveventlong{\normalsize Engineering Honours}{\normalsize Monash Cold Atoms Group}{Mar 2017 -- Nov 2017}{Clayton, VIC, Australia}
+%		\textalignment{
+%		Implemented a 300 kHz - 3 MHz digital IQ demodulator circuit on an FPGA, and an analogue differential amplifier circuit
+%		to analyse magnetometry signals acquired from Faraday measurements on cold-atoms/BECs as a final year project in collaboration with
+%		my supervisors Lincoln Turner (Physics) and James Saunderson (Engineering).
+%		}
+%
+%		\noindent\divider
+%
+%		\cveventlong{\normalsize Real time system design project}{\normalsize ECE5881, Monash}{Mar 2017 -- Jun 2017}{Clayton, Australia}
+%
+%		Implemented a PID control loop on an Altera DE2 FPGA Developement Board, using a NIOS-II uCOS-II microcontroller architecture. 
+%		The embedded task was to synchronise needle motion to a swinging pendulum, using a light-beam hardware interrupt as the signal source.
 
-		\divider
+%		\divider
+%
+%		\cveventlong{\normalsize Electrical engineering design project}{\normalsize ECE3091, Monash}{Aug 2016 -- Nov 2016}{Clayton, Australia}
+%
+%		Implemented an autonomous robot to collect coloured pucks, and stack them according to a readable sequence using a mechanical claw.
+%		This system was implemented using a programmable system-on-chip, in particular the Cypress CY8CKIT-059 PSoC 5LP Developement Board.
 
-		\cveventlong{\normalsize Real time system design project}{\normalsize ECE5881, Monash}{Mar 2017 -- Jun 2017}{Clayton, Australia}
-
-		Implemented a PID control loop on an Altera DE2 FPGA Developement Board, using a NIOS-II uCOS-II microcontroller architecture. 
-		The embedded task was to synchronise needle motion to a swinging pendulum, using a light-beam hardware interrupt as the signal source.
-
-		\divider
-
-		\cveventlong{\normalsize Electrical engineering design project}{\normalsize ECE3091, Monash}{Aug 2016 -- Nov 2016}{Clayton, Australia}
-
-		Implemented an autonomous robot to collect coloured pucks, and stack them according to a readable sequence using a mechanical claw.
-		This system was implemented using a programmable system-on-chip, in particular the Cypress CY8CKIT-059 PSoC 5LP Developement Board.
-
-		\divider
-
-		\cveventlong{\normalsize Research User}{\normalsize Melbourne Centre for Nanofabrication}{Jun 2018 -- Present}{Clayton, Australia}
+%		\divider
+		
+		\noindent\cveventlong{\normalsize Research User}{\normalsize Melbourne Centre for Nanofabrication}{Jun 2018 -- Present}{Clayton, VIC, Australia}
+		\textalignment{
 		I learned and optimised facility equipment for the electronic device fabrication, including responsible after-hours use and establishing new processes.
 		I designed and programatically generated 2D mask patterning for variety of materials science problems.  
-		Equipement I worked with included the Raith EBPG5000plusES electron-beam-lithography system (Linux OS), 
-		the Intelligent Micropatterning SF100 XPRESS, Wire Bonder Wedge FS Bondtec, and the Oxford PlasmaPro 100 ICP RIE system.
+		Equipment I worked with included the Raith EBPG5000plusES electron-beam-lithography system (Linux OS), 
+		the Intelligent Micropatterning SF100 XPRESS, Wire Bonder Wedge FS Bondtec, and the Oxford PlasmaPro 100 ICP RIE system, and e-beam/thermal deposition systems.
 		}
+		
+	\noindent\divider
+
+	\RaggedRight
+	\cvsubsection{Contributed Talks}
+	\cveventlong{\normalsize American Physical Society (APS) March Meeting}{\cvreference{\faGlobe}{https://meetings.aps.org/Meeting/MAR23/Session/A20.2}}{Mar 2023}{Las Vegas, NV, USA}
+	Gebert, M., Bhattacharrya, S., Fuhrer, M. S., ``Suppressing remote optical phonon scattering in graphene below room temperature with touch-printed oxide Ga2O3".
+	
+	\divider
+	
+	\cveventlong{\normalsize Int. Conf. for the Phys. of Semiconductors (ICPS)}{\cvreference{\faGlobe}{https://icps2022.org/program/}}{Jun 2022}{ICC, NSW, Australia}
+	Gebert, M., Bhattacharyya, S., Bounds, C.C., Syed, N., Daeneke, T., Fuhrer, M. S.,
+	``Suppressing remote optical phonon scattering in graphene below room temperature with touch‐printed oxide".
 
 	\cvsection{Complementary expertise}
+	\RaggedRight
 			
 		\setcolumnwidth{0.35\linewidth,0.32\linewidth,0.32\linewidth}
     	% \columnratio{0.33}

@@ -7,6 +7,7 @@ pdfa.*
 *.xdv
 *.lua
 *.aux
+*.blg
 !main.tex
 old/*
 *.pdf

@@ -7,6 +7,7 @@ pdfa.*
 *.xdv
 *.lua
 *.aux
+*.blg
 !main.tex
 old/*
 *.pdf
@@ -15,6 +16,7 @@ old/*
 *.fdb_latexmk
 *.bcf
 *.fdb_latexmk
+*.txss2
 reference.info
 personal.info
 cv-reference.info

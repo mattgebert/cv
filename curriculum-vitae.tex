@@ -210,20 +210,23 @@ autocite=superscript,
 %				\cvtags{Microcontrollers, PCBs, Digital, Analogue, FPGAs, Control,  Electronic Nanofab, Real-time Systems}
 %				\medskip
 
-				\cvtags{Electronic Transport, 2D Materials, Topological Materials, Reflectometry, Cryogenics, UHV}
+				\cvtags{SAXS/WAXS, NEXAFS, Diffraction, Tender, XR \& N Reflectometry}
+				\medskip
+				
+				\cvtags{Electronic Transport, Cryogenics, UHV, 2D Materials, Topological Materials, Organic Semiconductors}
 				\medskip
 
                 \cvtags{Python\faPython, Django, C++, Verilog/VHDL, HTML\faHtml5, Javascript, CSS\faCss3, LabView}
 %                	Matlab, Shell, Android\faAndroid, }
                 \medskip
                 
-                \cvtags{Full-stack, Data Analysis, Data Visualisation, Algorithms, Linux\faLinux\faUbuntu, Servers, Git\faGithub\faGit*}
-                \medskip
+                \cvtags{Full-stack, Fits \& MCMC, Algorithms, Linux\faLinux\faUbuntu, Servers, Git\faGithub\faGit*, CI}
+%                \medskip
 %                \cvtags{Mathematica, AutoCAD, Blender, KLayout, Eagle, LTSpice}
                 
-                \cvtags{Electron-Beam Lithography, Photolith., Etching, Material Deposition, Cleanrooms, MBE, PVD, Wirebonding
+%                \cvtags{Electron-Beam Lithography, Photolith., Etching, Material Deposition, Cleanrooms, MBE, PVD, Wirebonding
 %                	Material Stacking/Transfer,
-                }
+%                }
             \end{sloppypar*}
         % ----- TECH STACK -----
         
@@ -256,7 +259,7 @@ autocite=superscript,
         \vspace{0.5em}
         % ----- ABOUT ME -----
 		
-		I am a passionate scientist and engineer with a diverse background in fabrication, beamline and electronic techniques. I am a fast learner of new technology, and highly-adapable team-member. I love creating meaningful, optimised algorithms \& processes. Nothing is better than an efficient system! I enjoy new challenges and perfecting processes, which is part of my drive in science, and am a hobbyist programmer. I am currently working as a postdoctoral fellow in synchrotron science, where I do a lot of programming. I have strong interpersonal qualities and communication, and well suited to working within diverse teams. I like teaching and mentoring, and am always wanting to improve upon critical feedback.
+		I am a passionate scientist and engineer, with a diverse background across beamline science, electronic measurements and device fabrication techniques. I am a fast learner of new technology, and a highly-adapable team-member, and excellent trainer. I love creating meaningful, optimised algorithms \& processes. Nothing is better than an efficient system! I am currently working as a postdoctoral fellow in synchrotron science, where I do a lot of scientific research software engineering. I have strong interpersonal qualities and communication, and well suited to working within diverse teams. I like teaching and mentoring, and am always wanting to improve upon critical feedback.
 		}
 %        I love to dabble in code, teach and mentor, and prefer to have clear targets to work towards. My hobbies include music, where I have studied piano to AMEB Grade 8 and do a little electronic production, SciFy video games, Formula1 and Cycling, and home DIY. 
 		% I like teaching and mentoring, and am always wanting to improve upon critical feedback.
@@ -272,9 +275,7 @@ autocite=superscript,
 			% \cvachievement{\faUsers}{Membership: ARC CoE Future Low Energy Electronics \& Technologies (FLEET)}{PhD Candidate member of Australian Research Council (ARC) Centre of Excellence (CoE) FLEET. I have benifited from regular centre meetings, workshops, collaborations and professional development to expand my academic experience.}
 			{\textalignment
 			\cvachievementnoicon{Experimental Physics Thesis: Dirac Fermions at Interfaces}{	
-				Investigated the properties of Dirac materials when put into proximity at an interface with other materials. 
-				The ANSTO Lucas Heights facility was used to perform Neutron Reflectometry using the Platypus beamline, in addition to other tools.
-				This work encompassed the entire research cycle, from device fabrication, through experimental measurement and analysis, to publishing and communications.
+				Investigated the properties of Dirac materials (2D materials and topological insulators) when put into proximity at an interface with other materials, though UHV/Cryogenic transport and neutron scattering techniques.
 				}
 			}
 			% \cvachievementnoicon{Membership: ARC CoE Future Low Energy Electronics \& Technologies (FLEET)}{PhD Candidate member of Australian Research Council (ARC) Centre of Excellence (CoE) FLEET. I have benifited from regular centre meetings, workshops, collaborations and professional development to expand my academic experience.}
@@ -315,9 +316,11 @@ autocite=superscript,
 
 	\cvsection{Professional Experience}
 	
-		\cvevent{\normalsize Postdoctoral researcher - McNeill Group}{\normalsize Monash University\cvreference{|\faGithub}{https://github.com/mattgebert/pyNexafs}}{Mar 2024 -- Present}{Clayton, VIC, Australia}
-		My recent appointment to the McNeill research group is focused in tender x-ray measurements of organic semiconductors. As part of this program I am developing research tools using modern software engineering practices. In my time thus far I have performed NEXAFS spectroscopy with medium and soft energy X-rays, and GI-WAXS.
-	
+		\cvevent{\normalsize Postdoctoral researcher - McNeill Group}{\normalsize Monash University\cvreference{|\faGithub}{https://github.com/mattgebert/kkcalc/tree/v2}\cvreference{|\faGithub}{https://github.com/mattgebert/pyNexafs}}{Mar 2024 -- Present}{Clayton, VIC, Australia}
+		{\textalignment
+		As part of the McNeill research group I have focus on the tender x-ray measurements of organic semiconductors. I have been developing research tools using modern software engineering practices, such as python packages for Kramers Kronig transforms (kkcalc) and for beamline data handling of NEXAFS data (pyNexafs). I have performed NEXAFS spectroscopy multiple times across MEX2 and SXR beamlines, and performed X-ray scattering in/ex-situ measurements in transmission / GI, both at the SAXS/WAXS beamline in Australia and also the SMI beamline at NSLS-II, NY, USA, particularly with the focus of investigating the use of resonant diffraction and spectroscopy to understand the microstructure of soft matter that usually lacks strong diffraction information.
+		}
+		
 		\divider
 	
 		\newpage
@@ -333,7 +336,7 @@ autocite=superscript,
 %		\newpage
 
 		\cvevent{\normalsize Electronic materials PhD - Fuhrer Lab Group}{\normalsize Monash University 
-		\cvreference{ | \faNewspaper{}}{https://www.fleet.org.au/blog/a-shield-for-2d-materials-that-adds-vibrations-to-reduce-vibration-problems/}
+		\cvreference{ | \faNewspaper{}}{https://www.legacy.fleet.org.au/blog/a-shield-for-2d-materials-that-adds-vibrations-to-reduce-vibration-problems/}
 		\cvreference{ | \faNewspaper{}}{https://www.techbriefs.com/component/content/article/tb/stories/blog/47435}
 		\cvreference{| \faGithub}{https://github.com/mattgebert/pylectric-transport}
 		\cvreference{ | \faGithub}{https://github.com/mattgebert/xrd_analysis}
@@ -344,7 +347,7 @@ autocite=superscript,
 		{Jun 2018 -- Dec 2023}{Clayton, VIC, Australia}
 
 		\textalignment{
-		I conducted my research as a student in the Fuhrer lab group. This included restarting the electronic device fabrication section of the group, performing low-noise electrical measurements, and streamlining data acquisition and control systems for measurements. Fabrication techniques included molecular beam epitaxy (MBE) growths, exfoliation, mechanical sample transfer, liquid metal printing and vapor deposition methods. I have also developed a number of software tools for data analysis, including a Python package for electrical transport analysis, and a Python package for X-ray diffraction analysis.
+		I conducted my research as a student in the Fuhrer lab group. I lead significant electronic device fabrication within the group, performing low-noise electrical measurements under UHV and/or cryogenic conditions, and streamlining control systems for data acquisition. Fabrication techniques included molecular beam epitaxy (MBE) growths, exfoliation, mechanical sample transfer, liquid metal printing and vapor deposition methods. I developed a number of rudimentary software tools for data analysis, including a Python package for electrical transport analysis, and a simplistic Python package for X-ray diffraction analysis.
 		}
 		% \begin{itemize}
 		% 	\item Participation as an honours and PhD student in Fuhrer lab group. Worked on condensed matter physics projects primarily using 2D materials and topological insualtors sourced from CVD/MBE and exfoliated methods.
@@ -381,12 +384,12 @@ autocite=superscript,
 
 %		\divider
 		
-		\noindent\cveventlong{\normalsize Research User}{\normalsize Melbourne Centre for Nanofabrication}{Jun 2018 -- Present}{Clayton, VIC, Australia}
+		\noindent\cveventlong{\normalsize Research User}{\normalsize Melbourne Centre for Nanofabrication}{Jun 2018 -- Dec 2023}{Clayton, VIC, Australia}
 		\textalignment{
-		I learned and optimised facility equipment for the electronic device fabrication, including responsible after-hours use and establishing new processes.
-		I designed and programatically generated 2D mask patterning for variety of materials science problems.  
-		Equipment I worked with included the Raith EBPG5000plusES electron-beam-lithography system (Linux OS), 
-		the Intelligent Micropatterning SF100 XPRESS, Wire Bonder Wedge FS Bondtec, and the Oxford PlasmaPro 100 ICP RIE system, and e-beam/thermal deposition systems.
+		Long term user, trained and optimised facility equipment for the electronic device fabrication, including responsible after-hours use and establishing new processes.
+		I designed and programatically generated 2D mask patterning for variety of materials science problems, involving significant CAD experience.
+		I am particularly familiar with lithography (EBL and Photomasks) systems such as the Raith EBPG5000plusES (Linux OS) and the Intelligent Micropatterning SF100 XPRESS. I have used many other tools relevant to device fabrication.
+		% include Wire Bonder Wedge FS Bondtec, and the Oxford PlasmaPro 100 ICP RIE system, and e-beam/thermal deposition systems.
 		}
 		
 	\noindent\divider
@@ -398,9 +401,9 @@ autocite=superscript,
 	
 	\divider
 	
-	\cveventlong{\normalsize Int. Conf. for the Phys. of Semiconductors (ICPS)}{\cvreference{\faGlobe}{https://icps2022.org/program/}}{Jun 2022}{ICC, NSW, Australia}
-	Gebert, M., Bhattacharyya, S., Bounds, C.C., Syed, N., Daeneke, T., Fuhrer, M. S.,
-	``Suppressing remote optical phonon scattering in graphene below room temperature with touch‐printed oxide".
+	\cveventlong{\normalsize Int. Conf. for the Phys. of Semiconductors (ICPS)}{}{Jun 2022}{ICC, NSW, Australia}
+%	Gebert, M., Bhattacharyya, S., Bounds, C.C., Syed, N., Daeneke, T., Fuhrer, M. S.,
+%	``Suppressing remote optical phonon scattering in graphene below room temperature with touch‐printed oxide".
 
 	\cvsection{Complementary expertise}
 	\RaggedRight
@@ -410,29 +413,32 @@ autocite=superscript,
 		\begin{paracol}{3}
 			\cvsubsection{Communication \& Governance}
 			\begin{itemize}
+				\item \cvreference{2020-22 FLEET industry relations committee}{}{- Governance for encouraging and dialogue of research translation. Familiar with a large FLEET network of researchers and industry relationships.}
 				\item \cvreference{2017 \textbf{Undergraduate Academic Board Representative}}{https://www.monash.edu/academic-board}{- Elected onto the university primary governance committee.}
 				\item \cvreference{2022 \textbf{Science Meets Parliment}}{https://scienceandtechnologyaustralia.org.au/smp2022}
 				{- Represented FLEET CoE forging conversation between parlimentarians and scientists.}
-				\item Appeared on\cvreference{RRR \textbf{Einstein A GoGo}}{https://www.rrr.org.au/explore/podcasts/einstein-a-go-go}
-				\item FLEET industry rel. committee
-				\item Multiple conference presentations
-				\item Journal coverart design\cvreference{1}{https://onlinelibrary.wiley.com/doi/abs/10.1002/adma.202170262},\cvreference{2}{https://pubs.acs.org/toc/nalefd/23/1}
+%				\item Multiple conference presentations
 			\end{itemize}
 			\switchcolumn
+			\begin{itemize}
+				\item Appeared on\cvreference{RRR \textbf{Einstein A GoGo}}{https://www.rrr.org.au/explore/podcasts/einstein-a-go-go}
+				\item Journal coverart design\cvreference{1}{https://onlinelibrary.wiley.com/doi/abs/10.1002/adma.202170262},\cvreference{2}{https://pubs.acs.org/toc/nalefd/23/1}
+			\end{itemize}
 			\cvsubsection{Teaching/Supervision}
 			\begin{itemize}
 				\item \textbf{University tutor} for\cvreference{Eng. Maths,}{https://monash.edu/pubs/2017handbooks/units/ENG1005.html}
 				\cvreference{Fields \& Quantum Physics,}{https://www3.monash.edu/pubs/2018handbooks/units/PHS1022.html}and
 				\cvreference{Experimental Physics.}{https://handbook.monash.edu/2023/units/PHS3000}
 				\item \textbf{Specialist high-school teacher} for \cvreference{Emerging Science Victoria,}{https://emsci.vic.edu.au/} an online education platform based at John Monash Science School.
-				\item \textbf{Student supervision} experience for two Undergrad/Masters student projects, encompassing project design, teaching and mentoring.
+				\item \textbf{Student supervision} for three Undergrad/Masters student projects, encompassing project design, teaching and mentoring.
 			\end{itemize}
 			\switchcolumn
 			\cvsubsection{Awards}
 			\cvachievement{\small\faBullhorn}{Outstanding Student Award | Monash Science Faculty Awards \faCalendar*[small] 2020}
-			{Awarded for extensive science-outreach across a range of activities and programs.\hspace{9em} \cvreference{\faNewspaper Blog link}{http://www.fleet.org.au/blog/12772/} | \cvreference{\faCertificate Award link}{https://drive.google.com/file/d/1g3VeY3PgxkLOUvV2EcMlbWNjkn06d4-d/view?usp=drive_link}}
-			\cvachievement{\small\faUserGraduate}{Education \& Training Grant | FLEET \faCalendar*[small] 2020}
-			{Competitive grant (\$500). Used funds to undertake EdX Quantum Transport course.}
+			{Awarded for extensive science-outreach across a range of activities and programs.\hspace{9em} \cvreference{\faNewspaper Blog link}{https://archive.fleet.org.au/blog/12772/} | \cvreference{\faCertificate Award link}{https://drive.google.com/file/d/1g3VeY3PgxkLOUvV2EcMlbWNjkn06d4-d/view?usp=drive_link}}
+			\cvachievement{\small\faUserGraduate}{Education \& Training Grant | FLEET \faCalendar*[small] 2020, 2024}
+			{Competitive grant (\$500). EdX Quantum Transport course.}
+			\cvachievement{\small\faFileImage[regular]}{Best ECR Poster | Vic. X-ray Symposium \faCalendar*[small] 2024}{Aus. X-ray Analytical Assoc. \& Monash X-ray Platform}
 		\end{paracol}
 
 	\cvsection{References}
@@ -440,6 +446,7 @@ autocite=superscript,
         \newcommand*{\phonenumber}[1]{\href{tel:#1}{#1}}
         \newcommand*{\mailsym}{{\color{accent}\small\normalfont\mailaddresssymbol}}
         \newcommand*{\mailto}[1]{\href{mailto:#1}{#1}}
+        \newcommand*{\mailtoshort}[2]{\href{mailto:#2}{#1}}
         \newcommand*{\buildingsym}{\color{accent}\faBuilding}
         \newcommand*{\LIsym}{\color{accent}\faLinkedin}
         \newcommand*{\LIprofile}[2]{\href{https://linkedin.com/in/#1}{#2}}

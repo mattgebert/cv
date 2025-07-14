@@ -57,6 +57,7 @@
 \RequirePackage{ifxetex,ifluatex}
 \RequirePackage{scrlfile}
 \RequirePackage{xparse}
+\RequirePackage{academicons}
 
 %% v1.1.5: added for convenience
 \newif\ifxetexorluatex
@@ -207,6 +208,7 @@
 \NewInfoField{twitter}{\faTwitter}[https://twitter.com/]
 \NewInfoField{linkedin}{\faLinkedin}[https://linkedin.com/in/]
 \NewInfoField{github}{\faGithub}[https://github.com/]
+%\NewInfoField{scholar}{\aiGoogleScholarSquare}[https://scholar.google.com/citations?user\=] %\aiGoogleScholarSquare
 % v1.?? Use fontawesome5 for Orcid symbol
 \NewInfoField{orcid}{\faOrcid}[https://orcid.org/]
 \NewInfoField{location}{\faMapMarker}
@@ -369,7 +371,7 @@
 }
 
 \newcommand{\cvachievement}[3]{%
-  \begin{tabularx}{\linewidth}{@{}p{1em} @{\hspace{3ex}} >{\raggedright\arraybackslash}X@{}}
+  \begin{tabularx}{\linewidth}{@{}p{1em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
     \multirow{2}{*}{\Large\color{accent} #1} & \bfseries\textcolor{emphasis}{#2}\\
   & #3
   \end{tabularx}%

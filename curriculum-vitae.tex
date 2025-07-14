@@ -150,7 +150,7 @@ autocite=superscript,
 %% sample.bib contains your publications
 \addbibresource{MyPapers.bib}
 \addbibresource{UnderPreparation.bib}
-%\bibliographystyle{phys}
+% \bibliographystyle{phys}
 
 \begin{document}
     
@@ -188,12 +188,14 @@ autocite=superscript,
     	 % ----- LEARNING -----
     	\cvsection{Research}
     	\begin{sloppypar*}
-    		\cvsubsection{Expertise}
-    		\cvtags{Electronic Transport, 2D Materials, Topological Materials, Xray Scattering, Xray Reflectometry, Neutron Reflectometry, Cryogenics, UHV}
-    		\medskip
+    		% \cvsubsection{Expertise}
+			\cvtags{SAXS/WAXS, NEXAFS, Diffraction, XR \& N Reflectometry}
+			\medskip
+    		\cvtags{Electronic Transport, 2D Materials, Topological Materials, Organic Semiconductors, Cryogenics, UHV, Cleanroom, Fabrication}
+    		% \medskip
     		
-    		\cvsubsection{Experimental Techniques}
-    		\cvtags{Electron-Beam Lithography, Photolith., Etching, Material Stacking/Transfer, Material Deposition, Cleanrooms, MBE, PVD, Wirebonding}
+    		% \cvsubsection{Experimental Techniques}
+    		% \cvtags{Electron-Beam Lithography, Photolith., Etching, Material Stacking/Transfer, Material Deposition, Cleanrooms, MBE, PVD, Wirebonding}
     		%                \medskip
     		%                \cvtags{PCBs, Digital, Analogue, 3D Printing}
     	\end{sloppypar*}
@@ -252,47 +254,7 @@ autocite=superscript,
             %% Yeah I didn't spend too much time making all the
             %% spacing consistent... sorry. Use \smallskip, \medskip,
             %% \bigskip, \vpsace etc to make ajustments.
-        % ----- LANGUAGES -----
-            
-        % ----- REFERENCES -----
-		
-
-        \cvsection{References}
-
-		\IfFileExists{cv-reference.info}{
-    		\subfile{./cv-reference.info}
-		}{
-			\subfile{./cv-reference-example.info}
-		}
-        % ----- REFERENCES -----
-        
-        % ----- Other Experience ----
-        \cvsection{Other Exp.}
-        \cvsubsection{Work}
-        \begin{itemize}
-%        	\item Science Meets Parliment 2022
-%        	\item Postgraduate Student Committee 2020-2022
-%        	\item Vice President | Monash Optica Student Chapter 2020
-%        	\item ARC CoE FLEET | Industry Relations Committee 2019-2022
-        	\item Summer Internship | Ausnet Services 2015
-        	\item Monash UniHack 2015
-        	\item Retail Assistant | Clayton Newsagency 2010-2015
-        	\item WebUI | myTardis - Monash Bioinformatics Platform 2013
-        \end{itemize}
-%        \cvlang{}{}
-        
-        % ----- COMMUNITY -----
-        \cvsubsection{Community}
-        \begin{itemize}
-        	\item Volunteer | FLEET Outreach Programs
-        	\item Volunteer | Grace Christian Community, 2022-Present\\
-        	\item Leader | Scripture Union Family Mission 2016-2022\\
-%        	\item Leader | Church Missionary Society SUTS Youth Camp 2019\\
-			% \item Committee Member | John Monash Science School Alumni Committee 2013-2019
-        	\item Leader | St. Pauls Anglican Church Caulfield North 2013-2022
-        \end{itemize}
-%        \cvlang{}
-        % ----- COMMUNITY -----
+        % ----- LANGUAGES ----
         
         % ----- MOST PROUD -----
         % \cvsection{Most Proud of}
@@ -330,41 +292,34 @@ autocite=superscript,
 		{\textalignment
         \cvsection{About Me}
             \begin{quote}
-            	PhD Candidate in experimental condensed matter physics, with a strong programming background, seeking a career opportunity to passionately contribute to long-term scientific research.
+            	Postdoctoral researcher in tender X-rays scattering, seeking opportunities to passionately contribute to long-term scientific research in technical and user-focused roles.
             \end{quote}
         \vspace{0.5em}
         % ----- ABOUT ME -----
-        I am a passionate scientist and engineer who loves exploring new technology and \newline creating meaningful, 
-		optimised algorithms \& processes. Nothing is better than an \newline efficient system! I really enjoy new challenges and 
-		perfecting processes, which is part of my drive in science, and am a hobbyist programmer. 
-		I have strong interpersonal qualities and communication, well suited to working within diverse teams. 
-		I like \newline teaching and mentoring, and am always wanting to improve upon critical feedback.
+		I am a passionate physicist and engineer, with a diverse background across beamline science, electronic measurements and device fabrication techniques. I am a fast learner of new technology, and a highly-adapable team-member, and excellent trainer. I love creating systems/processes that are intuitive, accessible and efficient. Nothing is better than an optimised system! I am currently working as a postdoctoral fellow in synchrotron science, where I am processing significantly large datasets with modern open source toolkits. I have strong interpersonal qualities and communication, and well suited to working within diverse teams. I like teaching and mentoring, and am always seeking to improve upon critical feedback.
 %        I love to dabble in code, teach and mentor, and prefer to have clear targets to work towards. My hobbies include music, where I have studied piano to AMEB Grade 8 and do a little electronic production, SciFy video games, Formula1 and Cycling, and home DIY. 
         % I have recently begun learning Mandarin, and have been involved in longterm volunteering and leadership, particularly
 		% within Christian communities centred on Jesus.
 		}
         
         % ----- EDUCATION -----
-        \vspace{-1em}
+        % \vspace{-1em}
         \cvsection{Education}
-            \cvevent{Doctor of Philosophy Candidate, Physics}{
-				Monash University | \cvreference{FLEET}{https://www.fleet.org.au}}{Sep 2019 -- Dec 2023}{Clayton, Australia}
+            \cvevent{\cvreference{Doctor of Philosophy}{https://www.myequals.net/sharelink/c1423425-566f-4677-8233-4191e41585bb/9526942e-9d1a-4677-b5a8-eabec64ad5da}| Monash University}{\cvreference{FLEET}{https://www.fleet.org.au}}{Sep 2019 -- Dec 2023}{Clayton, Australia}
 %            \cvreference
-			% \cvachievement{\faBook}{Thesis: Dirac Fermions at Interfaces}{
-			% \hspace{-2pt}
+			
+			% \cvachievement{\faBook}{Thesis: Dirac Fermions at Interfaces}{Investigated the properties of Dirac carriers when put into proximity at an interface with other materials. This work encompassed the entire research cycle, from device fabrication, through experimental measurement and analysis, to publishing and comms. Work was particularly focused on transport properties of the 2D material graphene, and topological insulator Bi$_2$Te$_3$. Laboratory experiments also included beamtime at the Lucas Heights ANSTO facility to perform Neutron Reflectometry using Platypus, in addition to other tools.}
+			% \cvachievement{\faUsers}{Membership: ARC CoE Future Low Energy Electronics \& Technologies (FLEET)}{PhD Candidate member of Australian Research Council (ARC) Centre of Excellence (CoE) FLEET. I have benifited from regular centre meetings, workshops, collaborations and professional development to expand my academic experience.}
 			{\textalignment
-			\cvachievementnoicon{Thesis: Dirac Fermions at Interfaces}{
-				Investigated the properties of Dirac carriers when put into proximity at an interface with other materials. 
-				This work encompassed the entire research cycle, from device fabrication, through experimental measurement and 
-				analysis, to publishing and comms. Work was particularly focused on transport properties of the 2D material 
-				graphene, and topological insulator Bi$_2$Te$_3$. Laboratory experiments also included beamtime at the Lucas 
-				Heights ANSTO facility to perform Neutron Reflectometry using Platypus, in addition to other transport and specroscopy tools.}
+			\cvachievementnoicon{Experimental Physics Thesis: Dirac Fermions at Interfaces}{	
+				Investigated the properties of Dirac materials (2D materials and topological insulators) when put into proximity at an interface with other materials, though UHV/Cryogenic transport and neutron scattering techniques.
+				}
 			}
-				\begin{tabular}{ll}
-					Main-supervisor: & Prof. Michael S. Fuhrer\\
-					Co-supervisors: & A.Prof. Semonti Bhattacharyya, Dr. Grace Causer\\
-					Research Centre: & ARC CoE Future Low Energy Electronics \& Technologies (FLEET)
-				\end{tabular}
+			\begin{tabular}{ll}
+				Main-supervisor: & Prof. Michael S. Fuhrer\\
+				Co-supervisors: & A.Prof. Semonti Bhattacharyya, Dr. Grace Causer\\
+				Research Centre: & ARC CoE Future Low Energy Electronics \& Technologies (FLEET)
+			\end{tabular}
 			% \cvachievement{\faUsers}{Membership: ARC CoE Future Low Energy Electronics \& Technologies (FLEET)}{PhD Candidate member of Australian Research Council (ARC) Centre of Excellence (CoE) FLEET. I have benifited from regular centre meetings, workshops, collaborations and professional development to expand my academic experience.}
 			% Main Supervisor \& Research Group: \hspace{3.5cm} \faUserFriends Prof. Michael S. Fuhrer
 			% Co-supervisors: \hspace{1.7cm}\faUserFriends A.Prof. Semonti Bhattacharyya \hspace{0.5cm}\faUserFriends Dr. Grace Causer
@@ -397,32 +352,34 @@ autocite=superscript,
 			
 			\cvevent{Undergraduate Bachelor \& Honours Degrees}{Monash University}{}{}
             
-			\begin{tabularx}{0.75\textwidth}{llXXXX}
-				\multicolumn{2}{l}{{\bfseries\textcolor{emphasis}{B. Science (Honours) - Condensed-matter physics}}}&
-				\multicolumn{4}{r}{{\color{accent}\faCalendar} Feb 2018 --  Dec 2018}\\
-				% 
-				\multicolumn{2}{l}{\textit{First Class Honours}}&
-				\multicolumn{2}{>{\centering\arraybackslash}X}{\cvreference{GPA:}{http://www.monash.edu/exams/official-record-results/gpa}4.000}&
-				\multicolumn{2}{r}{\cvreference{WAM:}{http://www.monash.edu/exams/official-record-results/wam}83.5\%}\rule[-2ex]{0pt}{0pt}\\
-				% 
-				\multicolumn{3}{l}{{\bfseries\textcolor{emphasis}{B. Eng (Honours) \& B. Science}}}&
-				\multicolumn{3}{r}{{\color{accent}\faCalendar} Mar 2013 --  Dec 2017}\\
-				% 
-				\multicolumn{2}{l}{\textit{First Class Honours}}&
-				\multicolumn{2}{>{\centering\arraybackslash}X}{\cvreference{GPA:}{http://www.monash.edu/exams/official-record-results/gpa}3.225}&
-				\multicolumn{2}{r}{\cvreference{WAM:}{http://www.monash.edu/exams/official-record-results/wam}75.2\%}\\
-				% 
+			\begin{tabularx}{\linewidth}{llXXXX}
+				% \multicolumn{3}{l}{{\bfseries\textcolor{emphasis}{B. Science (Honours) - Condensed-matter physics}}}&
+				% \multicolumn{3}{r}{{\color{accent}\faCalendar} Feb 2018 --  Dec 2018}\\
+				% \multicolumn{2}{l}{\cvreference{\textit{First Class Honours}}{https://www.myequals.net/sharelink/5736635b-e2ae-4ec7-b26a-df72dba6268e/e6fe416c-da29-4080-bf51-85f492e2b9cf}}&
+				% \multicolumn{2}{>{\centering\arraybackslash}X}{\cvreference{GPA:}{http://www.monash.edu/exams/official-record-results/gpa}4.000}&
+				% \multicolumn{2}{r}{\cvreference{WAM:}{http://www.monash.edu/exams/official-record-results/wam}83.5\%}\rule[-2ex]{0pt}{0pt}\\
+				\multicolumn{2}{l}{{\bfseries\textcolor{emphasis}{B. Science (Honours)}}}&
+				\multicolumn{2}{l}{\cvreference{\textit{First Class Honours}}{https://www.myequals.net/sharelink/5736635b-e2ae-4ec7-b26a-df72dba6268e/e6fe416c-da29-4080-bf51-85f492e2b9cf}}&
+				\multicolumn{2}{r}{{\color{accent}\faCalendar} Feb 2018 --  Dec 2018}\\
+				% \multicolumn{3}{l}{{\bfseries\textcolor{emphasis}{B. Eng (Honours) \& B. Science}}}&
+				% \multicolumn{3}{r}{{\color{accent}\faCalendar} Mar 2013 --  Dec 2017}\\
+				% \multicolumn{2}{l}{\cvreference{\textit{First Class Honours}}{https://www.myequals.net/r/sharelink/3d43a154-ec7f-43f8-a491-565804ebd27f/a397ac2f-2931-4941-9543-d8f3403b6296}}&
+				% \multicolumn{2}{>{\centering\arraybackslash}X}{\cvreference{GPA:}{http://www.monash.edu/exams/official-record-results/gpa}3.225}&
+				% \multicolumn{2}{r}{\cvreference{WAM:}{http://www.monash.edu/exams/official-record-results/wam}75.2\%}\\
+				% {\small\textbf{Specialisations:}}&\multicolumn{5}{l}{Electrical \& Computer Systems Engingeering (Major), Physics (Major),}\\
+				% &\multicolumn{5}{l}{Applied Mathematics (Major) \& Computer Science (4 units).}
+				\multicolumn{2}{l}{{\bfseries\textcolor{emphasis}{B. Eng (Honours) \& B. Science}}}&
+				\multicolumn{2}{l}{\cvreference{\textit{First Class Honours}}{https://www.myequals.net/r/sharelink/3d43a154-ec7f-43f8-a491-565804ebd27f/a397ac2f-2931-4941-9543-d8f3403b6296}}&
+				\multicolumn{2}{r}{{\color{accent}\faCalendar} Mar 2013 --  Dec 2017}\\
 				{\small\textbf{Specialisations:}}&\multicolumn{5}{l}{Electrical \& Computer Systems Engingeering (Major), Physics (Major),}\\
-				&\multicolumn{5}{l}{Applied Mathematics (Major) \& Computer Science (4 units).}\\
-				&\multicolumn{5}{l}{Eng. Units: Digital \& FPGA, real-time systems and analogue electronics.}\\
-				% &\multicolumn{5}{l}{\cvachievement{\faLightbulb}{2017 Undergraduate Academic Board Representative}{Elected onto the university primary governance committee.}}
+				&\multicolumn{5}{l}{Applied Mathematics (Major) \& Computer Science (4 units).}
 			\end{tabularx}
 
 			\vspace{0.5em}
 
-			\cvachievement{\faLightbulb}{2017 Undergraduate Academic Board Elected Representative}{
-				Participated on the university primary governance committee, 
-				contributing student opinion and advocating in conjunction with student bodies.}
+			% \cvachievement{\faLightbulb}{2017 Undergraduate Academic Board Elected Representative}{
+			% 	Participated on the university primary governance committee, 
+			% 	contributing student opinion and advocating in conjunction with student bodies.}
 
             % \cvevent{B. Science (Hons) - Physics}{Monash University}{Feb 2018 --  Dec 2018}{Clayton, Australia}
             % \vspace{-2em}
@@ -469,13 +426,14 @@ autocite=superscript,
         %					M.\bibnamedelimi Gebert}        
         \nocite{*} %cite it all so you can construct references later..
         \vspace{-0.6em}
-        
+
         \printbibliography[type=article,heading=none]
         
         \vspace{-1em}
         \divider
-        
-        \cvsubsection{\faFile*[regular] Under preparation}
+
+        \end{paracol}
+        \cvsubsection{\faFile*[regular] Under preparation / consideration}
         
         \vspace{-0.6em}
         \printbibliography[type=unpublished,heading=none]
@@ -518,7 +476,7 @@ autocite=superscript,
         
         \cvsection{Awards and Scholarships}
 	        \cvsubsection{Awards}
-	        	\cvachievement{\faScroll}{Poster Award | FLEET Annual Meeting \faCalendar*[small] 2021}{Voted best poster award for work on liquid metal oxides and graphene.}
+	        	\cvachievement{\small\faScroll}{Poster Award | FLEET Annual Meeting \faCalendar*[small] 2021}{Voted best poster award for work on liquid metal oxides and graphene.}
 	        	
 	        	\divider
 
@@ -529,7 +487,7 @@ autocite=superscript,
 				\cvachievement{\faTrophy}{Outreach Award | FLEET Annual Meeting \faCalendar*[small] 2020}{Awarded for highest completion of outreach hours to FLEET. Involved organising a series practical lab and teaching classes for high school students, tours.}
 			\vspace{0.5em}
 			
-	\end{paracol}	
+	
 	\newpage
 		
  	    	\cvsubsection{Scholarships \& Funding}
@@ -836,6 +794,54 @@ autocite=superscript,
 		% ----- PROJECTS -----
 %	\end{multicols}
 %	\end{paracol}
+	         
+        % ----- REFERENCES -----
+		
+
+	\cvsection{References}
+	\newcommand*{\phonesym}{\color{accent}\faPhone}
+	\newcommand*{\phonenumber}[1]{\href{tel:#1}{#1}}
+	\newcommand*{\mailsym}{{\color{accent}\small\normalfont\mailaddresssymbol}}
+	\newcommand*{\mailto}[1]{\href{mailto:#1}{#1}}
+	\newcommand*{\mailtoshort}[2]{\href{mailto:#2}{#1}}
+	\newcommand*{\buildingsym}{\color{accent}\faBuilding}
+	\newcommand*{\LIsym}{\color{accent}\faLinkedin}
+	\newcommand*{\LIprofile}[2]{\href{https://linkedin.com/in/#1}{#2}}
+	\IfFileExists{cv-reference.info}{
+		\subfile{./cv-reference.info}
+	}{
+		\subfile{./cv-reference-example.info}
+	}
+	% ----- REFERENCES -----
+	
+	% ----- Other Experience ----
+	\cvsection{Other Exp.}
+	\cvsubsection{Work}
+	\begin{itemize}
+%        	\item Science Meets Parliment 2022
+%        	\item Postgraduate Student Committee 2020-2022
+%        	\item Vice President | Monash Optica Student Chapter 2020
+%        	\item ARC CoE FLEET | Industry Relations Committee 2019-2022
+		\item Summer Internship | Ausnet Services 2015
+		\item Monash UniHack 2015
+		\item Retail Assistant | Clayton Newsagency 2010-2015
+		\item WebUI | myTardis - Monash Bioinformatics Platform 2013
+	\end{itemize}
+%        \cvlang{}{}
+	
+	% ----- COMMUNITY -----
+	\cvsubsection{Community}
+	\begin{itemize}
+		\item Volunteer | FLEET Outreach Programs
+		\item Volunteer | Grace Christian Community, 2022-Present\\
+		\item Leader | Scripture Union Family Mission 2016-2022\\
+%        	\item Leader | Church Missionary Society SUTS Youth Camp 2019\\
+		% \item Committee Member | John Monash Science School Alumni Committee 2013-2019
+		\item Leader | St. Pauls Anglican Church Caulfield North 2013-2022
+	\end{itemize}
+%        \cvlang{}
+	% ----- COMMUNITY -----
+
 \vspace{4em}
 
 

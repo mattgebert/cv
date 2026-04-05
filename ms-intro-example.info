@@ -4,5 +4,9 @@
 
 \hspace*{1em}
 
-Dear Person One \& Person Two, and Selection Committee,
+\begin{center}
+{\color{emphasis}\Large\fontfamily{lmss}\selectfont Research Mission Statement
+}
+\end{center}
+
 \end{document}

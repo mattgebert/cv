@@ -1,0 +1,140 @@
+\documentclass[10pt,a4paper,ragged2e,withhyper,paragraphstrue]{altacv}
+
+% \newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
+% \geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+% \geometry{left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm,columnsep=0.75cm}
+\geometry{left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.0cm,columnsep=0.75cm}
+\usepackage{subfiles} % Use subfiles to define personal information.
+\usepackage{paracol}
+
+% % Change the font if you want to, depending on whether
+% % you're using pdflatex or xelatex/lualatex
+% \ifxetexorluatex
+%   % If using xelatex or lualatex:
+%   \setmainfont{Roboto Slab}
+%   \setsansfont{Lato}
+%   \renewcommand{\familydefault}{\sfdefault}
+% \else
+%   % If using pdflatex:
+%   \usepackage[rm]{roboto}
+%   \usepackage[defaultsans]{lato}
+%   % \usepackage{sourcesanspro}
+%   \renewcommand{\familydefault}{\sfdefault}
+% \fi
+
+% Fork (before v1.6.5a): Change the color codes to test your personal variant on any mode
+\ifdarkmode%
+  \definecolor{PrimaryColor}{HTML}{C69749}
+  \definecolor{SecondaryColor}{HTML}{D49B54}
+  \definecolor{ThirdColor}{HTML}{1877E8}
+  \definecolor{BodyColor}{HTML}{ABABAB}
+  \definecolor{EmphasisColor}{HTML}{ABABAB}
+  \definecolor{BackgroundColor}{HTML}{191919}
+\else%
+%  \definecolor{PrimaryColor}{HTML}{001F5A}
+%  \definecolor{SecondaryColor}{HTML}{0039AC}
+%  \definecolor{ThirdColor}{HTML}{F3890B}
+%  \definecolor{BodyColor}{HTML}{666666}
+%  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+%  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+  \definecolor{PrimaryColor}{HTML}{001F5A}
+  \definecolor{SecondaryColor}{HTML}{448888}
+  \definecolor{ThirdColor}{HTML}{4682B4}
+  \definecolor{BodyColor}{HTML}{666666}
+  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+  \definecolor{BackgroundColor}{HTML}{FFFFFF}
+%  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+\fi%
+
+%My Colours:
+% Teal 448888
+% Orange DD5522 
+% Light blu 77EEEE
+% Steel Blu 4682B4
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{SecondaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+%\usepackage{hyperref
+%%Setup bib hyperlinks
+\hypersetup{%
+	urlcolor=SecondaryColor,
+	citecolor=SecondaryColor
+}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\newcommand{\textalignment}{
+	\justifying
+    \tolerance=1 %https://tex.stackexchange.com/a/5039/137109
+    \emergencystretch=\maxdimen
+    \hyphenpenalty=10000 
+    \hbadness=10000
+}
+
+\setlength{\parindent}{24pt}
+\newcommand{\pind}{\hspace{24pt}}
+
+\begin{document}
+    
+    \IfFileExists{./cl-intro.info}{
+            \subfile{./ms-intro.info}
+        }{
+            \subfile{./ms-intro-example.info}
+        }
+
+    \vspace{1em}
+    {\textalignment
+    
+    My research is driven by a fundamental interest in electronic materials, which often involves optimising synthesis and measurement systems. More modern advances involve building systems that can discover, adapt, and optimise with minimal human intervention. This interest has emerged organically from my background spanning condensed matter physics, electronic materials-science engineering, and scientific software development, where I have repeatedly encountered the same core challenge: modern experiments generate vast, complex datasets and rely on intricate instrumentation, yet the processes of sample-fabrication, analysis, control, and optimisation remain largely manual. My fundamental goal is to bridge this gap through automation and, ultimately, autonomous scientific discovery.
+
+    \pind During my PhD and postdoctoral work in semiconducting and soft materials, I developed a strong expertise in experimental physics across nanofabrication, synchrotron and neutron facilities, including X-ray scattering (WAXS), spectroscopy (NEXAFS), and cryogenic electronic transport. Two modern material systems I have studied include `van der Waals' materials and organic semiconductors. The study the microstructure of polymer-based electronic materials using resonant X-ray techniques, where structure–property relationships emerge from a highly complex and coupled processing space. Fabrication methods such as blade coating and spin coating, combined with post-processing steps like thermal annealing, define a high-dimensional parameter space that governs morphology, crystallinity, and ultimately device performance.
+
+    \pind Critically, these systems exemplify the challenges of modern experimental science: the relationship between processing conditions and material structure is non-linear, history-dependent, and difficult to probe directly. By integrating in-situ X-ray scattering measurements during processing, I have worked to capture the evolution of material structure in real time, generating rich, multi-dimensional datasets that encode this complex phase space. However, extracting insight from such data—and using it to guide experimental decisions—remains a largely manual and intuition-driven process.
+
+    \pind This experience has reinforced my interest in automation not just as a tool for efficiency, but as a necessary step toward navigating complex experimental landscapes. I have developed software pipelines and scientific tools (e.g., for NEXAFS analysis and Kramers–Kronig transformations) that reduce manual intervention and enable more systematic exploration of parameter spaces. These efforts reflect a broader philosophy: that experimental systems should be designed to be self-consistent, modular, and capable of automating repetitive reasoning tasks, allowing researchers to focus on higher-level insight.
+
+    \pind Beyond automation, I am particularly motivated by the concept of autonomous discovery: systems that can iteratively explore high-dimensional experimental spaces, identify structure–property relationships, and refine hypotheses with minimal human input. The complex processing–structure landscape of polymer materials provides a compelling testbed for such ideas, where intelligent systems could dynamically select processing conditions, analyse in-situ data, and converge toward optimal material properties far more efficiently than traditional approaches.
+
+    \pind My interdisciplinary background positions me to contribute to this emerging paradigm from multiple angles. My training in physics provides a strong foundation in modelling and inference; my engineering experience enables the design of integrated hardware–software systems; and my software development skills allow me to build scalable, user-friendly tools. I am particularly interested in closing the loop between experiment and analysis—developing systems where data acquisition, processing, and decision-making occur in real time.
+
+    \pind Looking forward, I aim to contribute to research in intelligent robotics and autonomous systems, particularly in contexts where physical experimentation and sensing are central. This includes applications such as automated laboratories, adaptive sensing platforms, and robotic systems capable of interacting with complex physical environments. More broadly, I am interested in how autonomous systems can be deployed to navigate complex phase spaces—whether in materials science, manufacturing, or other domains where high-dimensional optimisation is a central challenge.
+
+    \pind Ultimately, my research vision is to help transition scientific practice from manual, sequential workflows to integrated, autonomous systems capable of accelerating discovery. By combining automation, advanced data analysis, and intelligent control, I aim to contribute to a future where scientific systems are not just tools, but active participants in the process of discovery.
+    }
+
+    {\color{emphasis}
+    \textalignment
+    % \vspace{1em}
+    % Yours Sincerely, \newline
+    % {\color{emphasis}Matthew G Gebert}
+
+    }
+    
+    % \vspace*{0.5em}
+    \divider
+    \IfFileExists{./ms-personal.info}{
+        \vspace{-2em}
+        \subfile{./ms-personal.info}
+    }{
+        \vspace{-2em}
+        \subfile{./ms-personal-example.info}
+    }
+
+\end{document}

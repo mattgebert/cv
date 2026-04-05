@@ -1,0 +1,8 @@
+\documentclass[./cover-letter.tex]{subfiles}
+\begin{document}
+\color{emphasis} Organisation \newline \color{body} Organisational Address
+
+\hspace*{1em}
+
+Dear Person One \& Person Two, and Selection Committee,
+\end{document}

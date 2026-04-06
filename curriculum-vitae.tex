@@ -104,6 +104,7 @@
 % Change the bullets for itemize and rating marker
 % for \cvskill if you want to
 \renewcommand{\itemmarker}{{\small\textbullet}}
+\setlist[itemize,2]{label=\(\circ\)}
 \renewcommand{\ratingmarker}{\faCircle}
 
 %% Use (and optionally edit if necessary) this .tex if you
@@ -452,6 +453,14 @@ autocite=superscript,
         \vspace{-1em}
         \divider
 
+		\cvsubsection{\faFile*[regular] Software}
+
+        \vspace{-0.6em}
+        \printbibliography[type=software,heading=none]
+
+		\vspace{-1em}
+        \divider
+
         \cvsubsection{\faFile*[regular] Under preparation}
         
         \vspace{-0.6em}
@@ -503,7 +512,7 @@ autocite=superscript,
 		        
         \divider
         
-        
+        \newpage
         \cvsection{Awards and Scholarships}
 	        \cvsubsection{Awards}
 				\cvachievement{\faBullhorn}{Best ECR Speaker Talk | Victorian X-ray Symposium \faCalendar*[small] 2025
@@ -573,28 +582,30 @@ autocite=superscript,
 	\cvsection{Experimental Experience}
 		\cvevent{\normalsize Postdoctoral researcher - McNeill Group}{\normalsize Monash University\cvreference{|\faGithub kkCalc}{https://github.com/xraysoftmat/kkcalc/}\cvreference{|\faGithub pyNexafs}{https://github.com/xraysoftmat/pyNexafs}\cvreference{|\faGithub XEFI}{https://github.com/xraysoftmat/XEFI}}{Mar 2024 -- Present}{Clayton, VIC, Australia}
 		{\textalignment
-		As part of the McNeill research group I focus on the tender x-ray measurements of organic semiconductors. I have performed NEXAFS spectroscopy multiple times across both MEX2 and SXR beamlines, and performed X-ray scattering in/ex-situ measurements in both transmission \& grazing-incidence, not only at the SAXS/WAXS beamline in Australia and also at the tender SMI beamline at NSLS-II, NY, USA. A particular focus of my research is the use of resonant diffraction and spectroscopy to understand the microstructure of soft matter that usually lacks strong diffraction information, which is essential to infer emergent charged transport in organic electronic devices such as photovoltaics, LEDs and transistors. To aid such efforts, I have been developing research tools using modern software engineering practices, such as python packages for Kramers Kronig transforms (kkcalc) and for beamline data handling of NEXAFS data (pyNexafs). I have responsibilities to assist our PhD students in both experimental design, acquisition, and data analysis.
+		As part of the McNeill research group I focus on the tender x-ray measurements of organic semiconductors. I have performed NEXAFS spectroscopy multiple times across both MEX2 and SXR beamlines, and performed X-ray scattering in/ex-situ measurements in both transmission \& grazing-incidence, not only at the SAXS/WAXS beamline in Australia and also at the tender SMI beamline at NSLS-II, NY, USA. I have significant interaction with the control systems of the beamlines we use, particularly the SAXS/WAXS beamline, and have been involved in the development of new software tools to streamline data acquisition and analysis. A particular focus of my research is the use of resonant diffraction and spectroscopy to understand the microstructure of soft matter that usually lacks strong diffraction information, which is essential to infer emergent charged transport in organic electronic devices such as photovoltaics, LEDs and transistors. To aid such efforts, I have been developing research tools using modern software engineering practices, such as python packages for Kramers Kronig transforms (kkcalc) and for beamline data handling of NEXAFS data (pyNexafs). I have responsibilities to assist our PhD students in both experimental design, acquisition, and data analysis. 
 		}\vspace{1em}
 		
+		\newpage
 		\textit{X-ray Beamtime Experience:}
 		\vspace{-1em}
 		\begin{multicols}{2}
 			\begin{enumerate}
 				\item 2024-03 SXR Beamtime (Aus. Synchrotron)
-				\item 2024-03 MEX2 Beamtime (Aus. Synchrotron)
-				\item 2024-04 SAXS/WAXS Beamtime (Aus. Synchrotron)
+				\item 2024-03 MEX2 Beamtime (Aus. Sync.)
+				\item 2024-04 SAXS/WAXS Beamtime (Aus. Sync.)
 				\item 2024-09 SMI Beamtime (NSLS-II, USA)
-				\item 2024-10 MEX2 Beamtime (Aus. Synchrotron)
-				\item 2024-12 SAXS/WAXS Beamtime (Aus. Synchrotron)
-				\item 2025-02 MEX2 Discretionary time (Aus. Synchrotron)
+				\item 2024-10 MEX2 Beamtime (Aus. Sync.)
+				\item 2024-12 SAXS/WAXS Beamtime (Aus. Sync.)
+				\item 2025-02 MEX2 Discretionary time (Aus. Sync.)
 				\item 2025-02 SMI Beamtime (NSLS-II, USA)
-				\item 2025-04 SAXS/WAXS Beamtime (Aus. Synchrotron)
-				\item 2025-06 MEX2 Beamtime (Aus. Synchrotron)
-				\item 2025-07 SAXS/WAXS Beamtime (Aus. Synchrotron)
-				\item 2025-08 SAXS/WAXS Beamtime (Aus. Synchrotron)
-				\item 2026-03 MEX2 Beamtime (Aus. Synchrotron)
-				\item 2026-03 (Upcoming) SAXS/WAXS Beamtime (Aus. Synchrotron)
-				\item 2026-06 (Upcoming) MEX2 Beamtime (Aus. Synchrotron)
+				\item 2025-04 SAXS/WAXS Beamtime (Aus. Sync.)
+				\item 2025-06 MEX2 Beamtime (Aus. Sync.)
+				\item 2025-07 SAXS/WAXS Beamtime (Aus. Sync.)
+				\item 2025-08 SAXS/WAXS Beamtime (Aus. Sync.)
+				\item 2026-03 MEX2 Beamtime (Aus. Sync.)
+				\item 2026-03 SAXS/WAXS Beamtime (Aus. Sync.)
+				\item 2026-06 (Upcoming) MEX2 Beamtime (Aus. Sync.)
+				\item 2026-07 (Upcoming) SAXS/WAXS Beamtime (Aus. Sync.)
 			\end{enumerate}
 		\end{multicols}
 		\divider
@@ -668,9 +679,12 @@ autocite=superscript,
 	
 %	\vspace{-0.2em}
 %	\begin{paracol}{2}
+		\newpage
 		\cvsection{Workshops / Conferences} %\faPlaneDeparture{}
-		\cveventlong{\normalsize AUCAOS Symposium}{\normalsize AXAA \& MXP }{Nov 2025}{Tweed Heads, Australia}
-		Australiasian Community for Advanced Organic Semiconductors annual symposium.
+		\cveventlong{\normalsize AUCAOS Symposium}{\normalsize AUCAOS}{Nov 2025}{Tweed Heads, Australia}
+		Australiasian Community for Advanced Organic Semiconductors (AUCAOS) annual symposium.
+
+		\divider
 
 		\cveventlong{\normalsize Victorian X‐ray Symposium}{\normalsize AXAA \& MXP }{Nov 2024, 2025}{Clayton, Australia}
 		Australian X‐ray Analytical Association \& Monash X‐ray Platform general combined meeting and symposium.
@@ -849,6 +863,7 @@ autocite=superscript,
 		\cveventlong[0.6]{\normalsize Undergrad. Student Rep.}{\normalsize Monash Academic Board}{Dec 2016 - Dec 2017}{Monash University}
 		Elected member of Monash University’s principle academic body, chosen by undergraduate student population of Monash University. Contributed to discussion and implementation of academic matters of the university, meeting with key stakeholders and student bodies.
 		
+		\newpage
 		\cvsection{Professional Memberships}
 		% \begin{multicols}{2}
 			\begin{itemize}[itemsep=0pt]
@@ -945,19 +960,25 @@ autocite=superscript,
 	\vspace{-1em}
 	\begin{multicols}{2}
 		\begin{itemize}
+			\item Volunteer | Grace Christian Community, 2022 - Present
+			\begin{itemize}[label=\(\circ\),leftmargin=1.5em]
+				\item Music team coordinator 2025 - Present
+				\item Connect group leader 2024
+				\item Band leader 2023 - 2025
+			\end{itemize}
 			\item First aider | Monash MSE Department 2025 - Present
-			\item Volunteer | Grace Christian Community, 2022 - Present\\
-				\subitem Music team coordinator 2025 - Present
-				\subitem Connect group leader 2024
-				\subitem Band leader 2023 - 2025
-			\item Volunteer | ISCAST (Institute for the Study of Christianity in an Age of Science \& Technology) 2022, 2025 - Present
-				\subitem High-school visits 2025,26
-				\subitem Conference assistance 2022
 			\item Volunteer | FLEET Outreach Programs 2019-2022
+			% Force the switch
+			\item Volunteer | ISCAST (Institute for the Study of Christianity in an Age of Science \& Technology) 2022, 2025 - Present
+			\begin{itemize}[label=\(\circ\),leftmargin=1.5em]
+				\item High-school visits 2025,26
+				\item Conference assistance 2022
+			\end{itemize}
 			\item Leader | Scripture Union Family Mission 2016-2022\\
-	%        	\item Leader | Church Missionary Society SUTS Youth Camp 2019\\
-			% \item Committee Member | John Monash Science School Alumni Committee 2013-2019
+	       	\item Leader | Church Missionary Society SUTS Youth Camp 2019\\
+			% \item Committee Member | John Monash Science School Alumni Committee 2013-2019\\
 			\item Leader | St. Pauls Anglican Church Caulfield North 2013-2022
+			\hspace{6em}
 		\end{itemize}
 	\end{multicols}
 %        \cvlang{}

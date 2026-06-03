@@ -149,6 +149,36 @@ autocite=superscript,
 }
 \makeauthorbold{Gebert}
 
+% Clear individual urldate fields globally to prevent "visited on" tags
+\AtEveryBibitem{%
+    \clearfield{urlday}%
+    \clearfield{urlmonth}%
+    \clearfield{urlyear}%
+}
+
+% For non-software entries, also clear the URL field
+\AtEveryBibitem{%
+    \ifentrytype{software}{}{%
+        \clearfield{url}%
+    }%
+}
+
+% Custom bibliography driver for software entries with URL rendering
+\DeclareBibliographyDriver{software}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author}%
+  \setunit{\labelnamepunct}%
+  \usebibmacro{title}%
+  \newunit\newblock%
+  \usebibmacro{publisher+location+date}%
+  \newunit\newblock%
+  \iffieldundef{doi}{}{%
+    {, DOI: }\href{https://doi.org/\thefield{doi}}{\thefield{doi}}%
+  }%
+  \usebibmacro{finentry}%
+}
+
 %% sample.bib contains your publications
 \addbibresource{MyPapers.bib}
 \addbibresource{UnderPreparation.bib}
@@ -311,12 +341,12 @@ autocite=superscript,
         \vspace{-0.2em}
         \cvsection{About Me}
             \begin{quote}
-            	Postdoctoral researcher in semiconducting materials, seeking opportunities to passionately contribute to long-term scientific research and education.
+            	Postdoctoral researcher in semiconducting materials, seeking opportunities to passionately contribute to long-term scientific research and engineering.
             \end{quote}
         \vspace{0.5em}
 		{\textalignment
         % ----- ABOUT ME -----
-		I am a passionate physicist and engineer, with a diverse background across x-ray \& neutron beamline science, electronic measurements and device fabrication techniques. I am a fast learner of new technology, and a highly-adapable team-member, and excellent trainer/teacher. I love creating systems/processes that are intuitive, accessible and efficient. Nothing is better than an optimised system! I am currently working as a postdoctoral fellow in synchrotron science, where I research GI-WAXS scattering at resonance conditions, by processing significantly large multi-dimensional datasets by creating and utilising modern open source toolkits, whilst having significant intereaction with electronic control systems. I have strong interpersonal qualities and communication, and well suited to working within diverse teams. I like teaching and mentoring, and am always seeking to improve upon critical feedback.
+		I am a passionate engineer and physicist, with a diverse background across x-ray \& neutron beamline science, electronic measurements and device fabrication techniques. I am a fast learner of new technology, and a highly-adapable team-member, and excellent trainer/teacher. I love creating systems/processes that are intuitive, accessible and efficient. Nothing is better than an optimised system! I am currently working as a postdoctoral fellow in synchrotron science, where I research GI-WAXS scattering at resonance conditions, by processing significantly large multi-dimensional datasets by creating and utilising modern open source toolkits, whilst having significant intereaction with electronic control systems. I have strong interpersonal qualities and communication, and well suited to working within diverse teams. I like teaching and mentoring, and am always seeking to improve upon critical feedback.
 %        I love to dabble in code, teach and mentor, and prefer to have clear targets to work towards. My hobbies include music, where I have studied piano to AMEB Grade 8 and do a little electronic production, SciFy video games, Formula1 and Cycling, and home DIY. 
         % I have recently begun learning Mandarin, and have been involved in longterm volunteering and leadership, particularly
 		% within Christian communities centred on Jesus.
@@ -456,7 +486,7 @@ autocite=superscript,
 		\cvsubsection{\faFile*[regular] Software}
 
         \vspace{-0.6em}
-        \printbibliography[type=software,heading=none]
+		\printbibliography[type=software,heading=none]
 
 		\vspace{-1em}
         \divider
@@ -520,7 +550,7 @@ autocite=superscript,
 		        
         \divider
         
-        \newpage
+        % \newpage
         \cvsection{Awards and Scholarships}
 	        \cvsubsection{Awards}
 				\cvachievement{\faBullhorn}{Best ECR Speaker Talk | Victorian X-ray Symposium \faCalendar*[small] 2025
@@ -587,13 +617,13 @@ autocite=superscript,
 %	\columnratio{0.5}
 %	\begin{paracol}{2}
 %	\cvsection{\faMicroscope{} Experimental Experience}
+	\newpage
 	\cvsection{Experimental Experience}
 		\cvevent{\normalsize Postdoctoral researcher - McNeill Group}{\normalsize Monash University\cvreference{|\faGithub kkCalc}{https://github.com/xraysoftmat/kkcalc/}\cvreference{|\faGithub pyNexafs}{https://github.com/xraysoftmat/pyNexafs}\cvreference{|\faGithub XEFI}{https://github.com/xraysoftmat/XEFI}}{Mar 2024 -- Present}{Clayton, VIC, Australia}
 		{\textalignment
 		As part of the McNeill research group I focus on the tender x-ray measurements of organic semiconductors. I have performed NEXAFS spectroscopy multiple times across both MEX2 and SXR beamlines, and performed X-ray scattering in/ex-situ measurements in both transmission \& grazing-incidence, not only at the SAXS/WAXS beamline in Australia and also at the tender SMI beamline at NSLS-II, NY, USA. I have significant interaction with the control systems of the beamlines we use, particularly the SAXS/WAXS beamline, and have been involved in the development of new software tools to streamline data acquisition and analysis. A particular focus of my research is the use of resonant diffraction and spectroscopy to understand the microstructure of soft matter that usually lacks strong diffraction information, which is essential to infer emergent charged transport in organic electronic devices such as photovoltaics, LEDs and transistors. To aid such efforts, I have been developing research tools using modern software engineering practices, such as python packages for Kramers Kronig transforms (kkcalc) and for beamline data handling of NEXAFS data (pyNexafs). I have responsibilities to assist our PhD students in both experimental design, acquisition, and data analysis. 
 		}\vspace{1em}
 		
-		\newpage
 		\textit{X-ray Beamtime Experience:}
 		\vspace{-1em}
 		\begin{multicols}{2}
@@ -703,7 +733,7 @@ autocite=superscript,
 	
 %	\vspace{-0.2em}
 %	\begin{paracol}{2}
-		\newpage
+
 		\cvsection{Workshops / Conferences} %\faPlaneDeparture{}
 		\cveventlong{\normalsize AUCAOS Symposium}{\normalsize AUCAOS}{Nov 2025}{Tweed Heads, Australia}
 		Australiasian Community for Advanced Organic Semiconductors (AUCAOS) annual symposium.

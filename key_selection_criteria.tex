@@ -1,0 +1,181 @@
+\documentclass[10pt,a4paper,ragged2e,withhyper,paragraphstrue]{altacv}
+
+% \newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
+% \geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+% \geometry{left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm,columnsep=0.75cm}
+\geometry{left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.0cm,columnsep=0.75cm}
+\usepackage{subfiles} % Use subfiles to define personal information.
+\usepackage{paracol}
+
+% % Change the font if you want to, depending on whether
+% % you're using pdflatex or xelatex/lualatex
+% \ifxetexorluatex
+%   % If using xelatex or lualatex:
+%   \setmainfont{Roboto Slab}
+%   \setsansfont{Lato}
+%   \renewcommand{\familydefault}{\sfdefault}
+% \else
+%   % If using pdflatex:
+%   \usepackage[rm]{roboto}
+%   \usepackage[defaultsans]{lato}
+%   % \usepackage{sourcesanspro}
+%   \renewcommand{\familydefault}{\sfdefault}
+% \fi
+
+% Fork (before v1.6.5a): Change the color codes to test your personal variant on any mode
+\ifdarkmode%
+  \definecolor{PrimaryColor}{HTML}{C69749}
+  \definecolor{SecondaryColor}{HTML}{D49B54}
+  \definecolor{ThirdColor}{HTML}{1877E8}
+  \definecolor{BodyColor}{HTML}{ABABAB}
+  \definecolor{EmphasisColor}{HTML}{ABABAB}
+  \definecolor{BackgroundColor}{HTML}{191919}
+\else%
+%  \definecolor{PrimaryColor}{HTML}{001F5A}
+%  \definecolor{SecondaryColor}{HTML}{0039AC}
+%  \definecolor{ThirdColor}{HTML}{F3890B}
+%  \definecolor{BodyColor}{HTML}{666666}
+%  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+%  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+  \definecolor{PrimaryColor}{HTML}{001F5A}
+  \definecolor{SecondaryColor}{HTML}{448888}
+  \definecolor{ThirdColor}{HTML}{4682B4}
+  \definecolor{BodyColor}{HTML}{666666}
+  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+  \definecolor{BackgroundColor}{HTML}{FFFFFF}
+%  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+\fi%
+
+%My Colours:
+% Teal 448888
+% Orange DD5522 
+% Light blu 77EEEE
+% Steel Blu 4682B4
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{SecondaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+%\usepackage{hyperref
+%%Setup bib hyperlinks
+\hypersetup{%
+	urlcolor=SecondaryColor,
+	citecolor=SecondaryColor
+}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\newcommand{\textalignment}{
+	\justifying
+    \tolerance=1 %https://tex.stackexchange.com/a/5039/137109
+    \emergencystretch=\maxdimen
+    \hyphenpenalty=10000 
+    \hbadness=10000
+}
+
+\setlength{\parindent}{24pt}
+\newcommand{\pind}{\hspace{24pt}}
+
+\begin{document}
+    
+    \IfFileExists{./cl-intro.info}{
+            \subfile{./ksc-intro.info}
+        }{
+            \subfile{./cl-intro-example.info}
+        }
+
+    \vspace{0.5em}
+    {\textalignment
+    
+    % The Senior Scientific Officer – X-ray
+    % is responsible for independently delivering high-quality technical and scientific support within the Monash X-ray Platform (MXP), ensuring the effective operation, maintenance, and continuous development of advanced X-ray characterisation capabilities. The primary focus of the role is the independent operation and management of X-ray photoelectron spectroscopy (XPS), including providing expert technical guidance, user support, training, method development, troubleshooting, and data quality assurance to enable world-class research outcomes. The role also supports X-ray Computed Tomography (XCT) through instrument operation, user training, technical support, and method development as required. The Senior Scientific Officer contributes to the broader objectives of the Monash X-ray Platform by supporting X-ray Diffraction (XRD) and Small-Angle X-ray Scattering (SAXS) capabilities where appropriate. Working with a high degree of professional judgement and autonomy, the Senior Scientific Officer collaborates with researchers, students, industry partners, and MXP colleagues to maintain operational excellence, enhance the user experience, and contribute to the ongoing development of analytical services, training programs, and research infrastructure. The role facilitates access to advanced X-ray technologies while promoting their safe, efficient, and effective use across a diverse range of research and innovation projects.
+    
+    % Key Responsibilities.
+    % 1. Contribute to planning and operational committees to share knowledge and expertise in the area of technical specialisation
+    % 2. Independently Oversee and administer the delivery of a high-quality technical service or program including applying advanced technical methodology, reporting on and minimising risks, undertaking data analysis, interpretation of results and reporting in accordance with operational standards, policies, timeframes and regulatory compliance requirements
+    % 3. Provide specialist and technical advice and/or training to clients, staff, students and other stakeholders in the area of service or technical expertise, including compliance with technical standards and protocols
+    % 4. Develop and maintain up-to-date specialist or technical knowledge of new and innovative methodology, equipment, technology, data management and analysis in the field of specialisation
+    % 5. Undertake tasks in support of technical service or program which may include providing adviceon, developing and supporting; papers for publication, research or technical procedures and supporting patenting, copyright or licensing activity
+    % 6. Provide support for budget management for the research technical service or facility, where required, including planning, contributing to funding proposals and developing budget reports
+    % 7. Oversee and co-ordinate the day-to-day technical operations including; conducting experiments, testing or data collection activities, ensuring OHS and a safe operations, maintaining equipment and materials, waste disposal and ordering of supplies
+    % 8. Build and sustain partnerships, collaborations and networks with academic and other staff, relevant research/technical bodies, service providers and functional areas
+    % 9. Other duties as directed from time to time
+
+    % Key Selection Criteria
+    % Education/Qualifications
+    % 1. The appointee will have:
+    % ● A PhD qualification in a relevant scientific or engineering discipline, with extensive knowledge and expertise in X-ray physics, X-ray interactions with matter, quantum and atomic physics, surface chemistry, chemical state analysis, and materials science. This includes a strong understanding of crystallography, solid-state chemistry, atomic structure, electron configuration, and related characterisation techniques, or an equivalent combination of significant relevant research and professional experience; or an equivalent combination of relevant experience and education/training
+% Knowledge and Skills
+	I am writing to address the key selection criteria for the position of Senior Scientific Officer within the Monash X-ray Platform.
+    My current role is a postdoctoral research fellow in the Department of Materials Science Engineering at Monash University, under the supervision of Prof. Chris McNeill, through which I have gained extensive experience in thin-film characterisation through spectroscopy and diffraction beamline science. I have strong familiarity with crystallographic principles, through the use of near-edge x-ray absorption fine-structure (NEXAFS) spectroscopy and grazing-incidence wide-angle x-ray scattering (GI-WAXS) diffraction to understand microstructure in organic semiconductors, which frequently exhibit only limited-range order. 
+    Complementing my postdoctoral experience, I have a PhD in condensed matter physics from Monash University under the supervision of Prof. Michael Fuhrer, researching 2D electronic surface science, particularly 2D materials and topological insulators.
+
+    % Knowledge and Skills
+    % 2. Demonstrated experience in overseeing a successful technical service, program or facility, with a focus on operational excellence
+    % 9. Demonstrated experience and skills in working within multi-user facilities/platforms, preferably with extensive scientific support experience and high-level multi-user facility/platform technical and administration skills
+    As a postdoc and senior PhD student, I have supported doctoral students through equipment training and experimental design. For instance, in    synchrotron experiments designed to understand the influence of annealing and blade coating on thin-film polymer microstructure, experimental beamlines like the SAXS-WAXS beamline require custom programmatic control and equipment to enable a high data quality experiment, in a short timeframe during the beamtime. One of my roles as a postdoc is to be tasked with programmatic design and implementation of such experiments, including kinematic and temporal aspects of control and apparatus construction. To achieve this, collaboration with beamline staff, and training PhD candidates on processes and equipment has been essential for success. Implementing and executing this work within a very short timeframe demonstrates my ability to work under pressure, and find fast solutions to maximise user outcomes.
+    I have since successfully completing over 15 beamtimes, local and international. My ability to successfully oversee technical details, plan and train other uses in equipment operation, is reflected in recent co-author publications since 2024.
+
+    Another instance of my ability to work within multi-user facilities is my experience in the Melbourne Centre for Nanofabrication (MCN), where I have been trained and have trained others in the use of electron-beam lithography, and other cleanroom processes. I was able to demonstrate and guide workflows to achieve very small chip and device lithography, in order to make nanoscopic electronic devices, beyond what the facility trainer was optimistic about. 
+    
+    % 4. Demonstrated experience in supporting a safe operating environment, implementing OHS requirements, developing operating procedures and providing authoritative oversight of complex technical processes and use of specialised equipment
+    Safety is a significant part of these environments, where both material hazards and experimental risks (i.e. UHV, thermal, mechanical and electrical) are numerous and cannot be neglected. I have extensive experience in preparing SOPs and risk assessments (particularly through my PhD), and have escalated near-miss incidents to ensure the safety of myself and others. One particular instance of a near-miss was spin-coating waste within a glovebox was contaminating the vacuum pump exhaust and creating a breathing hazard. By raising the issue with the school manager, we were able to establish new isolation and ventilation strategies to ensure a safe environment for the shared user lab-space. Experiences such as these affect the way I train students, frequently emphasising possible risks too look out for. Furthermore, I have been a user of multiple synchrotron facilities, where I have gained systems knowledge and experience in the standard operation of beamline equipment.
+    
+    % 3. Highly-developed planning and organisational skills, with experience establishing priorities, implementing improvements and meeting deadlines
+    I have juggled multiple projects involving beamline experiments, experimental analysis and software developement, which has required me to establish priorities and meet deadlines. In particular, my primary responsibility has been the successful completion of synchrotron experiments, which often require significant time dedication and intensity in a short time period. Planning and preparing for these experiments is a high priority part of my role, due to the relational nature with group members and students who rely on the data to complete their own work. Aside from this, I have been performing my own research and software developement, which has resulted in with three X-ray software projects released with DOIs, and two experimental papers in preparation. Last November I was able present a significant portion of this work at international synchrotron facilities; the Swiss Light Source and the European Synchrotron Radiation Facility.
+
+    % 5. Demonstrated analytical, research and problem solving skills and the ability to identify and recommend solutions to challenging issues
+    My experiments in resonant scattering of organic semiconductors have required me to carefully study new and underlying physics in experiments, and develop new tools to analyse and interpret data. For instance, at the SMI beamline at the NSLS2, the beamline doesn't have an accurate flux monitor, so we had to utilise Si fluorescence to normalise the beamline flux. Grazing incidence wedge correction and detector flatfield corrections are also important considerations that modify detector scattering images, which we collected to ensure rigorous analysis. Further to analyse such phenomena, I have developed the XEFI package is a grazing-incidence waveguiding calculator to understand x-ray scattering in thin films, where anisotropic scattering and polarization effects are considered. Working through algorithmic implementations of the Parratt formalism has been important to correctly model the field intensity and expected scattering intensity.
+
+    % 6. Highly-developed interpersonal and communication skills with the ability to prepare professional documentation for various audiences and provide expert advice in areas of specialist or technical knowledge
+    % 7. Demonstrated relationship management skills, including the ability to interact with, negotiate with and gain co-operation from internal and external stakeholders
+    I have very strong interpersonal and communication skills suited to relationship management. I have presented at international conferences numerous times, and built long-distance collaborations with researchers in the US and Europe, recently exhibited by a ECR grant to visit and present my invited work at synchrotron facilities. From my broad educational background, I have been able to communicate effectively with a wide range of individuals, from undergraduate students to senior academics. I have significant tutoring/demonstrating experience in experimental physics contexts, and aforementioned facility experience. My volunteer work in governance and community roles particularly highlights the wide breadth of individuals I can communicate effectively and build report with, and the nuance of improving stakeholder engagement.
+    One instance where this is highlighted is in my postgraduate representative role, where I was able to organize a working group with students across astronomy and physics to feedback student experience in localised areas disconnected through COVID. By working with a wide span of the student body, I was able to identify and organize significant issues around motivation and lack of relational engagement, successfully acquire funding to run a series of social events to improve cohesion and support.
+    A second instance was my role as a lab managing senior PhD student, where I was able to identify and organize a service plan for the lab's wide range of scroll pumps. I was able to get quotes and organize pump exchange without disrupting the lab's operation. This meant that pumps didn't suddenly die from neglect, or cause significant disruption to lab operation.
+    
+    % 8. Demonstrated expertise in X-ray Photoelectron Spectroscopy (XPS) and related advanced surface characterisation techniques, including Ultraviolet Photoelectron Spectroscopy (UPS), Angle-Resolved XPS (ARXPS), Ion Scattering Spectroscopy (ISS), and Reflection Electron Energy Loss Spectroscopy (REELS). Demonstrated experience with ultra-high vacuum (UHV) systems and the operation, maintenance, and troubleshooting of sophisticated analytical instrumentation is essential. Experience in X-ray Computed Tomography (XCT) and advanced X-ray imaging techniques is highly desirable. Experience in other X-ray characterisation techniques, including X-ray Diffraction (XRD) and Small-Angle X-ray Scattering (SAXS), and associated analytical methods such as Rietveld refinement, high-resolution X-ray diffraction (HRXRD), and thin-film characterisation, would be advantageous
+    I do have a significant background in NEXAFS which is a related but more general technique to X-ray photoemission spectroscopy (XPS) that allows for bonds to be investigated under resonance conditions, allowing alternative modes to a hemispherical analyser such as fluorescence (i.e. bulk sensitive) and electron yields (surface sensitive). I have conducted many angle-resolved NEXAFS experiments to probe molecular orientation in thin films, to reveal anisotropic scattering alignment. This is particularly relevant for my work, where spectroscopy can determine the anisotropic atomic scattering factors. Additionally, much of the surface physics is the same - NEXAFS probes the fine structure of particular bonds and elements, generating a spectrum that is very similar to XPS, and can be used to identify chemical states. I am confident of my understanding of the underlying physics of XPS, in particular the identification of various binding energies of core electrons.
+    I also have gained extensive experience in the operation of high and ultra-high vacuum (UHV) systems. In my PhD, I frequently utilised systems such as molecular beam epitaxy (MBE) and LHe dilution refrigerators for magnetic electronic transport. I have observed and assisted in bakeouts, understand the operational mechanics of various pumps (getter, turbo, scroll) and have electronics skills supported by my electrical and computer systems engineering honours degree.
+
+    Complementary, I have strong experience in wide-angle-xray scattering (WAXS) and it's grazing incidence variant (GI-WAXS). I am very familiar with analysis routines; including detector calibration and q-space conversion utilising open source libraries such as \cvreference{pyFAI}{https://pyfai.readthedocs.io/}. This has been a large part of my experience in utilising the SAXS-WAXS beamline at the Australian Synchrotron, and also the SMI beamline at the NSLS2. Reflectometry is another technique I have some moderate capability for, through utilising the ACNS Platypus instrument, their Rigaku Smartlab and \cvreference{Refnx}{https://refnx.readthedocs.io/en/latest/}. I have modelled reflectivity data using the Parratt formalism, and enforce selection rules of crystallographic symmetries in order to reconstruct the diffraction intensity of thin epitaxial films. I have exposure to standard X-ray diffraction (XRD) and small-angle X-ray scattering (SAXS).
+    Additionally, I have significant potential in capability developement, with my ability to produce open source software packages, and produce web documentation (for example, see the\cvreference{XEFI}{https://xefi.readthedocs.io/}package). I can establish pipelines and workflows that enhance the user experience, and can provide training and support to users in these workflows.
+
+    While my primary expertise is NEXAFS spectroscopy rather than laboratory XPS, the required foundations in photoelectron processes, X-ray matter interactions, surface characterisation and vacuum instrumentation are central components of my research career. I believe I would be a great fit for your team, and would be very excited to provide user support and training in X-ray characterisation techniques, and to contribute to the development of new methods and capabilities. I would be happy to discuss my application further, and can be contacted via email or phone.
+    }
+
+    {\color{emphasis}
+    \textalignment
+		
+    \vspace{0.5em}
+
+    Yours sincerely, \newline
+    {\color{emphasis}\hspace{0.5cm}Matthew G Gebert}
+
+    }
+    
+    % \vspace*{0.5em}
+    \divider
+    \IfFileExists{./cl-personal.info}{
+        \vspace{-2em}
+        \subfile{./cl-personal.info}
+    }{
+        \vspace{-2em}
+        \subfile{./cl-personal-example.info}
+    }
+
+\end{document}

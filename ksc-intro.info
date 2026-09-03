@@ -1,0 +1,17 @@
+\documentclass[./cover-letter.tex]{subfiles}
+\begin{document}
+
+\columnratio{0.5}
+\begin{paracol}{2}
+\color{heading} Monash University 
+\newline \color{subheading} Monash X-ray Platform (MXP)
+\switchcolumn
+\raggedright\color{body}
+\hfill Matthew G. Gebert\newline
+\hfill{}Key Selection Criteria, \today\newline
+\end{paracol}
+
+\hspace*{1em}
+
+{\color{emphasis}Dear Dr. Jisheng Ma \& selection committee,}
+\end{document}

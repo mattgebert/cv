@@ -1,7 +1,9 @@
 \documentclass[10pt,a4paper,ragged2e,withhyper,paragraphstrue]{altacv}
 
 % \newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
-\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+% \geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+\geometry{left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm,columnsep=0.75cm}
+% \geometry{left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.0cm,columnsep=0.75cm}
 \usepackage{subfiles} % Use subfiles to define personal information.
 \usepackage{paracol}
 
@@ -79,6 +81,7 @@
 \renewcommand{\ratingmarker}{\faCircle}
 
 \newcommand{\textalignment}{
+	\justifying
     \tolerance=1 %https://tex.stackexchange.com/a/5039/137109
     \emergencystretch=\maxdimen
     \hyphenpenalty=10000 
@@ -97,70 +100,79 @@
         }
 
     \vspace{1em}
+    {\textalignment
 
-    {
-    \textalignment
-    \pind I am writing to you to apply for the position of Senior Controls Engineer\cvreference{(\#PD-1851).}
-    {https://careers.ansto.gov.au/job/Melbourne-Senior-Controls-Engineer-VIC/946930210/}I have recently conferred my doctoral program in experimental physics at the Australian Research Council's Centre of Excellence in 
-    Future Low Energy Electronics \& Technologies (FLEET), based at Monash University under the supervision of Prof. Michael Fuhrer, 
-    the director of FLEET. I additionally have completed undergraduate honours degrees in both electrical engineering and science, where I have specialised my 
-    engineering education into digital and analogue electronic control systems. I am looking for an opportunity where I can
-    use my skill-set in a scientific context, applying my skills in control systems and instrumentation. 
 
-    % 1. Experience designing and implementing distributed control systems.
-    % 3. Knowledge of data acquisition and real time control systems.
-    \pind My doctoral program and engineering electives have given me a strong background in electronic control and measurement systems. I have designed and implemented 
-    digital control loops for autonomous and time-critical tasks, such as a robotic puck competition, a PID-lock to a swinging pendulum, IQ-demodulation,
-    digital clocks and real-time video-processors. I have implemented these systems on a variety of platforms, including microcontrollers, FPGAs and 
-    programmable system-on-chip (SoCs). I also have analogue circuit design experience, where I have implemented a custom differential-amplifier, 
-    and done some introductory work with RF circuit design.
-    % Desirable 3. Experience with embedded controls, VME systems, motion controls, Instrumentation, PLCs, safety systems.
-    A significant part of my doctoral experiments were to conduct low-noise electronic measurements of low-dimensional materials in strong magnetic fields. 
-    To do this I have utilised a variety of electronic measurement equipment including lock-in amplifiers, sourcemeters and high-impedance preamplifiers, and their 
-    respective automated acquisition through GPIB control using National Instruments LabView. These measurements were often performed in cryogenic UHV environments, 
-    employing cryogenics and vacuum control principles. I have also been required to implement safe operating procedures (SOPs) and risk assessments for such equipment, 
-    for the general use of other students and colleagues.
-
-    % 2. The ability to program in at least one programming language with exposure to low level device programming.
-    % Desirable 2. Advanced skills in C/C++. Software development experience on Linux and/or PLC platforms.
-    \pind I am an avid programmer, with strong experience in Python, and significant experience in C/C++ and (V)HDL. I have full-stack experience, often using linux
-    operating systems (including for fabrication tools such as the Raith EBPG5000plusES), and am hosting and running a personal website using the Django framework. 
-    I am competent in low-level programming and logic as previously mentioned, and have recently started using 3D printers and CNC machines which incorporate motion.
-    I have participated in summer work experience at the Synchrotron in 2012, working on web-UI elements of the MyTardis project particularly for Xray diffraction datasets.
-
-    % 4. The ability to perform and document design reviews relative to data acquisition and real time control.
-    \pind I have significant experience in documenting reproducible work to a scientific standard. This includes code bases, with utilisation of standards and tools such as
-    version control, program typing, unit testing and documentation styles such as NumpyDoc. While I have not been required to document design reviews in a control context 
-    explicitly, I have worked with significant amounts of CAD design and documentation, such as design documents for custom UHV parts and SOP documentation.
-    % 5. The ability to develop relevant working standards and instructions relative to control systems.
-    As mentioned, I have an understanding of software-development standards and have developed a number of SOP, and this will enable me to develop relevant
-    working standards and instructions in control system contexts. One of my PhD forte's was optimising procedures, particularly for high quality samples, and I believe 
-    producing a pragmatic, clear set of instructions and standards can benefit many users, operators and handover.
-
-    % 6. The ability to quickly understand scientific concepts to a sufficient level to provide the support needed.
-    % 7. The ability to communicate and collaborate with various technical groups, engineers, scientists other experts in their field to gain accurate and relevant information.
-    % Desirable 1. Experience in a science environment or light source facility
-    % 8. The ability to work autonomously or with limited supervision.
-    \pind During my doctoral program, I have developed a strong background in experimental physics, with a focus on the development of novel instrumentation and 
-    fabrication/measurement techniques for the study of low dimensional materials. Part of this program involved performing measurements at the ANSTO's Lucas Heights
-    facility, where I used the Platypus beamline to perform neutron reflectometry measurements. I am professionally aware of safety procedures and protocols 
-    in such institutions where security and safety are paramount. The breadth of knowledge required for my doctoral candidature demonstrates that I am also quick to learn 
-    conceptual ideas, new skills and techniques, particularly as my thesis involved nanofabrication, molecular-beam epitaxy, electronic-transport and spectroscopic measurements.
-    Whilst I find managerial supervision very useful, I have been working autonomously for quite some time particularly in experimental contexts.
-    I am a clear communicator, not only demonstrated by multiple conference presentations during my candidature, but also through extensive co-curricular teaching, 
-    leadership, volunteering and governance experience. My multidisciplinary background allows me to easily communicate and collaborate with numerous technical groups relevant
-    to the Synchrotron facility, particularly amongst the Controls \& Scientific Computing team, and I professionally know a number of scientists and engineers 
-    who work at the facility.
-
-    \pind I believe my breadth of professional experience makes me an ideal candidate for the position of Senior Controls Engineer, and I am very excited by the opportunity to
-    contribute to the significant work that is undertaken at the Synchrotron. If you have any questions or seek further clarification, please don't hesitate to contact me.
-    I look forward to hearing from you soon.
     
+    % 5. Demonstrated analytical, research and problem solving skills and the ability to identify and
+    % recommend solutions to challenging issues
+
+
+	I am writing to apply for the position of Technical Specialist for the School of Physics and Astronomy. This opportunity is of great interest to me because of its user-facing role, multidisciplinary nature, long-term location in Melbourne, at the intersection of scientific experimentation, electronic control, data and analysis, through all of which I believe I am ideally qualified to serve both the educational and research missions of the school. I have a strong and diverse background in physics, engineering, and software development, with extensive experience in scientific research and technical support. 
+
+    %     1. The appointee will have:
+    % ● A degree qualification in a relevant field with extensive relevant experience; or
+    My education includes a PhD in condensed matter physics within the School of Physics at Monash University focused on electronic materials, and  an honours degree in electrical and computer systems engineering majoring in digital (i.e. FPGA) and analogue electronics highlighted by the completion of two masters units; Real-time System Design\cvreference{(ECE5881)}{https://handbook.monash.edu/2026/units/ECE5881} and Advanced Analogue Electronics\cvreference{(ECE5882).}{https://handbook.monash.edu/2026/units/ECE5882}
+    
+    % 7. Experience with advanced technologies including equipment repair and maintenance,
+    % equipment development (including electronic design and assembly), software, coding and data
+    % acquisition and demonstrated ability to quickly adapt to and learn new systems. Practical
+    % experience in programming with C, C++, and Python. Matlab and LabView programming
+    % experience
+    % 8. Expertise in both analogue and digital electronics, including high speed electronics, computer
+    % interfacing, knowledge of GPUs, FPGAs, embedded controllers and circuit design (e.g., ASICs)
+    Through my doctorate and undergraduate studies, I have demonstrated the ability to learn a wide range of technologies rapidly. I've extensively used standard electronic acquisition equipment (lock-ins, pre-amps), and implemented control loops (LabVIEW, Python). My research required significant use of cryogenic and UHV systems, including MBE and dilution refrigerators. My responsibilities included maintenance, repair, training and development of gloveboxes, probestations, and scroll pump systems to upkeep a functioning laboratory. I consequently have often worked in service and operational engagement with academic and technical staff.
+    My work has spanned relevant hardware programmatic languages, and engaged in multiple design projects that required me to design and build electronic systems. I have practical project experience across microcontrollers and FPGAs, including VHDL implementation, and PCB design and assembly, including soldering and testing of custom electronics, and wire-bonding for finer integration.
+    % My nanofabrication experience, though not directly relevant to this position, also required me to learn and operate a wide range of complex equipment, including electron-beam lithography systems, plasma etching systems, and wire bonders. I often developed/optimised new processes, which is essential for the technical support role at the School of Physics and Astronomy.
+    % 4. Demonstrated experience in supporting a safe operating environment, implementing OHS
+    % requirements, developing operating procedures and providing authoritative oversight of
+    % complex technical processes and use of specialised equipment
+    I have implemented safety documentation such as standard operating procedures and risk assessments for laboratory operations, and also have raised incident reports for equipment failures and near misses. I have performed this work across multiple facilities, including after-hours contexts, locally at the Monash X-ray Platform (MXP) and the ANFF Melbourne Centre for Nanofabrication (MCN), demonstrating my adherence to safety protocols across a range of environments.
+
+    % 7. Experience with advanced technologies including equipment repair and maintenance,
+    % equipment development (including electronic design and assembly), software, coding and data
+    % acquisition and demonstrated ability to quickly adapt to and learn new systems. Practical
+    % experience in programming with C, C++, and Python. Matlab and LabView programming
+    % experience
+    % 8. Expertise in both analogue and digital electronics, including high speed electronics, computer
+    % interfacing, knowledge of GPUs, FPGAs, embedded controllers and circuit design (e.g., ASICs)
+    My postdoctoral research in synchrotron x-ray characterisation has enabled me to develop a deep understanding of control and detectors. This requires handling complex programmatic and data tasks to a industrial standard of software quality control, personally demonstrated through contributions to open source software development, particularly in Python, with multiple software packages published to the Python Package Index (PyPI), with user focussed documentation, and utilisation of programmatic AI models to progress software development.
+    % 3. Highly-developed planning and organisational skills, with experience establishing priorities,
+    % implementing improvements and meeting deadlines
+    I have great project management skills, working with overlapping deadlines and complex technical requirements, and experience in utilising software project management toolkits such as Github Projects (with semantic versioning, unit testing, and continuous integration), which enable reliable interaction and feedback with a wider community.
+
+
+    % 6. Highly-developed interpersonal and communication skills with the ability to prepare
+    % professional documentation for various audiences and provide expert advice in areas of
+    % specialist or technical knowledge
+    I have excellent interpersonal and communication skills, exmplified in a variety of context.
+    My work has enabled travel and collaboration with a wide range of researchers across international facilities and conferences, involving presentations and peer-reviewed publications. I also have significant teaching experience, and student mentoring in my research group, directly supervising four undergraduate/masters projects, and training multiple PhD students in nanofabrication and measurement techniques. My interpersonal skills are further highlighted by community service and governance roles.
+
+    I believe my uniquely diverse experience makes me an ideal candidate for this position. With my passion for supporting people and enabling research, I am very excited to contribute to the School of Physics and Astronomy in this role. I look forward to the opportunity to discuss my application further.
+
+    % My current role is as a postdoctoral research fellow in the Materials Science and Engineering department at Monash University, under the supervision of Prof. Christopher McNeill, an expert in using synchrotron radiation to study photovoltaic materials. I have extensive experience in spectroscopy and diffraction beamline science, and I have completed 13 beamtimes (plus discretionary time). I have strong familiarity with anomalous diffraction principles, as my research focuses on utilising polarized light at resonance to understand alignment and orientation in organic semiconductors (materials with moderate disorder), which often lack strong crystallographic signals. Through numerous beamtimes, I have developed strong experimental experience in design and control aspects of in-situ WAXS experiments, for which I have been responsible within our group. 
+    % I am familiar with control systems such as \cvreference{Bluesky}{https://github.com/bluesky/bluesky} (a modern open-source framework) built on top of EPICS, and EPICS formats such as MDA files, which are utilised for repeatable experimentation.
+    
+    % \pind In parallel, I have been developing open-source Python toolkits for interaction with and analysis of beamline experiments (see \cvreference{XraySoftMat}{https://github.com/xraysoftmat/} repositories). These tools contribute to reproducible, extensible, and integrated experimental workflows, and demonstrate strong software development capability to meet modern software-engineering standards (i.e. unit-testing, semantic versioning, etc.). I believe these skills are essential for modern control and automation research in user-focused facilities such as the Synchrotron.
+    
+    % \pind Complementing my postdoctoral experience, I have a PhD in condensed matter physics under the supervision of Prof. Michael Fuhrer, researching 2D electronic surface science. Significantly relevant to this position, I have utilised polarized neutron reflectometry, XRR, and XRD at the ACNS, ANSTO, and performed cryogenic electronic transport and molecular beam epitaxy (in UHV with in-situ RHEED). I have experience with analytical methods such as fundamental parameters, atomic-layer XRD simulations, and Laue oscillations.
+    
+    % \pind In both of these research contexts, I have demonstrated my ability to undertake self-directed learning in new fields that differ from my previous educational experience, and to collaborate with a wide range of researchers. I have developed national networks (such as through FLEET) and am internationally engaged in collaborations at European institutes, including recent ECR grant travel in Oct. 2025 through the ESRF and SLS.
+
+    % \pind My experience demonstrates excellent communication and interpersonal skills through a combination of collaboration, teaching, volunteering, and community activities. I have trained multiple PhD students in nanofabrication and measurement techniques, supervised numerous undergraduate and masters students, and taught X-ray analysis processes to PhD students in my research group. Through such roles, including community service and governance, I have learned the importance of relationships with clients and stakeholders, how to create meaningful community connections, and how to foster positive and inclusive environments. This record demonstrates my initiative in making relational contributions.
+
+    % \pind I have a strong capacity for detail, policy, and procedure, with significant experience in preparing standard operating procedures, risk assessments, and other safety documentation required in research contexts. The same is true for understanding compliance and best practice in engineering and scientific problem-solving, where details around specifications are critical. My diverse educational background (including my honours degree in electrical and computer systems engineering) also positions me to communicate effectively with a wide range of technical staff and researchers to deliver strong outcomes for the Diffraction Group.
+
+    % \pind I hope you find my application promising, and I look forward to the opportunity to discuss it further. I am excited about the possibility of contributing to this group and the broader synchrotron community, and I believe my skills and experience align well with the requirements of this position.
+    }
+
+    {\color{emphasis}
+    \textalignment
+		
     \vspace{1em}
 
     Yours Sincerely, \newline
-
-    {\color{emphasis}Matthew Gebert}
+    {\color{emphasis}\hspace{0.5cm}Matthew G Gebert}
 
     }
     

@@ -1,0 +1,12 @@
+\documentclass[./cover-letter.tex]{subfiles}
+\begin{document}
+\color{emphasis} Organisation \newline \color{body} Organisational Address
+
+\hspace*{1em}
+
+\begin{center}
+{\color{emphasis}\Large\fontfamily{lmss}\selectfont Research Mission Statement
+}
+\end{center}
+
+\end{document}

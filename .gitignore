@@ -7,6 +7,7 @@ pdfa.*
 *.xdv
 *.lua
 *.aux
+*.blg
 !main.tex
 old/*
 *.pdf
@@ -21,3 +22,6 @@ cv-reference.info
 cv-personal.info
 cl-intro.info
 cl-personal.info
+*-SAVE-ERROR
+.vscode/*
+ms-intro.info

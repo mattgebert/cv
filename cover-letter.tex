@@ -1,7 +1,9 @@
 \documentclass[10pt,a4paper,ragged2e,withhyper,paragraphstrue]{altacv}
 
 % \newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
-\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+% \geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+\geometry{left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm,columnsep=0.75cm}
+% \geometry{left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.0cm,columnsep=0.75cm}
 \usepackage{subfiles} % Use subfiles to define personal information.
 \usepackage{paracol}
 
@@ -79,6 +81,7 @@
 \renewcommand{\ratingmarker}{\faCircle}
 
 \newcommand{\textalignment}{
+	\justifying
     \tolerance=1 %https://tex.stackexchange.com/a/5039/137109
     \emergencystretch=\maxdimen
     \hyphenpenalty=10000 
@@ -97,70 +100,85 @@
         }
 
     \vspace{1em}
+    {\textalignment
 
-    {
-    \textalignment
-    \pind I am writing to you to apply for the position of Senior Controls Engineer\cvreference{(\#PD-1851).}
-    {https://careers.ansto.gov.au/job/Melbourne-Senior-Controls-Engineer-VIC/946930210/}I have recently conferred my doctoral program in experimental physics at the Australian Research Council's Centre of Excellence in 
-    Future Low Energy Electronics \& Technologies (FLEET), based at Monash University under the supervision of Prof. Michael Fuhrer, 
-    the director of FLEET. I additionally have completed undergraduate honours degrees in both electrical engineering and science, where I have specialised my 
-    engineering education into digital and analogue electronic control systems. I am looking for an opportunity where I can
-    use my skill-set in a scientific context, applying my skills in control systems and instrumentation. 
+    %%% START JOB DESCRIPTION %%%
+    % You are a Software Engineer who enjoys solving complex technical challenges and working as part of a multidisciplinary team to deliver meaningful outcomes. You bring a combination of software development expertise, analytical thinking and collaboration skills, enabling you to work effectively across technical teams and customer environments.
 
-    % 1. Experience designing and implementing distributed control systems.
-    % 3. Knowledge of data acquisition and real time control systems.
-    \pind My doctoral program and engineering electives have given me a strong background in electronic control and measurement systems. I have designed and implemented 
-    digital control loops for autonomous and time-critical tasks, such as a robotic puck competition, a PID-lock to a swinging pendulum, IQ-demodulation,
-    digital clocks and real-time video-processors. I have implemented these systems on a variety of platforms, including microcontrollers, FPGAs and 
-    programmable system-on-chip (SoCs). I also have analogue circuit design experience, where I have implemented a custom differential-amplifier, 
-    and done some introductory work with RF circuit design.
-    % Desirable 3. Experience with embedded controls, VME systems, motion controls, Instrumentation, PLCs, safety systems.
-    A significant part of my doctoral experiments were to conduct low-noise electronic measurements of low-dimensional materials in strong magnetic fields. 
-    To do this I have utilised a variety of electronic measurement equipment including lock-in amplifiers, sourcemeters and high-impedance preamplifiers, and their 
-    respective automated acquisition through GPIB control using National Instruments LabView. These measurements were often performed in cryogenic UHV environments, 
-    employing cryogenics and vacuum control principles. I have also been required to implement safe operating procedures (SOPs) and risk assessments for such equipment, 
-    for the general use of other students and colleagues.
+    % Essential for this role:
+    % Experience across software design, development, integration, testing and troubleshooting within complex software environments.
+    % Proficiency in Golang, TypeScript, Python, Java or a comparable programming language.
+    % Experience developing and integrating APIs, services, interfaces or technical data exchange solutions.
+    % Knowledge of containerisation technologies such as Kubernetes and/or Docker.
+    % Experience using Git or equivalent source-control systems and participating in peer-review processes.
+    % Ability to investigate software defects, analyse logs and interpret simulation or system outputs to identify and resolve technical issues.
+    % Experience producing software design documentation, interface specifications and test artefacts.
+    % Experience working within Agile delivery environments and collaborating with cross-functional engineering teams.
+    % Strong communication and stakeholder engagement skills, with the ability to communicate technical concepts to a range of audiences.
+    % Relevant tertiary qualifications in Software Engineering, Computer Science or a related discipline, or equivalent industry experience.
 
-    % 2. The ability to program in at least one programming language with exposure to low level device programming.
-    % Desirable 2. Advanced skills in C/C++. Software development experience on Linux and/or PLC platforms.
-    \pind I am an avid programmer, with strong experience in Python, and significant experience in C/C++ and (V)HDL. I have full-stack experience, often using linux
-    operating systems (including for fabrication tools such as the Raith EBPG5000plusES), and am hosting and running a personal website using the Django framework. 
-    I am competent in low-level programming and logic as previously mentioned, and have recently started using 3D printers and CNC machines which incorporate motion.
-    I have participated in summer work experience at the Synchrotron in 2012, working on web-UI elements of the MyTardis project particularly for Xray diffraction datasets.
+    % Advantageous:
+    % Experience within Defence, aerospace, command and control, communications, sensor or mission-system environments.
+    % Experience integrating software with complex, software-intensive systems, test environments or simulation platforms.
+    % Experience using tools such as DOORS, Jazz, Jira or Confluence.
+    % Experience developing web applications using Angular.
+    % Working knowledge of PostgreSQL or similar database technologies.
+    % Familiarity with Defence technologies and protocols, including IFF and Link 16.
+    % Experience in software performance profiling, optimisation and system tuning.
+    % Ability to facilitate technical workshops, present findings and engage effectively with customers and stakeholders.
+    %%% END JOB DESCRIPTION %%%
 
-    % 4. The ability to perform and document design reviews relative to data acquisition and real time control.
-    \pind I have significant experience in documenting reproducible work to a scientific standard. This includes code bases, with utilisation of standards and tools such as
-    version control, program typing, unit testing and documentation styles such as NumpyDoc. While I have not been required to document design reviews in a control context 
-    explicitly, I have worked with significant amounts of CAD design and documentation, such as design documents for custom UHV parts and SOP documentation.
-    % 5. The ability to develop relevant working standards and instructions relative to control systems.
-    As mentioned, I have an understanding of software-development standards and have developed a number of SOP, and this will enable me to develop relevant
-    working standards and instructions in control system contexts. One of my PhD forte's was optimising procedures, particularly for high quality samples, and I believe 
-    producing a pragmatic, clear set of instructions and standards can benefit many users, operators and handover.
-
-    % 6. The ability to quickly understand scientific concepts to a sufficient level to provide the support needed.
-    % 7. The ability to communicate and collaborate with various technical groups, engineers, scientists other experts in their field to gain accurate and relevant information.
-    % Desirable 1. Experience in a science environment or light source facility
-    % 8. The ability to work autonomously or with limited supervision.
-    \pind During my doctoral program, I have developed a strong background in experimental physics, with a focus on the development of novel instrumentation and 
-    fabrication/measurement techniques for the study of low dimensional materials. Part of this program involved performing measurements at the ANSTO's Lucas Heights
-    facility, where I used the Platypus beamline to perform neutron reflectometry measurements. I am professionally aware of safety procedures and protocols 
-    in such institutions where security and safety are paramount. The breadth of knowledge required for my doctoral candidature demonstrates that I am also quick to learn 
-    conceptual ideas, new skills and techniques, particularly as my thesis involved nanofabrication, molecular-beam epitaxy, electronic-transport and spectroscopic measurements.
-    Whilst I find managerial supervision very useful, I have been working autonomously for quite some time particularly in experimental contexts.
-    I am a clear communicator, not only demonstrated by multiple conference presentations during my candidature, but also through extensive co-curricular teaching, 
-    leadership, volunteering and governance experience. My multidisciplinary background allows me to easily communicate and collaborate with numerous technical groups relevant
-    to the Synchrotron facility, particularly amongst the Controls \& Scientific Computing team, and I professionally know a number of scientists and engineers 
-    who work at the facility.
-
-    \pind I believe my breadth of professional experience makes me an ideal candidate for the position of Senior Controls Engineer, and I am very excited by the opportunity to
-    contribute to the significant work that is undertaken at the Synchrotron. If you have any questions or seek further clarification, please don't hesitate to contact me.
-    I look forward to hearing from you soon.
     
+    % You are a Software Engineer who enjoys solving complex technical challenges and working as part of a multidisciplinary team to deliver meaningful outcomes. You bring a combination of software development expertise, analytical thinking and collaboration skills, enabling you to work effectively across technical teams and customer environments.
+	I am writing to apply for the position of Software Engineer for Mission Software Systems team. This opportunity is of great interest to me, in both the software technologies and the multidisciplinary nature of the role. I believe my diverse experience makes me an ideal candidate for this position.
+
+    % Relevant tertiary qualifications in Software Engineering, Computer Science or a related discipline, or equivalent industry experience.
+    My education includes a PhD in condensed matter physics within the School of Physics at Monash University focused on electronic materials, and an honours degree in electrical and computer systems engineering majoring in digital (i.e. FPGA) and analogue electronics. My undergraduate science degree majored in experimental physics, mathematics and a minor in computer science. 
+    
+    % highlighted by the completion of two masters units; Real-time System Design\cvreference{(ECE5881)}{https://handbook.monash.edu/2026/units/ECE5881} and Advanced Analogue Electronics\cvreference{(ECE5882).}{https://handbook.monash.edu/2026/units/ECE5882}.
+    % Experience across software design, development, integration, testing and troubleshooting within complex software environments.
+    % Proficiency in Golang, TypeScript, Python, Java or a comparable programming language.
+    % Experience developing and integrating APIs, services, interfaces or technical data exchange solutions.
+    % Knowledge of containerisation technologies such as Kubernetes and/or Docker.
+    % Experience using Git or equivalent source-control systems and participating in peer-review processes.
+    % Knowledge of CI/CD pipelines, DevSecOps practices and modern software delivery toolsets.
+    % Experience producing software design documentation, interface specifications and test artefacts.
+    My postdoctoral research in synchrotron x-ray characterisation has enabled me to develop a deep understanding of scientific python for workflow and data-intensive systems. I have build multiple Python packages (see XEFI, KKCalc) published to the Python Package Index (PyPI) for handling complex programmatic and data tasks at a industrial standard of software quality control, utilizing modern software developement practises. This includes linting, type-checking, semantic versioning, unit testing and coverage, and user/docstring API documentation. I have also crafted CI/CD pipelines within GitHub actions and employ tools like pre-commit. I have also contributed to open-source software projects, such as NumpyDoc. Furthermore, these projects have required me to develop and maintain class APIs to enable good data workflow from a scientific perspective. 
+    % Experience developing web applications using Angular.
+    % Working knowledge of PostgreSQL or similar database technologies.
+    % Experience working within Agile delivery environments and collaborating with cross-functional engineering teams.
+    I have experience with web development and database management, having hosted my own personal Django website utilising PostgreSQL for relational model tables, and recently have been experimenting with React and TypeScript to build modern web applications to deploy in a linux home-server environment using Docker containerisation. I am familiar with Agile workflows, and have experience using GitHub for source control and peer-review processes.
+    
+    % Experience within Defence, aerospace, command and control, communications, sensor or mission-system environments.
+    % Experience integrating software with complex, software-intensive systems, test environments or simulation platforms.
+    Within my research, I have been involved in time-intensive synchrotron beamline experiments, which are typically 2-4 days in duration. These experiments require fast implementation of new control processes for physical hardware, as well as rapid analysis of resulting data to inform decision-making and ensure successful acquisition of results. Part of my role has been to ensure the implementation of these processes to collect essential data and being actively responsible for training and supporting junior members of my research group in a time-critical environment.
+    
+    % Ability to investigate software defects, analyse logs and interpret simulation or system outputs to identify and resolve technical issues.
+    % Experience in software performance profiling, optimisation and system tuning.
+    My work has spanned relevant hardware programmatic languages, and engaged in multiple design projects that required me to design and build electronic systems. I have practical project experience across microcontrollers and FPGAs, including VHDL implementation. I've extensively used standard electronic acquisition equipment (lock-ins, pre-amps) integrated into control systems (LabVIEW, Python). My research required significant use of cryogenic and UHV systems. Furthermore, I have used some parallelisation and timing libraries to enhance software performance. My time-sensitive synchrotron experiments also demonstrate my ability to quickly investigate and resolve technical issues across a range of software and hardware systems, from low-level electronics to high-level software, and to interpret system outputs to identify and resolve technical issues.
+
+    % Strong communication and stakeholder engagement skills, with the ability to communicate technical concepts to a range of audiences.
+    % Ability to facilitate technical workshops, present findings and engage effectively with customers and stakeholders.
+    I have excellent interpersonal and communication skills, exemplified in a variety of contexts.
+    My work has enabled travel and collaboration with a wide range of researchers across international facilities and conferences, involving presentations and peer-reviewed publications. I also have significant teaching experience, and student mentoring in my research group, directly supervising four undergraduate/masters projects, and training multiple PhD students in nanofabrication and measurement techniques. My interpersonal skills are further highlighted by community service and governance roles.
+
+    % LACKING EXPERIENCE:
+    % Essential
+    % Advantageous:    
+    % Experience using tools such as DOORS, Jazz, Jira or Confluence.
+    % Familiarity with Defence technologies and protocols, including IFF and Link 16.
+
+    I believe my uniquely diverse experience makes me an ideal candidate for this position. With my passion for supporting people and enabling research, I am very excited to contribute to Leidos's MSS team in this role. I look forward to the opportunity to discuss my application further.
+
+    }
+
+    {\color{emphasis}
+    \textalignment
+		
     \vspace{1em}
 
     Yours Sincerely, \newline
-
-    {\color{emphasis}Matthew Gebert}
+    {\color{emphasis}\hspace{0.5cm}Matthew G Gebert}
 
     }
     

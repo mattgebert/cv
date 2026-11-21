@@ -378,16 +378,18 @@
 	\medskip\normalsize
 }
 
-\newcommand{\hobbyproject}[3][0.2]{
+% \newcommand{\hobbyproject}[3][0.2]{
+\NewDocumentCommand{\hobbyproject}{ O{0.2} O{} m m }{
   \tikzmath{
 		\resultone = 1 - #1;
 	}
   \noindent
   \parbox[t]{#1\linewidth}{% 
-    \color{accent}\normalsize #2%
+    \color{accent}\normalsize% #2%
+    \ifstrempty{#2}{#3}{\href{#2}{#3}}%
   }% 
   \parbox[t]{\resultone\linewidth}{%
-    \color{emphasis}\small ~#3% 
+    \color{emphasis}\small ~#4% 
   }\par
   \vspace{0.5\baselineskip}
 }

@@ -364,6 +364,47 @@
 	\medskip\normalsize
 }
 
+% addition by matt.
+\newcommand{\cveventwithlinks}[6][0.3]{
+	{\large\color{emphasis}#2}
+	\tikzmath{
+		\resultone = 1 - 2 * #1;
+	}
+	\ifstrequal{#3}{}{}{\large{\color{accent} | #3}}
+	\par\medskip\normalsize
+	\ifstrequal{#4}{}{}{{\small\makebox[#1\linewidth][l]{\color{accent}\faCalendar\color{emphasis}~#4}}}
+  \ifstrequal{#5}{}{}{{\small\makebox[#1\linewidth][l]{\color{accent}\faMapMarker\color{emphasis}~#5}}}
+	\ifstrequal{#6}{}{}{{\small\makebox[\resultone\linewidth][l]{\color{emphasis}~#6}}}\par
+	\medskip\normalsize
+}
+
+\newcommand{\hobbyproject}[3][0.2]{
+  \tikzmath{
+		\resultone = 1 - #1;
+	}
+  \noindent
+  \parbox[t]{#1\linewidth}{% 
+    \color{accent}\normalsize #2%
+  }% 
+  \parbox[t]{\resultone\linewidth}{%
+    \color{emphasis}\small ~#3% 
+  }\par
+  \vspace{0.5\baselineskip}
+}
+
+% \newcommand{\hobbyproject}[3][0.15]{%
+%   \tikzmath{
+%     \resultone = 1 - #1;
+%   }
+%   \begin{tabularx}{\linewidth}{%
+%       p{#1\linewidth}%
+%       >{\raggedright\arraybackslash}X%
+%     }
+%     \color{accent}\normalsize #2 &
+%     \color{emphasis}\small ~#3
+%   \end{tabularx}\par
+% }
+
 
 
 % Fork v1.6.5b
